@@ -5,7 +5,7 @@ title: Home
 
 <div class="hero">
   <h1>Travel • Photography • Stories</h1>
-  <h2>Explore the world through my lens</h2>
+  <p>Explore the world through my lens</p>
 </div>
 
 
