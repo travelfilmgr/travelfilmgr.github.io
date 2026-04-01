@@ -5,11 +5,9 @@ title: Home
 
 <div class="hero">
   <h1>Travel • Photography • Stories</h1>
-</div>
-
-<div class="container">
   <h2>Explore the world through my lens</h2>
 </div>
+
 
 <div class="container">
   <h2>Latest Posts</h2>
