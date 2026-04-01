@@ -1,14 +1,22 @@
-body {
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #f5f5f5;
-  color: #222;
-  transition: 0.3s;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* container */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
 .container {
-  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px 0;
 }
 
 /* HEADER */
@@ -16,38 +24,43 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 5%;
   background: white;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 nav a {
-  margin: 0 10px;
+  margin-left: 15px;
   text-decoration: none;
   color: #333;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-/* HERO (FIXED PATH - NO / at start for Jekyll) */
+nav a:hover {
+  color: #000;
+}
+
+/* HERO */
 .hero {
   height: 90vh;
-  background-image: url("assets/images/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  background: url("assets/images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: white;
   position: relative;
+  color: white;
 }
 
-/* DARK OVERLAY */
+/* HERO OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
@@ -55,27 +68,51 @@ nav a {
   background: rgba(0,0,0,0.45);
 }
 
-/* HERO TEXT */
-.hero h1 {
+.hero-content {
   position: relative;
-  z-index: 1;
-  font-size: 3rem;
   text-align: center;
+  z-index: 1;
 }
 
-/* CARDS */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ddd;
+}
+
+/* CARDS (BLOG / POSTS) */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 40px 5%;
 }
 
 .card {
   background: white;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
@@ -88,41 +125,66 @@ nav a {
   display: block;
 }
 
-/* GRID */
+.card-content {
+  padding: 15px;
+}
+
+/* GALLERY GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 20px;
+  padding: 40px 5%;
 }
 
 .grid img {
   width: 100%;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
-/* FILTERS */
+.grid img:hover {
+  transform: scale(1.03);
+}
+
+/* FILTER BUTTONS */
+.filters {
+  text-align: center;
+  margin: 20px 0;
+}
+
 .filters button {
   margin: 5px;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
-  background: black;
+  background: #111;
   color: white;
+  border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #333;
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   background: #111;
   color: white;
+  margin-top: 50px;
 }
 
 /* DARK MODE */
 .dark {
   background: #0f0f0f;
-  color: #f5f5f5;
+  color: #eee;
+}
+
+.dark .header {
+  background: #1a1a1a;
 }
 
 .dark .card {
@@ -130,11 +192,11 @@ nav a {
   color: white;
 }
 
-.dark .header {
-  background: #1a1a1a;
+.dark nav a {
+  color: #eee;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -142,5 +204,10 @@ nav a {
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
