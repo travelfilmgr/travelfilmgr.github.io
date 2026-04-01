@@ -1,7 +1,0 @@
----
-layout: default
-title: About
----
-
-<h1>About Me</h1>
-<p>Travel photographer and storyteller.</p>
