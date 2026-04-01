@@ -1,0 +1,20 @@
+title: "TravelFilm Portfolio"
+email: "youremail@example.com"
+description: "Photography portfolio and blog: general photography, landscapes, nature, urban scenes, photo stories, travel guides, articles, and photography tips by @travelfilm_gr"
+baseurl: ""
+url: "https://travelfilmgr.github.io"
+language: "en"
+theme: minima
+paginate: 5
+
+categories:
+  - Urban
+  - Landscape
+  - Nature
+  - Macro
+
+social:
+  instagram: "https://www.instagram.com/travelfilm_gr/"
+  youtube: "https://www.youtube.com/"
+  twitter: "https://twitter.com/"
+  facebook: "https://www.facebook.com/"
