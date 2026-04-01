@@ -3,21 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>{{ page.title }}</title>
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
-<script defer src="/assets/js/script.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+<!-- JS -->
+<script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 {% include header.html %}
 
-<main class="container">
-{{ content }}
+<!-- MAIN CONTENT -->
+<main>
+  {{ content }}
 </main>
 
+<!-- FOOTER -->
 {% include footer.html %}
 
 </body>
