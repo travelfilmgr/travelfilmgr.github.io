@@ -4,6 +4,9 @@ title: Gallery
 permalink: /gallery/
 ---
 
+<!-- WRAPPER (gallery-only scope) -->
+<div class="gallery-page">
+
 <!-- HERO TITLE -->
 <section class="container fade-in" style="text-align:center; padding-top:120px;">
   <h2>Photography Gallery</h2>
@@ -16,6 +19,7 @@ permalink: /gallery/
 <section class="container fade-in">
 
   <div class="filters">
+
     <button onclick="filterImages('all', event)" class="active">All</button>
     <button onclick="filterImages('nature', event)">Nature</button>
     <button onclick="filterImages('city', event)">City</button>
@@ -29,6 +33,7 @@ permalink: /gallery/
     <button onclick="filterImages('pet', event)">Pet</button>
     <button onclick="filterImages('realestate', event)">Real Estate</button>
     <button onclick="filterImages('others', event)">Others</button>
+
   </div>
 
 </section>
@@ -46,9 +51,11 @@ permalink: /gallery/
 
 </section>
 
-<!-- FOOTER NOTE -->
+<!-- FOOTER -->
 <section class="container fade-in" style="text-align:center;">
   <p style="color: var(--muted); margin-top:40px;">
     Every image tells a story — captured, not created.
   </p>
 </section>
+
+</div>
