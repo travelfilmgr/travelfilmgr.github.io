@@ -52,11 +52,11 @@ function setGalleryTheme(cat) {
    GALLERY FILTER SYSTEM
 ========================= */
 function filterImages(cat, event) {
-  const gallerySection = document.querySelector('.gallery-page') || document;
-  const images = gallerySection.querySelectorAll('.grid img');
-  const buttons = gallerySection.querySelectorAll('.filters button:not(.blog-filters button)');
+  const gallery = document.querySelector('.gallery-page');
+  if (!gallery) return;
 
-  if (!images.length) return;
+  const images = gallery.querySelectorAll('.grid img');
+  const buttons = gallery.querySelectorAll('.filters button');
 
   buttons.forEach((btn) => btn.classList.remove('active'));
 
@@ -75,7 +75,7 @@ function filterImages(cat, event) {
       img.style.transform = 'translateY(10px) scale(0.98)';
 
       setTimeout(() => {
-        img.style.transition = 'all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        img.style.transition = 'all 0.5s ease';
         img.style.opacity = '1';
         img.style.transform = 'translateY(0) scale(1)';
       }, i * 20);
@@ -89,29 +89,6 @@ function filterImages(cat, event) {
       }, 250);
     }
   });
-}
-
-/* =========================
-   RESET GALLERY THEMES
-========================= */
-function resetGalleryThemeIfNoGallery() {
-  const hasGalleryPage = document.querySelector('.gallery-page');
-  if (hasGalleryPage) return;
-
-  document.body.classList.remove(
-    'theme-nature',
-    'theme-city',
-    'theme-landscape',
-    'theme-portrait',
-    'theme-street',
-    'theme-food',
-    'theme-architecture',
-    'theme-fashion',
-    'theme-macro',
-    'theme-pet',
-    'theme-realestate',
-    'theme-others'
-  );
 }
 
 /* =========================
@@ -144,10 +121,11 @@ function setBlogTheme(cat) {
    BLOG FILTER SYSTEM
 ========================= */
 function filterPosts(cat, event) {
-  const posts = document.querySelectorAll('.blog-post-card');
-  const buttons = document.querySelectorAll('.blog-filters button');
+  const blog = document.querySelector('.blog-page');
+  if (!blog) return;
 
-  if (!posts.length) return;
+  const posts = blog.querySelectorAll('.blog-post-card');
+  const buttons = blog.querySelectorAll('.blog-filters button');
 
   buttons.forEach((btn) => btn.classList.remove('active'));
 
@@ -167,7 +145,7 @@ function filterPosts(cat, event) {
       post.style.transform = 'translateY(10px) scale(0.98)';
 
       setTimeout(() => {
-        post.style.transition = 'all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        post.style.transition = 'all 0.5s ease';
         post.style.opacity = '1';
         post.style.transform = 'translateY(0) scale(1)';
       }, i * 20);
@@ -184,32 +162,11 @@ function filterPosts(cat, event) {
 }
 
 /* =========================
-   RESET BLOG THEMES
-========================= */
-function resetBlogThemeIfNoBlogFilters() {
-  const hasBlogFilters = document.querySelector('.blog-filters');
-  if (hasBlogFilters) return;
-
-  document.body.classList.remove(
-    'blog-theme-travel',
-    'blog-theme-tips',
-    'blog-theme-city',
-    'blog-theme-photography',
-    'blog-theme-photography-tips',
-    'blog-theme-gear',
-    'blog-theme-stories',
-    'blog-theme-other'
-  );
-}
-
-/* =========================
-   INIT EVENTS
+   INIT
 ========================= */
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll();
-  resetGalleryThemeIfNoGallery();
-  resetBlogThemeIfNoBlogFilters();
 });
