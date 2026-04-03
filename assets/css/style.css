@@ -28,7 +28,7 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  transition: background 0.6s ease, color 0.6s ease;
+  transition: background 0.8s ease, color 0.6s ease;
 }
 
 /* =========================
@@ -41,9 +41,9 @@ header {
   padding: 18px 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 1000;
-
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -78,17 +78,13 @@ header a:hover::after {
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-
   background: url("/assets/images/hero.jpg") center/cover no-repeat fixed;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-
   position: relative;
   overflow: hidden;
-
   animation: heroZoom 20s ease-in-out infinite alternate;
 }
 
@@ -101,7 +97,11 @@ header a:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.85)
+  );
 }
 
 .hero .overlay {
@@ -138,7 +138,7 @@ header a:hover::after {
 
 .btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 10px 30px rgba(255,204,0,0.2);
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.2);
 }
 
 /* =========================
@@ -148,6 +148,8 @@ header a:hover::after {
   max-width: 1200px;
   margin: auto;
   padding: 90px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
@@ -186,6 +188,49 @@ header a:hover::after {
 }
 
 /* =========================
+   BLOG PAGE
+========================= */
+.blog-page {
+  min-height: 100vh;
+}
+
+.blog-hero {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.hero-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.hero-overlay h2 {
+  font-size: 2rem;
+}
+
+.blog-grid {
+  margin-top: 40px;
+}
+
+.blog-page .card {
+  cursor: pointer;
+}
+
+/* =========================
    GALLERY GRID
 ========================= */
 .grid {
@@ -220,8 +265,8 @@ header a:hover::after {
 }
 
 .filters button {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   padding: 8px 14px;
   border-radius: 20px;
@@ -231,7 +276,7 @@ header a:hover::after {
 }
 
 .filters button:hover {
-  background: rgba(255,204,0,0.15);
+  background: rgba(255, 204, 0, 0.15);
   border-color: var(--primary);
 }
 
@@ -265,72 +310,79 @@ footer {
 }
 
 /* =========================
-   🎨 GALLERY BACKGROUND THEMES (IMPORTANT FIX)
+   BODY-BASED THEME BACKGROUNDS
+   (WORKS WITH CURRENT JS)
 ========================= */
-
-.gallery-page {
-  min-height: 100vh;
-  transition: background 0.8s ease;
+body.theme-nature {
+  background: radial-gradient(circle at top, #0b3d2e, #05060a);
 }
 
-/* 🌿 Nature */
-.gallery-page.theme-nature {
-  background: radial-gradient(circle, #0b3d2e, #05060a);
+body.theme-city {
+  background: radial-gradient(circle at top, #1a1a2e, #05060a);
 }
 
-/* 🌆 City */
-.gallery-page.theme-city {
-  background: radial-gradient(circle, #1a1a2e, #05060a);
+body.theme-landscape {
+  background: radial-gradient(circle at top, #2e3b4e, #05060a);
 }
 
-/* 🏔️ Landscape */
-.gallery-page.theme-landscape {
-  background: radial-gradient(circle, #2e3b4e, #05060a);
+body.theme-portrait {
+  background: radial-gradient(circle at top, #3b1b2b, #05060a);
 }
 
-/* 🎭 Portrait */
-.gallery-page.theme-portrait {
-  background: radial-gradient(circle, #3b1b2b, #05060a);
+body.theme-street {
+  background: radial-gradient(circle at top, #2b2b2b, #05060a);
 }
 
-/* 🏙️ Street */
-.gallery-page.theme-street {
-  background: radial-gradient(circle, #2b2b2b, #05060a);
+body.theme-food {
+  background: radial-gradient(circle at top, #3a2a10, #05060a);
 }
 
-/* 🍜 Food */
-.gallery-page.theme-food {
-  background: radial-gradient(circle, #3a2a10, #05060a);
+body.theme-architecture {
+  background: radial-gradient(circle at top, #1f2937, #05060a);
 }
 
-/* 🏛️ Architecture */
-.gallery-page.theme-architecture {
-  background: radial-gradient(circle, #1f2937, #05060a);
+body.theme-fashion {
+  background: radial-gradient(circle at top, #2a0f2f, #05060a);
 }
 
-/* 👗 Fashion */
-.gallery-page.theme-fashion {
-  background: radial-gradient(circle, #2a0f2f, #05060a);
+body.theme-macro {
+  background: radial-gradient(circle at top, #143a3a, #05060a);
 }
 
-/* 🔬 Macro */
-.gallery-page.theme-macro {
-  background: radial-gradient(circle, #143a3a, #05060a);
+body.theme-pet {
+  background: radial-gradient(circle at top, #2a2a1a, #05060a);
 }
 
-/* 🐾 Pet */
-.gallery-page.theme-pet {
-  background: radial-gradient(circle, #2a2a1a, #05060a);
+body.theme-realestate {
+  background: radial-gradient(circle at top, #111827, #05060a);
 }
 
-/* 🏠 Real Estate */
-.gallery-page.theme-realestate {
-  background: radial-gradient(circle, #111827, #05060a);
+body.theme-others {
+  background: radial-gradient(circle at top, #2b1f1f, #05060a);
 }
 
-/* 🌌 Others */
-.gallery-page.theme-others {
-  background: radial-gradient(circle, #2b1f1f, #05060a);
+/* optional glow overlay */
+body.theme-nature::before,
+body.theme-city::before,
+body.theme-landscape::before,
+body.theme-portrait::before,
+body.theme-street::before,
+body.theme-food::before,
+body.theme-architecture::before,
+body.theme-fashion::before,
+body.theme-macro::before,
+body.theme-pet::before,
+body.theme-realestate::before,
+body.theme-others::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(255,204,0,0.06), transparent 30%);
 }
 
 /* =========================
@@ -343,5 +395,13 @@ footer {
 
   .filters {
     gap: 6px;
+  }
+
+  header {
+    padding: 16px 20px;
+  }
+
+  .hero-card img {
+    height: 280px;
   }
 }
