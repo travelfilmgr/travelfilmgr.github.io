@@ -59,9 +59,9 @@ title: Home
 <!-- CTA -->
 <section class="container fade-in">
   <div class="card" style="text-align:center; padding:40px;">
-    <h2>Let’s Create Together</h2>
+    <h2>Open to New Opportunities</h2>
     <p style="color: var(--muted);">
-      Photography • Travel • Collaborations
+      Travel • Photography • Creative collaborations
     </p>
    <a href="/about/" class="btn">Contact Me</a>
   </div>
