@@ -13,16 +13,17 @@ permalink: /about/
       <div class="about-text">
         <span class="about-label">About Me</span>
 
-        <h1>Your Name</h1>
+        <h1>TravelFilm GR</h1>
 
         <p class="about-subtitle">
-          Travel Photographer • Filmmaker • Storyteller
+          Travel Photography • Cinematic Moments • Storytelling
         </p>
 
         <p class="about-description">
-          I am a travel photographer capturing cinematic moments around the world.
-          My goal is to tell stories through light, composition, and emotion.
+          I capture travel moments as I experience them — raw, cinematic, and real.
+          This is not a job, it’s something I genuinely enjoy doing.
         </p>
+
       </div>
 
     </div>
@@ -35,14 +36,13 @@ permalink: /about/
       <h2>Who I Am</h2>
 
       <p>
-        Write here who you are, what you do, and what your style is.
-        Talk about your journey, your passion for photography and travel,
-        and what inspires your work.
+        I am someone who loves traveling, exploring new places, and capturing moments through my lens.
+        For me, photography and video are ways to freeze time and turn simple experiences into something memorable.
       </p>
 
       <p>
-        You can also explain your vision, your creative process,
-        and what kind of collaborations you are open to.
+        I don’t chase perfection — I focus on real moments, light, atmosphere,
+        and the feeling a place gives.
       </p>
 
     </div>
@@ -52,12 +52,23 @@ permalink: /about/
   <section class="container fade-in">
     <div class="about-card">
 
-      <h2>Find Me Online</h2>
+      <h2>Follow My Journey</h2>
 
       <div class="social-links">
-        <a href="https://www.instagram.com/travelfilm_gr/ target="_blank">Instagram</a>
-        <a href="[https://tiktok.com/@yourusername](https://www.tiktok.com/@travelfilm.gr)" target="_blank">TikTok</a>
+
+        <a href="https://www.instagram.com/travelfilm_gr/" target="_blank" rel="noopener">
+          Instagram
+        </a>
+
+        <a href="https://www.tiktok.com/@travelfilm.gr" target="_blank" rel="noopener">
+          TikTok
+        </a>
+
       </div>
+
+      <p style="margin-top:15px; color:var(--muted);">
+        I post my work and moments from my travels here.
+      </p>
 
     </div>
   </section>
@@ -87,7 +98,7 @@ permalink: /about/
 
         <div class="gear-item">
           <h3>Accessories</h3>
-          <p>Tripod, filters, mic, etc.</p>
+          <p>Tripod, filters, microphone, etc.</p>
         </div>
 
         <div class="gear-item">
@@ -97,7 +108,7 @@ permalink: /about/
 
         <div class="gear-item">
           <h3>Other</h3>
-          <p>Anything else you use</p>
+          <p>Anything else I use along the way</p>
         </div>
 
       </div>
