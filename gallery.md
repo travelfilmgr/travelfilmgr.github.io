@@ -4,6 +4,7 @@ title: Gallery
 permalink: /gallery/
 ---
 
+<!-- WRAPPER (gallery-only scope) -->
 <div class="gallery-page">
 
   <!-- HERO TITLE -->
@@ -38,5 +39,17 @@ permalink: /gallery/
     <div class="grid">
 
       <div class="gallery-link">
-        <img
-          src="/assets/images/n
+        <img src="/assets/images/nature-mountain-landscape.jpg" class="fade-in landscape" alt="Mountain landscape">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="container fade-in" style="text-align:center;">
+    <p style="color: var(--muted); margin-top:40px;">
+      Every image tells a story — captured, not created.
+    </p>
+  </section>
+
+</div>
