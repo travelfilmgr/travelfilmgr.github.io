@@ -6,52 +6,6 @@ function toggleDarkMode() {
 }
 
 /* =========================
-   FILTER SYSTEM (SAFE PREMIUM)
-========================= */
-function filterImages(cat, event) {
-  const images = document.querySelectorAll('.grid img');
-
-  // active button highlight
-  document.querySelectorAll('.filters button').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  if (event && event.target) {
-    event.target.classList.add('active');
-  }
-
-  images.forEach((img, i) => {
-
-    const match = cat === 'all' || img.classList.contains(cat);
-
-    if (match) {
-
-      img.style.display = "block";
-
-      // reset safe animation state
-      img.style.opacity = "0";
-      img.style.transform = "translateY(10px) scale(0.98)";
-
-      setTimeout(() => {
-        img.style.transition = "all 0.4s ease";
-        img.style.opacity = "1";
-        img.style.transform = "translateY(0) scale(1)";
-      }, i * 30); // stagger premium effect
-
-    } else {
-
-      img.style.transition = "all 0.25s ease";
-      img.style.opacity = "0";
-      img.style.transform = "scale(0.95)";
-
-      setTimeout(() => {
-        img.style.display = "none";
-      }, 250);
-    }
-  });
-}
-
-/* =========================
    SCROLL REVEAL SYSTEM
 ========================= */
 function revealOnScroll() {
@@ -65,13 +19,12 @@ function revealOnScroll() {
 }
 
 /* =========================
-   BACKGROUND INTERACTION (GALLERY ONLY SAFE)
+   BACKGROUND THEME SYSTEM
 ========================= */
 function setGalleryTheme(cat) {
   const gallery = document.querySelector('.gallery-page');
   if (!gallery) return;
 
-  // remove old themes safely
   const themes = [
     'theme-nature','theme-city','theme-landscape',
     'theme-portrait','theme-street','theme-food',
@@ -84,15 +37,18 @@ function setGalleryTheme(cat) {
   if (cat && cat !== 'all') {
     gallery.classList.add(`theme-${cat}`);
   }
+
+  // extra premium touch (smooth background shift)
+  document.body.dataset.theme = cat;
 }
 
 /* =========================
-   ENHANCED FILTER WRAPPER
+   FILTER SYSTEM (FINAL PREMIUM VERSION)
 ========================= */
 function filterImages(cat, event) {
-  // run normal filter
   const images = document.querySelectorAll('.grid img');
 
+  // active button UI
   document.querySelectorAll('.filters button').forEach(btn => {
     btn.classList.remove('active');
   });
@@ -101,9 +57,10 @@ function filterImages(cat, event) {
     event.target.classList.add('active');
   }
 
-  // gallery theme switch (SAFE)
+  // background theme change
   setGalleryTheme(cat);
 
+  // stagger animation system
   images.forEach((img, i) => {
 
     const match = cat === 'all' || img.classList.contains(cat);
@@ -112,19 +69,19 @@ function filterImages(cat, event) {
 
       img.style.display = "block";
       img.style.opacity = "0";
-      img.style.transform = "translateY(10px) scale(0.98)";
+      img.style.transform = "translateY(12px) scale(0.98)";
 
       setTimeout(() => {
-        img.style.transition = "all 0.5s ease";
+        img.style.transition = "all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
         img.style.opacity = "1";
         img.style.transform = "translateY(0) scale(1)";
-      }, i * 25);
+      }, i * 20);
 
     } else {
 
       img.style.transition = "all 0.25s ease";
       img.style.opacity = "0";
-      img.style.transform = "scale(0.95)";
+      img.style.transform = "scale(0.96)";
 
       setTimeout(() => {
         img.style.display = "none";
@@ -134,7 +91,7 @@ function filterImages(cat, event) {
 }
 
 /* =========================
-   INIT SYSTEM
+   INIT
 ========================= */
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
