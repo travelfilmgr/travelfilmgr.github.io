@@ -1,4 +1,3 @@
-
 /* =========================
    ROOT
 ========================= */
@@ -72,7 +71,7 @@ header a:hover::after {
 }
 
 /* =========================
-   HERO (CINEMATIC PRO)
+   HERO (CINEMATIC)
 ========================= */
 .hero {
   height: 100vh;
@@ -89,10 +88,7 @@ header a:hover::after {
 
   position: relative;
   overflow: hidden;
-}
 
-/* soft cinematic zoom */
-.hero {
   animation: heroZoom 20s ease-in-out infinite alternate;
 }
 
@@ -105,11 +101,7 @@ header a:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.85)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
 }
 
 .hero .overlay {
@@ -130,7 +122,7 @@ header a:hover::after {
 }
 
 /* =========================
-   BUTTONS (PREMIUM)
+   BUTTON
 ========================= */
 .btn {
   display: inline-block;
@@ -159,7 +151,7 @@ header a:hover::after {
 }
 
 /* =========================
-   CARDS (BLOG)
+   CARDS
 ========================= */
 .cards {
   display: grid;
@@ -194,7 +186,7 @@ header a:hover::after {
 }
 
 /* =========================
-   GALLERY GRID (PREMIUM FIX)
+   GALLERY GRID
 ========================= */
 .grid {
   display: grid;
@@ -207,7 +199,6 @@ header a:hover::after {
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
-
   filter: brightness(0.85);
   transition: all 0.4s ease;
 }
@@ -218,7 +209,7 @@ header a:hover::after {
 }
 
 /* =========================
-   FILTER BUTTONS (NEW PREMIUM)
+   FILTER BUTTONS
 ========================= */
 .filters {
   display: flex;
@@ -250,7 +241,7 @@ header a:hover::after {
 }
 
 /* =========================
-   FADE IN ANIMATION
+   FADE IN
 ========================= */
 .fade-in {
   opacity: 0;
@@ -271,6 +262,75 @@ footer {
   padding: 40px;
   background: black;
   color: var(--muted);
+}
+
+/* =========================
+   🎨 GALLERY BACKGROUND THEMES (IMPORTANT FIX)
+========================= */
+
+.gallery-page {
+  min-height: 100vh;
+  transition: background 0.8s ease;
+}
+
+/* 🌿 Nature */
+.gallery-page.theme-nature {
+  background: radial-gradient(circle, #0b3d2e, #05060a);
+}
+
+/* 🌆 City */
+.gallery-page.theme-city {
+  background: radial-gradient(circle, #1a1a2e, #05060a);
+}
+
+/* 🏔️ Landscape */
+.gallery-page.theme-landscape {
+  background: radial-gradient(circle, #2e3b4e, #05060a);
+}
+
+/* 🎭 Portrait */
+.gallery-page.theme-portrait {
+  background: radial-gradient(circle, #3b1b2b, #05060a);
+}
+
+/* 🏙️ Street */
+.gallery-page.theme-street {
+  background: radial-gradient(circle, #2b2b2b, #05060a);
+}
+
+/* 🍜 Food */
+.gallery-page.theme-food {
+  background: radial-gradient(circle, #3a2a10, #05060a);
+}
+
+/* 🏛️ Architecture */
+.gallery-page.theme-architecture {
+  background: radial-gradient(circle, #1f2937, #05060a);
+}
+
+/* 👗 Fashion */
+.gallery-page.theme-fashion {
+  background: radial-gradient(circle, #2a0f2f, #05060a);
+}
+
+/* 🔬 Macro */
+.gallery-page.theme-macro {
+  background: radial-gradient(circle, #143a3a, #05060a);
+}
+
+/* 🐾 Pet */
+.gallery-page.theme-pet {
+  background: radial-gradient(circle, #2a2a1a, #05060a);
+}
+
+/* 🏠 Real Estate */
+.gallery-page.theme-realestate {
+  background: radial-gradient(circle, #111827, #05060a);
+}
+
+/* 🌌 Others */
+.gallery-page.theme-others {
+  background: radial-gradient(circle, #2b1f1f, #05060a);
 }
 
 /* =========================
