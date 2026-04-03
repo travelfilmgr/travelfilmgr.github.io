@@ -6,7 +6,7 @@ function toggleDarkMode() {
 }
 
 /* =========================
-   SCROLL REVEAL SYSTEM
+   SCROLL REVEAL
 ========================= */
 function revealOnScroll() {
   document.querySelectorAll('.fade-in').forEach(el => {
@@ -19,11 +19,10 @@ function revealOnScroll() {
 }
 
 /* =========================
-   BACKGROUND THEME SYSTEM
+   🎨 THEME SYSTEM (WORKING 100%)
 ========================= */
 function setGalleryTheme(cat) {
-  const gallery = document.querySelector('.gallery-page');
-  if (!gallery) return;
+  const body = document.body;
 
   const themes = [
     'theme-nature','theme-city','theme-landscape',
@@ -32,35 +31,36 @@ function setGalleryTheme(cat) {
     'theme-pet','theme-realestate','theme-others'
   ];
 
-  gallery.classList.remove(...themes);
+  // remove all themes first
+  body.classList.remove(...themes);
 
+  // apply new theme
   if (cat && cat !== 'all') {
-    gallery.classList.add(`theme-${cat}`);
+    body.classList.add(`theme-${cat}`);
   }
 
-  // extra premium touch (smooth background shift)
-  document.body.dataset.theme = cat;
+  // smooth transition
+  body.style.transition = "background 0.8s ease";
 }
 
 /* =========================
-   FILTER SYSTEM (FINAL PREMIUM VERSION)
+   FILTER SYSTEM (FINAL VERSION)
 ========================= */
 function filterImages(cat, event) {
   const images = document.querySelectorAll('.grid img');
+  const buttons = document.querySelectorAll('.filters button');
 
-  // active button UI
-  document.querySelectorAll('.filters button').forEach(btn => {
-    btn.classList.remove('active');
-  });
+  // reset active button
+  buttons.forEach(btn => btn.classList.remove('active'));
 
   if (event && event.target) {
     event.target.classList.add('active');
   }
 
-  // background theme change
+  // change background theme
   setGalleryTheme(cat);
 
-  // stagger animation system
+  // animate images
   images.forEach((img, i) => {
 
     const match = cat === 'all' || img.classList.contains(cat);
@@ -69,7 +69,7 @@ function filterImages(cat, event) {
 
       img.style.display = "block";
       img.style.opacity = "0";
-      img.style.transform = "translateY(12px) scale(0.98)";
+      img.style.transform = "translateY(10px) scale(0.98)";
 
       setTimeout(() => {
         img.style.transition = "all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
@@ -91,7 +91,7 @@ function filterImages(cat, event) {
 }
 
 /* =========================
-   INIT
+   INIT EVENTS
 ========================= */
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
