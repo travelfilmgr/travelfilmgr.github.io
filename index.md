@@ -9,7 +9,7 @@ title: Home
     <h1>Travel • Photography • Stories</h1>
     <p>Explore the world through my lens</p>
 
-    <a href="#gallery" class="btn">View Gallery</a>
+    <a href="/gallery" class="btn">View Gallery</a>
   </div>
 </section>
 
@@ -39,8 +39,8 @@ title: Home
   </div>
 </section>
 
-<!-- SMALL GALLERY PREVIEW (NO FILTERS) -->
-<section class="container fade-in" id="gallery">
+<!-- GALLERY PREVIEW (NO FILTERS - CLEAN) -->
+<section class="container fade-in">
   <h2>Latest Shots</h2>
 
   <div class="grid">
@@ -63,6 +63,6 @@ title: Home
     <p style="color: var(--muted);">
       Photography • Travel • Collaborations
     </p>
-    <a href="#" class="btn">Contact Me</a>
+    <a href="/gallery" class="btn">Contact Me</a>
   </div>
 </section>
