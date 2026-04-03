@@ -67,7 +67,7 @@ permalink: /about/
       </div>
 
       <p style="margin-top:15px; color:var(--muted);">
-        I post my work and moments from my travels here.
+        I share my personal photography and moments from my travels here — purely as a passion and hobby.
       </p>
 
     </div>
