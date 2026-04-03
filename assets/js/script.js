@@ -9,7 +9,7 @@ function toggleDarkMode() {
    SCROLL REVEAL
 ========================= */
 function revealOnScroll() {
-  document.querySelectorAll('.fade-in').forEach(el => {
+  document.querySelectorAll('.fade-in').forEach((el) => {
     const rect = el.getBoundingClientRect();
 
     if (rect.top < window.innerHeight - 80) {
@@ -45,19 +45,20 @@ function setGalleryTheme(cat) {
     body.classList.add(`theme-${cat}`);
   }
 
-  body.style.transition = "background 0.8s ease";
+  body.style.transition = 'background 0.8s ease';
 }
 
 /* =========================
    GALLERY FILTER SYSTEM
 ========================= */
 function filterImages(cat, event) {
-  const images = document.querySelectorAll('.grid img');
-  const buttons = document.querySelectorAll('.filters button');
+  const gallerySection = document.querySelector('.gallery-page') || document;
+  const images = gallerySection.querySelectorAll('.grid img');
+  const buttons = gallerySection.querySelectorAll('.filters button:not(.blog-filters button)');
 
   if (!images.length) return;
 
-  buttons.forEach(btn => btn.classList.remove('active'));
+  buttons.forEach((btn) => btn.classList.remove('active'));
 
   if (event && event.target) {
     event.target.classList.add('active');
@@ -69,22 +70,22 @@ function filterImages(cat, event) {
     const match = cat === 'all' || img.classList.contains(cat);
 
     if (match) {
-      img.style.display = "block";
-      img.style.opacity = "0";
-      img.style.transform = "translateY(10px) scale(0.98)";
+      img.style.display = 'block';
+      img.style.opacity = '0';
+      img.style.transform = 'translateY(10px) scale(0.98)';
 
       setTimeout(() => {
-        img.style.transition = "all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
-        img.style.opacity = "1";
-        img.style.transform = "translateY(0) scale(1)";
+        img.style.transition = 'all 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        img.style.opacity = '1';
+        img.style.transform = 'translateY(0) scale(1)';
       }, i * 20);
     } else {
-      img.style.transition = "all 0.25s ease";
-      img.style.opacity = "0";
-      img.style.transform = "scale(0.96)";
+      img.style.transition = 'all 0.25s ease';
+      img.style.opacity = '0';
+      img.style.transform = 'scale(0.96)';
 
       setTimeout(() => {
-        img.style.display = "none";
+        img.style.display = 'none';
       }, 250);
     }
   });
@@ -94,10 +95,8 @@ function filterImages(cat, event) {
    RESET GALLERY THEMES
 ========================= */
 function resetGalleryThemeIfNoGallery() {
-  const hasGalleryFilters = document.querySelector('.filters');
-  const hasBlogFilters = document.querySelector('.blog-filters');
-
-  if (hasGalleryFilters && !hasBlogFilters) return;
+  const hasGalleryPage = document.querySelector('.gallery-page');
+  if (hasGalleryPage) return;
 
   document.body.classList.remove(
     'theme-nature',
@@ -138,7 +137,7 @@ function setBlogTheme(cat) {
     body.classList.add(`blog-theme-${cat}`);
   }
 
-  body.style.transition = "background 0.8s ease";
+  body.style.transition = 'background 0.8s ease';
 }
 
 /* =========================
@@ -150,7 +149,7 @@ function filterPosts(cat, event) {
 
   if (!posts.length) return;
 
-  buttons.forEach(btn => btn.classList.remove('active'));
+  buttons.forEach((btn) => btn.classList.remove('active'));
 
   if (event && event.target) {
     event.target.classList.add('active');
@@ -163,22 +162,22 @@ function filterPosts(cat, event) {
     const match = cat === 'all' || postCat === cat;
 
     if (match) {
-      post.style.display = "block";
-      post.style.opacity = "0";
-      post.style.transform = "translateY(10px) scale(0.98)";
+      post.style.display = 'block';
+      post.style.opacity = '0';
+      post.style.transform = 'translateY(10px) scale(0.98)';
 
       setTimeout(() => {
-        post.style.transition = "all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)";
-        post.style.opacity = "1";
-        post.style.transform = "translateY(0) scale(1)";
+        post.style.transition = 'all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        post.style.opacity = '1';
+        post.style.transform = 'translateY(0) scale(1)';
       }, i * 20);
     } else {
-      post.style.transition = "all 0.25s ease";
-      post.style.opacity = "0";
-      post.style.transform = "scale(0.96)";
+      post.style.transition = 'all 0.25s ease';
+      post.style.opacity = '0';
+      post.style.transform = 'scale(0.96)';
 
       setTimeout(() => {
-        post.style.display = "none";
+        post.style.display = 'none';
       }, 250);
     }
   });
