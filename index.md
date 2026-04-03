@@ -63,6 +63,6 @@ title: Home
     <p style="color: var(--muted);">
       Photography • Travel • Collaborations
     </p>
-    <a href="/gallery" class="btn">Contact Me</a>
+   <a href="/about/" class="btn">Contact Me</a>
   </div>
 </section>
