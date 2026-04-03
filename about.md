@@ -56,8 +56,7 @@ permalink: /about/
 
       <div class="social-links">
         <a href="https://www.instagram.com/travelfilm_gr/ target="_blank">Instagram</a>
-        <a href="https://tiktok.com/@yourusername" target="_blank">TikTok</a>
-        <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
+        <a href="[https://tiktok.com/@yourusername](https://www.tiktok.com/@travelfilm.gr)" target="_blank">TikTok</a>
       </div>
 
     </div>
