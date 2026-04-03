@@ -1,3 +1,4 @@
+
 /* =========================
    ROOT
 ========================= */
@@ -17,7 +18,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 html {
@@ -29,41 +29,53 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
 }
 
 /* =========================
-   HEADER (GLASS)
+   HEADER (GLASS PREMIUM)
 ========================= */
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 20px 40px;
+  padding: 18px 40px;
   display: flex;
   justify-content: space-between;
   z-index: 1000;
 
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 header a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
+  position: relative;
 }
 
-header a:hover {
-  color: var(--primary);
+header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+header a:hover::after {
+  width: 100%;
 }
 
 /* =========================
-   HERO (FULL + CINEMATIC)
+   HERO (CINEMATIC PRO)
 ========================= */
 .hero {
   height: 100vh;
-
-  /* FULL WIDTH FIX */
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
@@ -76,13 +88,17 @@ header a:hover {
   text-align: center;
 
   position: relative;
-
-  animation: zoomHero 18s ease-in-out infinite alternate;
+  overflow: hidden;
 }
 
-@keyframes zoomHero {
-  from { background-size: 100%; }
-  to { background-size: 115%; }
+/* soft cinematic zoom */
+.hero {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
 .hero::before {
@@ -91,8 +107,8 @@ header a:hover {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.3),
-    rgba(0,0,0,0.9)
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.85)
   );
 }
 
@@ -114,21 +130,23 @@ header a:hover {
 }
 
 /* =========================
-   BUTTON
+   BUTTONS (PREMIUM)
 ========================= */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 25px;
+  padding: 12px 28px;
   background: linear-gradient(45deg, #ffcc00, #ff6b00);
   color: black;
-  border-radius: 30px;
+  border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(255,204,0,0.2);
 }
 
 /* =========================
@@ -137,11 +155,11 @@ header a:hover {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 80px 20px;
+  padding: 90px 20px;
 }
 
 /* =========================
-   BLOG CARDS
+   CARDS (BLOG)
 ========================= */
 .cards {
   display: grid;
@@ -151,8 +169,9 @@ header a:hover {
 
 .card {
   background: var(--card);
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -163,6 +182,11 @@ header a:hover {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card h3 {
@@ -170,33 +194,68 @@ header a:hover {
 }
 
 /* =========================
-   GALLERY
+   GALLERY GRID (PREMIUM FIX)
 ========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .grid img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+
   filter: brightness(0.85);
+  transition: all 0.4s ease;
 }
 
 .grid img:hover {
   transform: scale(1.05);
-  filter: brightness(1);
+  filter: brightness(1.05);
 }
 
 /* =========================
-   ANIMATION
+   FILTER BUTTONS (NEW PREMIUM)
+========================= */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 13px;
+}
+
+.filters button:hover {
+  background: rgba(255,204,0,0.15);
+  border-color: var(--primary);
+}
+
+.filters button.active {
+  background: var(--primary);
+  color: black;
+}
+
+/* =========================
+   FADE IN ANIMATION
 ========================= */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
+  transition: 0.6s ease;
 }
 
 .fade-in.show {
@@ -218,9 +277,11 @@ footer {
    MOBILE
 ========================= */
 @media (max-width: 768px) {
-
   .hero h1 {
     font-size: 2rem;
   }
 
+  .filters {
+    gap: 6px;
+  }
 }
