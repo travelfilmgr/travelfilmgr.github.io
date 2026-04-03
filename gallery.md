@@ -43,9 +43,9 @@ permalink: /gallery/
 
   <div class="grid">
 
-    <img src="/assets/images/photo1.jpg" class="fade-in nature" alt="Nature photo 1">
-    <img src="/assets/images/photo2.jpg" class="fade-in city" alt="City photo 1">
-    <img src="/assets/images/photo3.jpg" class="fade-in nature" alt="Nature photo 2">
+    <img src="/assets/images/nature-mountain-landscape.jpg" class="fade-in landscape" alt="Mountain landscape">
+    
+    
 
   </div>
 
