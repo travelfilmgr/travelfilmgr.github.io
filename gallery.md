@@ -40,6 +40,7 @@ permalink: /gallery/
 
       <div class="gallery-link">
         <img src="/assets/images/nature-mountain-landscape.jpg" class="fade-in landscape" alt="Mountain landscape">
+        <img src="/assets/images/meadow.jpg" class="fade-in landscape Nature" alt="meadow.jpg">
       </div>
 
     </div>
