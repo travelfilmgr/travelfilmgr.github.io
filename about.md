@@ -55,7 +55,7 @@ permalink: /about/
       <h2>Find Me Online</h2>
 
       <div class="social-links">
-        <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/travelfilm_gr/ target="_blank">Instagram</a>
         <a href="https://tiktok.com/@yourusername" target="_blank">TikTok</a>
         <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
       </div>
