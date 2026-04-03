@@ -6,7 +6,7 @@ function toggleDarkMode() {
 }
 
 /* =========================
-   FILTER SYSTEM (PREMIUM)
+   FILTER SYSTEM (SAFE PREMIUM)
 ========================= */
 function filterImages(cat, event) {
   const images = document.querySelectorAll('.grid img');
@@ -20,19 +20,29 @@ function filterImages(cat, event) {
     event.target.classList.add('active');
   }
 
-  images.forEach(img => {
+  images.forEach((img, i) => {
+
     const match = cat === 'all' || img.classList.contains(cat);
 
     if (match) {
+
       img.style.display = "block";
-      requestAnimationFrame(() => {
-        img.style.opacity = "1";
-        img.style.transform = "scale(1)";
-        img.style.filter = "brightness(0.9)";
-      });
-    } else {
+
+      // reset safe animation state
       img.style.opacity = "0";
-      img.style.transform = "scale(0.9)";
+      img.style.transform = "translateY(10px) scale(0.98)";
+
+      setTimeout(() => {
+        img.style.transition = "all 0.4s ease";
+        img.style.opacity = "1";
+        img.style.transform = "translateY(0) scale(1)";
+      }, i * 30); // stagger premium effect
+
+    } else {
+
+      img.style.transition = "all 0.25s ease";
+      img.style.opacity = "0";
+      img.style.transform = "scale(0.95)";
 
       setTimeout(() => {
         img.style.display = "none";
@@ -42,15 +52,93 @@ function filterImages(cat, event) {
 }
 
 /* =========================
-   SCROLL ANIMATION
+   SCROLL REVEAL SYSTEM
 ========================= */
 function revealOnScroll() {
   document.querySelectorAll('.fade-in').forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+    const rect = el.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 80) {
       el.classList.add('show');
     }
   });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+/* =========================
+   BACKGROUND INTERACTION (GALLERY ONLY SAFE)
+========================= */
+function setGalleryTheme(cat) {
+  const gallery = document.querySelector('.gallery-page');
+  if (!gallery) return;
+
+  // remove old themes safely
+  const themes = [
+    'theme-nature','theme-city','theme-landscape',
+    'theme-portrait','theme-street','theme-food',
+    'theme-architecture','theme-fashion','theme-macro',
+    'theme-pet','theme-realestate','theme-others'
+  ];
+
+  gallery.classList.remove(...themes);
+
+  if (cat && cat !== 'all') {
+    gallery.classList.add(`theme-${cat}`);
+  }
+}
+
+/* =========================
+   ENHANCED FILTER WRAPPER
+========================= */
+function filterImages(cat, event) {
+  // run normal filter
+  const images = document.querySelectorAll('.grid img');
+
+  document.querySelectorAll('.filters button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+
+  // gallery theme switch (SAFE)
+  setGalleryTheme(cat);
+
+  images.forEach((img, i) => {
+
+    const match = cat === 'all' || img.classList.contains(cat);
+
+    if (match) {
+
+      img.style.display = "block";
+      img.style.opacity = "0";
+      img.style.transform = "translateY(10px) scale(0.98)";
+
+      setTimeout(() => {
+        img.style.transition = "all 0.5s ease";
+        img.style.opacity = "1";
+        img.style.transform = "translateY(0) scale(1)";
+      }, i * 25);
+
+    } else {
+
+      img.style.transition = "all 0.25s ease";
+      img.style.opacity = "0";
+      img.style.transform = "scale(0.95)";
+
+      setTimeout(() => {
+        img.style.display = "none";
+      }, 250);
+    }
+  });
+}
+
+/* =========================
+   INIT SYSTEM
+========================= */
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+document.addEventListener('DOMContentLoaded', () => {
+  revealOnScroll();
+});
