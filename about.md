@@ -83,7 +83,7 @@ permalink: /about/
 
         <div class="gear-item">
           <h3>Camera</h3>
-          <p>Your camera model</p>
+          <p>NIKON D7000</p>
         </div>
 
         <div class="gear-item">
