@@ -489,13 +489,15 @@ header a:hover::after {
 ========================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  justify-content: center;
+  gap: 14px;
 }
 
 .gallery-link {
   display: block;
-  border-radius: 16px;
+  width: 100%;
+  border-radius: 14px;
   overflow: hidden;
   position: relative;
   background: rgba(255,255,255,0.03);
@@ -507,15 +509,15 @@ header a:hover::after {
   height: auto;
   object-fit: cover;
   display: block;
-  border-radius: 16px;
-  filter: brightness(0.9);
-  transition: transform 0.4s ease, filter 0.4s ease;
+  border-radius: 14px;
+  filter: brightness(0.92);
+  transition: transform 0.35s ease, filter 0.35s ease;
   cursor: pointer;
 }
 
 .grid img:hover {
-  transform: scale(1.03);
-  filter: brightness(1.02);
+  transform: scale(1.02);
+  filter: brightness(1.03);
 }
 
 /* =========================
@@ -781,8 +783,9 @@ body.blog-theme-other::before {
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(140px, 170px));
+    justify-content: center;
+    gap: 10px;
   }
 
   .lightbox {
