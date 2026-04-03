@@ -162,6 +162,55 @@ function filterPosts(cat, event) {
 }
 
 /* =========================
+   GALLERY LIGHTBOX
+========================= */
+function initGalleryLightbox() {
+  const gallery = document.querySelector('.gallery-page');
+  if (!gallery) return;
+
+  const galleryImages = gallery.querySelectorAll('.grid img');
+  if (!galleryImages.length) return;
+
+  let lightbox = document.querySelector('.lightbox');
+
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+      <button class="lightbox-close" aria-label="Close">×</button>
+      <img src="" alt="">
+    `;
+    document.body.appendChild(lightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      if (
+        e.target.classList.contains('lightbox') ||
+        e.target.classList.contains('lightbox-close')
+      ) {
+        lightbox.classList.remove('show');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('show');
+      }
+    });
+  }
+
+  const lightboxImg = lightbox.querySelector('img');
+
+  galleryImages.forEach((img) => {
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.classList.add('show');
+    });
+  });
+}
+
+/* =========================
    INIT
 ========================= */
 window.addEventListener('scroll', revealOnScroll);
@@ -169,4 +218,5 @@ window.addEventListener('load', revealOnScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
   revealOnScroll();
+  initGalleryLightbox();
 });
