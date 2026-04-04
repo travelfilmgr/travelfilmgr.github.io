@@ -22,7 +22,7 @@ permalink: /blog/
 
           {% if featured.excerpt %}
             <p>
-              {{ featured.excerpt | strip_html | truncate: 150 }}
+              {{ featured.excerpt | strip_html | truncate: 160 }}
             </p>
           {% endif %}
         </div>
@@ -73,7 +73,7 @@ permalink: /blog/
   <section class="container fade-in">
     <div class="cards blog-grid">
 
-      {% for post in site.posts offset:1 %}
+      {% for post in site.posts %}
         <div
           class="card blog-post-card fade-in"
           data-category="{{ post.category | default: 'other' | downcase }}"
@@ -99,7 +99,7 @@ permalink: /blog/
 
               {% if post.excerpt %}
                 <p>
-                  {{ post.excerpt | strip_html | truncate: 115 }}
+                  {{ post.excerpt | strip_html | truncate: 130 }}
                 </p>
               {% endif %}
             </div>
