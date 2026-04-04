@@ -53,18 +53,19 @@ permalink: /gallery/
     </div>
   </section>
 
-  <!-- GALLERY GRID -->
+  <!-- GALLERY GRID (AUTO FROM YAML) -->
   <section class="container fade-in">
     <div class="grid">
 
-      <!-- ITEM -->
-      <div class="gallery-link">
-        <img src="/assets/images/nature-mountain-landscape.jpg" class="fade-in landscape" alt="Mountain landscape">
-      </div>
-
-      <div class="gallery-link">
-        <img src="/assets/images/meadow.jpg" class="fade-in landscape nature" alt="Meadow">
-      </div>
+      {% for shot in site.data.gallery %}
+        <div class="gallery-link">
+          <img 
+            src="{{ shot.image }}" 
+            class="fade-in {{ shot.category }}" 
+            alt="{{ shot.alt }}"
+          >
+        </div>
+      {% endfor %}
 
     </div>
   </section>
