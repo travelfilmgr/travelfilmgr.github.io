@@ -70,42 +70,46 @@ title: Home
   </div>
 
   <div class="cards">
-    {% for post in site.posts limit:3 %}
-      <div class="card">
-        <a href="{{ post.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
-          {% if post.image %}
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-          {% endif %}
-
-          <div style="padding:18px;">
-            {% if post.category %}
-              <span style="
-                display:inline-block;
-                margin-bottom:10px;
-                padding:5px 10px;
-                border-radius:999px;
-                background:rgba(255,204,0,0.10);
-                border:1px solid rgba(255,204,0,0.18);
-                color:var(--primary);
-                font-size:12px;
-                font-weight:600;
-                text-transform:uppercase;
-              ">
-                {{ post.category }}
-              </span>
+    {% if site.posts.size > 0 %}
+      {% for post in site.posts limit:3 %}
+        <div class="card">
+          <a href="{{ post.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
+            {% if post.image %}
+              <img src="{{ post.image }}" alt="{{ post.title }}">
             {% endif %}
 
-            <h3 style="padding:0; margin-bottom:10px;">{{ post.title }}</h3>
+            <div style="padding:18px;">
+              {% if post.category %}
+                <span style="
+                  display:inline-block;
+                  margin-bottom:10px;
+                  padding:5px 10px;
+                  border-radius:999px;
+                  background:rgba(255,204,0,0.10);
+                  border:1px solid rgba(255,204,0,0.18);
+                  color:var(--primary);
+                  font-size:12px;
+                  font-weight:600;
+                  text-transform:uppercase;
+                ">
+                  {{ post.category }}
+                </span>
+              {% endif %}
 
-            {% if post.excerpt %}
-              <p style="color:var(--muted); line-height:1.7;">
-                {{ post.excerpt | strip_html | truncate: 110 }}
-              </p>
-            {% endif %}
-          </div>
-        </a>
-      </div>
-    {% endfor %}
+              <h3 style="padding:0; margin-bottom:10px;">{{ post.title }}</h3>
+
+              {% if post.excerpt %}
+                <p style="color:var(--muted); line-height:1.7;">
+                  {{ post.excerpt | strip_html | truncate: 110 }}
+                </p>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p style="color: var(--muted);">No posts yet.</p>
+    {% endif %}
   </div>
 </section>
 
@@ -136,17 +140,19 @@ title: Home
   </div>
 
   <div class="grid">
-    {% for post in site.posts limit:6 %}
-      {% if post.image %}
+    {% if site.data.gallery.size > 0 %}
+      {% for shot in site.data.gallery limit:6 %}
         <div class="gallery-link fade-in">
           <img
-            src="{{ post.image }}"
-            alt="{{ post.title }}"
-            class="fade-in"
+            src="{{ shot.image }}"
+            alt="{{ shot.alt }}"
+            class="fade-in {{ shot.category }}"
           >
         </div>
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+      <p style="color: var(--muted);">No shots yet.</p>
+    {% endif %}
   </div>
 </section>
 
