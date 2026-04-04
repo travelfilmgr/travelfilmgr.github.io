@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{{ page.title }}</title>
+  <title>
+    {% if page.title == "Home" %}
+      TravelFilm GR
+    {% else %}
+      {{ page.title }} | TravelFilm GR
+    {% endif %}
+  </title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <meta name="description" content="TravelFilm GR — travel photography, cinematic moments, and visual storytelling through curated images and stories.">
+  <meta name="theme-color" content="#0b0b0b">
 
-<!-- CSS -->
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<!-- JS -->
-<script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- JS -->
+  <script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </head>
 
 <body>
 
-<!-- HEADER -->
-{% include header.html %}
+  <!-- HEADER -->
+  {% include header.html %}
 
-<!-- MAIN CONTENT -->
-<main>
-  {{ content }}
-</main>
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    {{ content }}
+  </main>
 
-<!-- FOOTER -->
-{% include footer.html %}
+  <!-- FOOTER -->
+  {% include footer.html %}
 
 </body>
 </html>
