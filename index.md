@@ -21,10 +21,27 @@ title: Home
       TravelFilm GR
     </span>
 
-    <h1>Travel • Photography • Stories</h1>
+    <h1 style="
+      font-size:clamp(2.15rem, 4vw, 3.6rem);
+      line-height:1.08;
+      white-space:normal;
+    ">
+      Travel • Photography • Stories
+    </h1>
 
-    <p>
+    <p style="margin-top:14px;">
       Explore places, moods, and moments through a cinematic visual journey.
+    </p>
+
+    <p style="
+      margin-top:10px;
+      color:var(--primary);
+      font-size:0.96rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-weight:600;
+    ">
+      live in freadome
     </p>
 
     <a href="/gallery/" class="btn">View Gallery</a>
