@@ -496,24 +496,32 @@ header nav a.active::after {
   background: linear-gradient(180deg, #09090d 0%, #000000 100%);
 }
 
-/* subtle stars */
+/* richer stars */
 .about-page::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.38;
   background:
-    radial-gradient(circle at 10% 18%, rgba(255,255,255,0.95) 0.9px, transparent 1.6px),
-    radial-gradient(circle at 22% 72%, rgba(255,255,255,0.8) 1px, transparent 1.7px),
-    radial-gradient(circle at 34% 28%, rgba(255,255,255,0.85) 1px, transparent 1.7px),
-    radial-gradient(circle at 48% 14%, rgba(255,255,255,0.8) 1px, transparent 1.7px),
-    radial-gradient(circle at 58% 64%, rgba(255,255,255,0.9) 0.9px, transparent 1.6px),
-    radial-gradient(circle at 69% 24%, rgba(255,255,255,0.78) 1px, transparent 1.7px),
-    radial-gradient(circle at 78% 76%, rgba(255,255,255,0.86) 1px, transparent 1.7px),
-    radial-gradient(circle at 88% 32%, rgba(255,255,255,0.82) 0.9px, transparent 1.6px),
-    radial-gradient(circle at 92% 62%, rgba(255,255,255,0.76) 1px, transparent 1.7px);
-  animation: starsTwinkle 6s ease-in-out infinite alternate;
+    radial-gradient(circle at 10% 18%, rgba(255,255,255,0.92) 0.8px, transparent 1.6px),
+    radial-gradient(circle at 22% 72%, rgba(255,255,255,0.72) 0.9px, transparent 1.7px),
+    radial-gradient(circle at 34% 28%, rgba(255,255,255,0.84) 1px, transparent 1.7px),
+    radial-gradient(circle at 48% 14%, rgba(255,255,255,0.74) 0.8px, transparent 1.6px),
+    radial-gradient(circle at 58% 64%, rgba(255,255,255,0.88) 0.9px, transparent 1.6px),
+    radial-gradient(circle at 69% 24%, rgba(255,255,255,0.68) 1px, transparent 1.7px),
+    radial-gradient(circle at 78% 76%, rgba(255,255,255,0.84) 1px, transparent 1.7px),
+    radial-gradient(circle at 88% 32%, rgba(255,255,255,0.72) 0.8px, transparent 1.6px),
+    radial-gradient(circle at 92% 62%, rgba(255,255,255,0.68) 1px, transparent 1.7px),
+    radial-gradient(circle at 15% 40%, rgba(255,255,255,0.6) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.58) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 42% 82%, rgba(255,255,255,0.55) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 63% 52%, rgba(255,255,255,0.58) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 70% 50%, rgba(255,255,255,0.6) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.58) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 76% 14%, rgba(255,255,255,0.54) 0.8px, transparent 1.5px),
+    radial-gradient(circle at 8% 84%, rgba(255,255,255,0.52) 0.8px, transparent 1.5px);
+  animation: starsTwinkle 7s ease-in-out infinite alternate;
 }
 
 .about-page::after {
@@ -530,15 +538,15 @@ header nav a.active::after {
 
 @keyframes starsTwinkle {
   0% {
-    opacity: 0.18;
+    opacity: 0.26;
     transform: scale(1);
   }
   50% {
-    opacity: 0.28;
-    transform: scale(1.01);
+    opacity: 0.44;
+    transform: scale(1.012);
   }
   100% {
-    opacity: 0.22;
+    opacity: 0.32;
     transform: scale(1);
   }
 }
