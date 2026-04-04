@@ -1,9 +1,24 @@
 <header>
-  <h1>TravelFilmGR</h1>
+
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="/" style="
+      text-decoration:none;
+      color:white;
+      font-weight:700;
+      letter-spacing:0.04em;
+      font-size:1.1rem;
+    ">
+      TravelFilm<span style="color: var(--primary);">GR</span>
+    </a>
+  </div>
+
+  <!-- NAV -->
   <nav>
-    <a href="/">Home</a>
-    <a href="/gallery">Gallery</a>
-    <a href="/blog">Blog</a>
-    <a href="/about">About</a>
+    <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+    <a href="/gallery/" class="{% if page.url contains 'gallery' %}active{% endif %}">Gallery</a>
+    <a href="/blog/" class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+    <a href="/about/" class="{% if page.url contains 'about' %}active{% endif %}">About</a>
   </nav>
+
 </header>
