@@ -1,24 +1,47 @@
 <header>
+  <div class="header-container">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <a href="/" style="
-      text-decoration:none;
-      color:white;
-      font-weight:700;
-      letter-spacing:0.04em;
-      font-size:1.1rem;
-    ">
-      TravelFilm<span style="color: var(--primary);">GR</span>
-    </a>
+    <!-- LEFT: LOGO + SOCIAL -->
+    <div class="header-left">
+      <div class="logo">
+        <a href="/" style="
+          text-decoration:none;
+          color:white;
+          font-weight:700;
+          letter-spacing:0.04em;
+          font-size:1.1rem;
+        ">
+          TravelFilm<span style="color: var(--primary);">GR</span>
+        </a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://instagram.com/TO_INSTAGRAM_SOU" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@TO_TIKTOK_SOU" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- CENTER: NAV -->
+    <nav>
+      <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+      <a href="/gallery/" class="{% if page.url contains 'gallery' %}active{% endif %}">Gallery</a>
+      <a href="/blog/" class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a>
+      <a href="/about/" class="{% if page.url contains 'about' %}active{% endif %}">About</a>
+    </nav>
+
+    <!-- RIGHT: LANGUAGE -->
+    <div class="lang-switch">
+      <button type="button" class="lang-btn" data-lang="en" aria-label="English">
+        <span>🇬🇧</span>
+      </button>
+      <button type="button" class="lang-btn" data-lang="el" aria-label="Ελληνικά">
+        <span>🇬🇷</span>
+      </button>
+    </div>
+
   </div>
-
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-    <a href="/gallery/" class="{% if page.url contains 'gallery' %}active{% endif %}">Gallery</a>
-    <a href="/blog/" class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a>
-    <a href="/about/" class="{% if page.url contains 'about' %}active{% endif %}">About</a>
-  </nav>
-
 </header>
