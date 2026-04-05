@@ -6,10 +6,10 @@
   alt: Meadow
   category: nature
 
- - image: /assets/images/Blossom & Bee.jpg
-  alt: Mountain landscape
+- image: "/assets/images/blossom-and-bee.jpg"
+  alt: Bee on white blossoms
   category: Nature
-  description: A bee gently pollinating delicate white blossoms, capturing the essence of spring and renewal.
+  description: "A bee gently pollinating delicate white blossoms, capturing the essence of spring and renewal."
   location: Greece
   date: 2026-03-20
   camera: Nikon D7000
