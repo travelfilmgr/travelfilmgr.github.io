@@ -66,11 +66,11 @@ permalink: /privacy/
     Cookies
   </h2>
   <p
-    data-en="This website does not use cookies or tracking technologies."
+    data-en="This website does not use cookies or any tracking technologies."
     data-el="Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies ή τεχνολογίες παρακολούθησης."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not use cookies or tracking technologies.
+    This website does not use cookies or any tracking technologies.
   </p>
 
   <!-- Analytics -->
@@ -78,11 +78,11 @@ permalink: /privacy/
     Analytics
   </h2>
   <p
-    data-en="No analytics tools are used. Visitor activity is not tracked."
-    data-el="Δεν χρησιμοποιούνται εργαλεία στατιστικών. Η δραστηριότητα των επισκεπτών δεν παρακολουθείται."
+    data-en="No analytics tools are currently used. Visitor activity is not tracked."
+    data-el="Δεν χρησιμοποιούνται προς το παρόν εργαλεία στατιστικών. Η δραστηριότητα των επισκεπτών δεν παρακολουθείται."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    No analytics tools are used. Visitor activity is not tracked.
+    No analytics tools are currently used. Visitor activity is not tracked.
   </p>
 
   <!-- Hosting -->
@@ -102,11 +102,11 @@ permalink: /privacy/
     Legal Basis
   </h2>
   <p
-    data-en="Since no personal data is collected or processed, no legal basis for processing is required under GDPR."
-    data-el="Δεδομένου ότι δεν συλλέγονται ούτε επεξεργάζονται προσωπικά δεδομένα, δεν απαιτείται νομική βάση επεξεργασίας σύμφωνα με τον GDPR."
+    data-en="Since no personal data is collected or processed, no legal basis for processing is required under the General Data Protection Regulation (GDPR)."
+    data-el="Δεδομένου ότι δεν συλλέγονται ούτε επεξεργάζονται προσωπικά δεδομένα, δεν απαιτείται νομική βάση επεξεργασίας σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR)."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    Since no personal data is collected or processed, no legal basis for processing is required under GDPR.
+    Since no personal data is collected or processed, no legal basis for processing is required under the General Data Protection Regulation (GDPR).
   </p>
 
   <!-- Third-Party Links -->
@@ -114,11 +114,11 @@ permalink: /privacy/
     Third-Party Links
   </h2>
   <p
-    data-en="This website may contain links to external platforms such as Instagram or TikTok. These platforms may process data according to their own privacy policies."
+    data-en="This website may contain links to external platforms such as Instagram or TikTok. These platforms may process personal data according to their own privacy policies."
     data-el="Αυτός ο ιστότοπος μπορεί να περιέχει συνδέσμους προς εξωτερικές πλατφόρμες όπως το Instagram ή το TikTok. Οι πλατφόρμες αυτές ενδέχεται να επεξεργάζονται δεδομένα σύμφωνα με τις δικές τους πολιτικές απορρήτου."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website may contain links to external platforms such as Instagram or TikTok. These platforms may process data according to their own privacy policies.
+    This website may contain links to external platforms such as Instagram or TikTok. These platforms may process personal data according to their own privacy policies.
   </p>
 
   <!-- Contact -->
@@ -138,11 +138,11 @@ permalink: /privacy/
     Changes
   </h2>
   <p
-    data-en="This policy may be updated in the future. Any changes will be reflected on this page."
-    data-el="Η παρούσα πολιτική ενδέχεται να ενημερωθεί στο μέλλον. Οποιεσδήποτε αλλαγές θα εμφανίζονται σε αυτή τη σελίδα."
+    data-en="This privacy policy may be updated in the future. Any changes will be reflected on this page."
+    data-el="Η παρούσα πολιτική απορρήτου ενδέχεται να ενημερωθεί στο μέλλον. Οποιεσδήποτε αλλαγές θα εμφανίζονται σε αυτή τη σελίδα."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This policy may be updated in the future. Any changes will be reflected on this page.
+    This privacy policy may be updated in the future. Any changes will be reflected on this page.
   </p>
 
 </div>
