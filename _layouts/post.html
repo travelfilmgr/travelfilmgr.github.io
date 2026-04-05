@@ -12,7 +12,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Theme + Language init -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const savedLang = localStorage.getItem('lang');
+
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+
+      if (savedLang) {
+        document.documentElement.setAttribute('lang', savedLang);
+      }
+    })();
+  </script>
+
   <script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </head>
 
@@ -25,7 +45,7 @@
 
       {% if page.image %}
         <div class="post-hero">
-          <img src="{{ page.image }}" alt="{{ page.title }}">
+          <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
         </div>
       {% endif %}
 
@@ -42,6 +62,15 @@
             <span class="post-date">
               {{ page.date | date: "%d %b %Y" }}
             </span>
+
+            <span class="post-reading-time" data-en="• 1 min read" data-el="• 1 λεπτό ανάγνωση">
+              • 1 min read
+            </span>
+
+            <button type="button" class="copy-link-btn" aria-label="Copy post link">
+              <i class="fa-solid fa-link"></i>
+              <span data-en="Copy link" data-el="Αντιγραφή συνδέσμου">Copy link</span>
+            </button>
           </div>
         </div>
 
@@ -56,7 +85,9 @@
         </div>
 
         <div class="post-bottom-link">
-          <a href="/blog/">← Back to Blog</a>
+          <a href="/blog/">
+            <span data-en="← Back to Blog" data-el="← Επιστροφή στο Blog">← Back to Blog</span>
+          </a>
         </div>
 
       </div>
