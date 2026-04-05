@@ -1,10 +1,20 @@
 - image: /assets/images/nature-mountain-landscape.jpg
   alt: Mountain landscape
   category: landscape
+  description: "."
+  location: Greece
+  date: 2026-03-20
+  camera: Nikon D7000
+
 
 - image: /assets/images/meadow.jpg
   alt: Meadow
   category: nature
+  description: "."
+  location: Greece
+  date: 2026-03-20
+  camera: Nikon D7000
+
 
 - image: "/assets/images/blossom-and-bee.jpg"
   alt: Bee on white blossoms
