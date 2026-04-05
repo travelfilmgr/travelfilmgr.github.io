@@ -48,7 +48,7 @@ permalink: /gallery/
     </div>
   </section>
 
-  <!-- 🔍 SEARCH BAR -->
+  <!-- SEARCH BAR -->
   <div class="search-wrap">
     <input
       type="text"
@@ -84,17 +84,32 @@ permalink: /gallery/
     <div class="grid" id="galleryGrid">
 
       {% for shot in site.data.gallery %}
-        <div class="gallery-link gallery-item">
-          <img 
-            src="{{ shot.image }}" 
-            class="fade-in {{ shot.category }}" 
+        <div
+          class="gallery-link gallery-item"
+          data-category="{{ shot.category | downcase }}"
+        >
+          <img
+            src="{{ shot.image }}"
+            class="fade-in {{ shot.category | downcase }}"
             alt="{{ shot.alt }}"
-            data-title="{{ shot.alt | downcase }}"
+            data-title="{{ shot.alt | escape }}"
+            data-description="{{ shot.description | default: '' | escape }}"
+            data-location="{{ shot.location | default: '' | escape }}"
+            data-date="{{ shot.date | default: '' }}"
+            data-camera="{{ shot.camera | default: '' | escape }}"
+            loading="lazy"
           >
 
-          <!-- caption -->
+          <!-- HOVER CAPTION -->
           <div class="gallery-caption">
-            {{ shot.alt }}
+            <div class="gallery-caption-title">{{ shot.alt }}</div>
+
+            {% if shot.location or shot.date %}
+              <div class="gallery-caption-meta">
+                {% if shot.location %}<span>{{ shot.location }}</span>{% endif %}
+                {% if shot.date %}<span>{{ shot.date }}</span>{% endif %}
+              </div>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
@@ -120,39 +135,40 @@ permalink: /gallery/
 
 </div>
 
-<!-- 🔍 SEARCH SCRIPT -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("gallerySearch");
   const items = document.querySelectorAll(".gallery-item");
 
-  if (!input) return;
+  if (input) {
+    input.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
 
-  input.addEventListener("input", function () {
-    const value = this.value.toLowerCase();
+      items.forEach(item => {
+        const img = item.querySelector("img");
+        const searchableText = [
+          img.getAttribute("data-title") || "",
+          img.getAttribute("data-description") || "",
+          img.getAttribute("data-location") || "",
+          img.getAttribute("data-camera") || "",
+          img.getAttribute("alt") || ""
+        ].join(" ").toLowerCase();
 
-    items.forEach(item => {
-      const img = item.querySelector("img");
-      const title = img.getAttribute("data-title") || "";
-
-      if (title.includes(value)) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+        item.style.display = searchableText.includes(value) ? "flex" : "none";
+      });
     });
-  });
 
-  // language placeholder switch
-  function updatePlaceholder() {
-    const lang = document.documentElement.lang || "en";
-    input.placeholder = input.getAttribute(`data-${lang}-placeholder`);
+    function updatePlaceholder() {
+      const lang = document.documentElement.lang || "en";
+      const key = lang === "el" ? "data-el-placeholder" : "data-en-placeholder";
+      input.placeholder = input.getAttribute(key);
+    }
+
+    updatePlaceholder();
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", updatePlaceholder);
+    });
   }
-
-  updatePlaceholder();
-
-  document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.addEventListener("click", updatePlaceholder);
-  });
 });
 </script>
