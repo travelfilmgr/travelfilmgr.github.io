@@ -44,19 +44,21 @@ permalink: /about/
       <h2 data-en="Who I Am" data-el="Ποιος Είμαι">Who I Am</h2>
 
       <p
-        data-en="I am someone who loves traveling, discovering new places, and turning simple moments into visual memories through photography and film."
-        data-el="Είμαι ένας άνθρωπος που αγαπά τα ταξίδια, την ανακάλυψη νέων τόπων και τη μετατροπή απλών στιγμών σε οπτικές αναμνήσεις μέσα από τη φωτογραφία και το βίντεο."
+        data-en="I am someone who loves traveling, discovering new places, and turning simple moments into visual memories through photography and film. For me, every destination has its own mood, its own rhythm, and its own story worth capturing."
+        data-el="Είμαι ένας άνθρωπος που αγαπά τα ταξίδια, την ανακάλυψη νέων τόπων και τη μετατροπή απλών στιγμών σε οπτικές αναμνήσεις μέσα από τη φωτογραφία και το βίντεο. Για μένα, κάθε προορισμός έχει τη δική του ατμόσφαιρα, τον δικό του ρυθμό και τη δική του ιστορία που αξίζει να αποτυπωθεί."
       >
         I am someone who loves traveling, discovering new places, and turning simple moments
-        into visual memories through photography and film.
+        into visual memories through photography and film. For me, every destination has its
+        own mood, its own rhythm, and its own story worth capturing.
       </p>
 
       <p
-        data-en="I do not focus on perfection. I focus on what feels real — the light of a place, the atmosphere of a street, the silence of a landscape."
-        data-el="Δεν εστιάζω στην τελειότητα. Εστιάζω σε αυτό που μοιάζει αληθινό — στο φως ενός τόπου, στην ατμόσφαιρα ενός δρόμου, στη σιωπή ενός τοπίου."
+        data-en="I do not focus on perfection. I focus on what feels real — the light of a place, the atmosphere of a street, the silence of a landscape, and the emotion hidden in small details that most people pass by."
+        data-el="Δεν εστιάζω στην τελειότητα. Εστιάζω σε αυτό που μοιάζει αληθινό — στο φως ενός τόπου, στην ατμόσφαιρα ενός δρόμου, στη σιωπή ενός τοπίου και στο συναίσθημα που κρύβεται σε μικρές λεπτομέρειες που οι περισσότεροι προσπερνούν."
       >
         I do not focus on perfection. I focus on what feels real — the light of a place,
-        the atmosphere of a street, the silence of a landscape.
+        the atmosphere of a street, the silence of a landscape, and the emotion hidden in
+        small details that most people pass by.
       </p>
 
       <p
@@ -76,17 +78,20 @@ permalink: /about/
       <h2 data-en="What I Create" data-el="Τι Δημιουργώ">What I Create</h2>
 
       <p
-        data-en="Through photography and cinematic moments, I create work that feels immersive and atmospheric."
-        data-el="Μέσα από φωτογραφία και κινηματογραφικές στιγμές, δημιουργώ έργο που μοιάζει ατμοσφαιρικό και βιωματικό."
+        data-en="Through photography, short cinematic moments, and curated visual content, I try to create work that feels immersive, honest, and atmospheric. My goal is not simply to show a place, but to let people feel something when they see it."
+        data-el="Μέσα από φωτογραφία, μικρές κινηματογραφικές στιγμές και προσεγμένο οπτικό περιεχόμενο, προσπαθώ να δημιουργώ έργο που μοιάζει ατμοσφαιρικό, ειλικρινές και βιωματικό. Ο στόχος μου δεν είναι απλώς να δείξω έναν τόπο, αλλά να κάνω τον κόσμο να νιώσει κάτι όταν τον βλέπει."
       >
-        Through photography and cinematic moments, I create work that feels immersive and atmospheric.
+        Through photography, short cinematic moments, and curated visual content, I try to create
+        work that feels immersive, honest, and atmospheric. My goal is not simply to show a place,
+        but to let people feel something when they see it.
       </p>
 
       <p
-        data-en="My goal is not simply to show a place, but to let people feel something."
-        data-el="Ο στόχος μου δεν είναι απλώς να δείξω έναν τόπο, αλλά να κάνω τον κόσμο να νιώσει κάτι."
+        data-en="Some images are quiet and minimal. Others are dramatic, vibrant, or full of movement. What connects them all is the same intention: to capture moments as they truly happen."
+        data-el="Κάποιες εικόνες είναι ήσυχες και μινιμαλιστικές. Άλλες είναι δραματικές, ζωντανές ή γεμάτες κίνηση. Αυτό που τις ενώνει όλες είναι η ίδια πρόθεση: να αποτυπώνονται οι στιγμές όπως πραγματικά συμβαίνουν."
       >
-        My goal is not simply to show a place, but to let people feel something.
+        Some images are quiet and minimal. Others are dramatic, vibrant, or full of movement.
+        What connects them all is the same intention: to capture moments as they truly happen.
       </p>
 
     </div>
@@ -99,7 +104,6 @@ permalink: /about/
       <h2 data-en="Follow My Journey" data-el="Ακολούθησε το Ταξίδι Μου">Follow My Journey</h2>
 
       <div class="social-links">
-
         <a href="https://www.instagram.com/travelfilm_gr/" target="_blank" rel="noopener noreferrer">
           Instagram
         </a>
@@ -109,17 +113,16 @@ permalink: /about/
         </a>
 
         <a href="mailto:travelfilm.gr@gmail.com">
-          <span data-en="Email Me" data-el="Στείλε Email">Email Me</span>
+          <span data-en="Email" data-el="Email">Email</span>
         </a>
-
       </div>
 
       <p
         style="margin-top:15px; color:var(--muted);"
-        data-en="I share photography and cinematic travel moments from the places I explore."
-        data-el="Μοιράζομαι φωτογραφία και κινηματογραφικές ταξιδιωτικές στιγμές από τα μέρη που εξερευνώ."
+        data-en="I share personal photography, cinematic travel moments, and visual highlights from the places I explore — purely through passion, creativity, and love for the journey."
+        data-el="Μοιράζομαι προσωπική φωτογραφία, κινηματογραφικές ταξιδιωτικές στιγμές και οπτικά highlights από τα μέρη που εξερευνώ — καθαρά μέσα από πάθος, δημιουργικότητα και αγάπη για το ταξίδι."
       >
-        I share photography and cinematic travel moments from the places I explore.
+        I share personal photography, cinematic travel moments, and visual highlights from the places I explore — purely through passion, creativity, and love for the journey.
       </p>
 
     </div>
@@ -134,23 +137,43 @@ permalink: /about/
       <div class="gear-grid">
 
         <div class="gear-item">
-          <h3>Camera</h3>
+          <h3 data-en="Camera" data-el="Κάμερα">Camera</h3>
           <p>NIKON D7000</p>
         </div>
 
         <div class="gear-item">
-          <h3>Lenses</h3>
+          <h3 data-en="Lenses" data-el="Φακοί">Lenses</h3>
           <p>Your lenses</p>
         </div>
 
         <div class="gear-item">
-          <h3>Drone</h3>
+          <h3 data-en="Drone" data-el="Drone">Drone</h3>
           <p>Your drone</p>
         </div>
 
         <div class="gear-item">
-          <h3>Editing</h3>
+          <h3 data-en="Accessories" data-el="Αξεσουάρ">Accessories</h3>
+          <p
+            data-en="Tripod, filters, microphone, and travel essentials"
+            data-el="Τρίποδο, φίλτρα, μικρόφωνο και ταξιδιωτικά απαραίτητα"
+          >
+            Tripod, filters, microphone, and travel essentials
+          </p>
+        </div>
+
+        <div class="gear-item">
+          <h3 data-en="Editing" data-el="Επεξεργασία">Editing</h3>
           <p>Lightroom, Photoshop, Premiere Pro</p>
+        </div>
+
+        <div class="gear-item">
+          <h3 data-en="Other" data-el="Άλλα">Other</h3>
+          <p
+            data-en="Creative tools and gear I use along the way"
+            data-el="Δημιουργικά εργαλεία και εξοπλισμός που χρησιμοποιώ στη διαδρομή"
+          >
+            Creative tools and gear I use along the way
+          </p>
         </div>
 
       </div>
