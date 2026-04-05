@@ -37,17 +37,31 @@ permalink: /privacy/
     This website respects your privacy and is designed to operate without collecting personal data.
   </p>
 
+  <!-- Data Controller -->
+  <h2 data-en="Data Controller" data-el="Υπεύθυνος Επεξεργασίας" style="margin-bottom:10px;">
+    Data Controller
+  </h2>
+  <p
+    data-en="This website is operated by TravelFilmGR."
+    data-el="Ο ιστότοπος αυτός διαχειρίζεται από το TravelFilmGR."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    This website is operated by TravelFilmGR.
+  </p>
+
+  <!-- Data Collection -->
   <h2 data-en="Data Collection" data-el="Συλλογή Δεδομένων" style="margin-bottom:10px;">
     Data Collection
   </h2>
   <p
-    data-en="This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are currently used."
+    data-en="This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are used."
     data-el="Αυτός ο ιστότοπος δεν συλλέγει, δεν αποθηκεύει και δεν επεξεργάζεται προσωπικά δεδομένα των επισκεπτών. Δεν χρησιμοποιούνται φόρμες επικοινωνίας, λογαριασμοί χρηστών ή συστήματα παρακολούθησης."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are currently used.
+    This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are used.
   </p>
 
+  <!-- Cookies -->
   <h2 data-en="Cookies" data-el="Cookies" style="margin-bottom:10px;">
     Cookies
   </h2>
@@ -59,17 +73,43 @@ permalink: /privacy/
     This website does not use cookies or tracking technologies.
   </p>
 
+  <!-- Analytics -->
   <h2 data-en="Analytics" data-el="Στατιστικά" style="margin-bottom:10px;">
     Analytics
   </h2>
   <p
-    data-en="No analytics tools are currently used. Visitor activity is not tracked."
-    data-el="Δεν χρησιμοποιούνται αυτή τη στιγμή εργαλεία στατιστικών. Η δραστηριότητα των επισκεπτών δεν παρακολουθείται."
+    data-en="No analytics tools are used. Visitor activity is not tracked."
+    data-el="Δεν χρησιμοποιούνται εργαλεία στατιστικών. Η δραστηριότητα των επισκεπτών δεν παρακολουθείται."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    No analytics tools are currently used. Visitor activity is not tracked.
+    No analytics tools are used. Visitor activity is not tracked.
   </p>
 
+  <!-- Hosting -->
+  <h2 data-en="Hosting" data-el="Φιλοξενία" style="margin-bottom:10px;">
+    Hosting
+  </h2>
+  <p
+    data-en="This website is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses and server logs according to its own privacy policy."
+    data-el="Αυτός ο ιστότοπος φιλοξενείται στο GitHub Pages. Το GitHub ενδέχεται να συλλέγει τεχνικά δεδομένα όπως διευθύνσεις IP και αρχεία καταγραφής σύμφωνα με τη δική του πολιτική απορρήτου."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    This website is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses and server logs according to its own privacy policy.
+  </p>
+
+  <!-- Legal Basis -->
+  <h2 data-en="Legal Basis" data-el="Νομική Βάση" style="margin-bottom:10px;">
+    Legal Basis
+  </h2>
+  <p
+    data-en="Since no personal data is collected or processed, no legal basis for processing is required under GDPR."
+    data-el="Δεδομένου ότι δεν συλλέγονται ούτε επεξεργάζονται προσωπικά δεδομένα, δεν απαιτείται νομική βάση επεξεργασίας σύμφωνα με τον GDPR."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    Since no personal data is collected or processed, no legal basis for processing is required under GDPR.
+  </p>
+
+  <!-- Third-Party Links -->
   <h2 data-en="Third-Party Links" data-el="Σύνδεσμοι Τρίτων" style="margin-bottom:10px;">
     Third-Party Links
   </h2>
@@ -81,6 +121,7 @@ permalink: /privacy/
     This website may contain links to external platforms such as Instagram or TikTok. These platforms may process data according to their own privacy policies.
   </p>
 
+  <!-- Contact -->
   <h2 data-en="Contact" data-el="Επικοινωνία" style="margin-bottom:10px;">
     Contact
   </h2>
@@ -92,6 +133,7 @@ permalink: /privacy/
     If you have any questions regarding this privacy policy, you can contact me through my social media accounts.
   </p>
 
+  <!-- Changes -->
   <h2 data-en="Changes" data-el="Αλλαγές" style="margin-bottom:10px;">
     Changes
   </h2>
