@@ -831,7 +831,7 @@ html[data-theme="light"] .about-description {
   box-shadow: 0 20px 50px rgba(0,0,0,0.24);
   backdrop-filter: blur(12px);
   position: relative;
-  z-index: 1;
+  z-index: 2;
   overflow: hidden;
 }
 
@@ -875,7 +875,7 @@ html[data-theme="light"] .about-card p {
   gap: 14px;
   margin-top: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .social-links a {
@@ -888,6 +888,9 @@ html[data-theme="light"] .about-card p {
   color: white;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
   transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
@@ -1406,6 +1409,8 @@ footer {
   background: rgba(0, 0, 0, 0.84);
   color: var(--muted);
   border-top: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  z-index: 2;
 }
 
 html[data-theme="light"] footer {
@@ -1416,6 +1421,8 @@ html[data-theme="light"] footer {
 .footer-container {
   max-width: 1200px;
   margin: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .footer-logo {
@@ -1437,6 +1444,8 @@ html[data-theme="light"] footer {
   gap: 10px;
   margin-top: 16px;
   margin-bottom: 14px;
+  position: relative;
+  z-index: 4;
 }
 
 .footer-social a {
@@ -1450,6 +1459,9 @@ html[data-theme="light"] footer {
   color: white;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
   transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
 }
 
@@ -1622,6 +1634,27 @@ body.blog-theme-other::before {
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
     radial-gradient(circle at 80% 30%, rgba(255,204,0,0.06), transparent 30%),
     radial-gradient(circle at 50% 110%, rgba(255,107,0,0.04), transparent 26%);
+}
+
+/* =========================
+   SOCIAL LINKS CLICK FIX
+========================= */
+.about-page::before,
+.about-page::after,
+.about-card::before,
+.gallery-link::after,
+body::after {
+  pointer-events: none;
+}
+
+.social-links a,
+.footer-social a {
+  pointer-events: auto;
+}
+
+.footer-social a i,
+.social-links a i {
+  pointer-events: none;
 }
 
 /* =========================
