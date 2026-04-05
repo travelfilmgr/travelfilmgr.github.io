@@ -16,10 +16,10 @@
       </div>
 
       <div class="social-icons">
-        <a href="https://instagram.com/TO_INSTAGRAM_SOU" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/travelfilm_gr/" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://tiktok.com/@TO_TIKTOK_SOU" target="_blank" aria-label="TikTok">
+        <a href="https://www.tiktok.com/@travelfilm.gr" target="_blank" aria-label="TikTok">
           <i class="fab fa-tiktok"></i>
         </a>
       </div>
@@ -27,19 +27,35 @@
 
     <!-- CENTER: NAV -->
     <nav>
-      <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-      <a href="/gallery/" class="{% if page.url contains 'gallery' %}active{% endif %}">Gallery</a>
-      <a href="/blog/" class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a>
-      <a href="/about/" class="{% if page.url contains 'about' %}active{% endif %}">About</a>
+      <a href="/" class="{% if page.url == '/' %}active{% endif %}">
+        <span data-en="Home" data-el="Αρχική">Home</span>
+      </a>
+
+      <a href="/gallery/" class="{% if page.url contains 'gallery' %}active{% endif %}">
+        <span data-en="Gallery" data-el="Gallery">Gallery</span>
+      </a>
+
+      <a href="/blog/" class="{% if page.url contains 'blog' %}active{% endif %}">
+        <span data-en="Blog" data-el="Blog">Blog</span>
+      </a>
+
+      <a href="/about/" class="{% if page.url contains 'about' %}active{% endif %}">
+        <span data-en="About" data-el="Σχετικά">About</span>
+      </a>
     </nav>
 
-    <!-- RIGHT: LANGUAGE -->
+    <!-- RIGHT: LANGUAGE + THEME -->
     <div class="lang-switch">
       <button type="button" class="lang-btn" data-lang="en" aria-label="English">
-        <span>🇬🇧</span>
+        🇬🇧
       </button>
+
       <button type="button" class="lang-btn" data-lang="el" aria-label="Ελληνικά">
-        <span>🇬🇷</span>
+        🇬🇷
+      </button>
+
+      <button type="button" class="theme-toggle" aria-label="Toggle theme">
+        🌙
       </button>
     </div>
 
