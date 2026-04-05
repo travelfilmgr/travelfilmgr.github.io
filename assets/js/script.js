@@ -40,9 +40,15 @@ function applyTranslations(lang) {
     }
   });
 
-  const placeholders = document.querySelectorAll('[data-placeholder-en][data-placeholder-el]');
+  const placeholders = document.querySelectorAll(
+    '[data-placeholder-en][data-placeholder-el], [data-en-placeholder][data-el-placeholder]'
+  );
+
   placeholders.forEach((el) => {
-    const value = el.getAttribute(`data-placeholder-${lang}`);
+    const value =
+      el.getAttribute(`data-placeholder-${lang}`) ||
+      el.getAttribute(`data-${lang}-placeholder`);
+
     if (value !== null) {
       el.setAttribute('placeholder', value);
     }
@@ -69,7 +75,6 @@ function revealOnScroll() {
 
   elements.forEach((el) => {
     const rect = el.getBoundingClientRect();
-
     if (rect.top < window.innerHeight - 80) {
       el.classList.add('show');
     }
@@ -128,10 +133,14 @@ function filterImages(cat, event) {
     const img = item.querySelector('img');
     if (!img) return;
 
-    const match = cat === 'all' || img.classList.contains(cat) || item.dataset.category === cat;
+    const itemCategory = (item.dataset.category || '').toLowerCase();
+    const match =
+      cat === 'all' ||
+      img.classList.contains(cat) ||
+      itemCategory === cat;
 
     if (match) {
-      item.style.display = '';
+      item.style.display = 'flex';
       item.style.opacity = '0';
       item.style.transform = 'translateY(14px) scale(0.98)';
 
@@ -226,28 +235,42 @@ function filterPosts(cat, event) {
    GALLERY SEARCH
 ========================= */
 function initGallerySearch() {
-  const searchInput = document.querySelector('[data-gallery-search]');
-  const gallery = document.querySelector('.gallery-page');
-  if (!searchInput || !gallery) return;
+  const input = document.getElementById('gallerySearch');
+  const items = document.querySelectorAll('.gallery-item');
 
-  const items = gallery.querySelectorAll('.gallery-link, .gallery-item');
+  if (!input || !items.length) return;
 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim().toLowerCase();
+  input.addEventListener('input', function () {
+    const value = this.value.toLowerCase();
 
     items.forEach((item) => {
-      const text = [
-        item.dataset.title || '',
-        item.dataset.category || '',
-        item.dataset.tags || '',
-        item.getAttribute('aria-label') || '',
-        item.querySelector('img')?.alt || ''
-      ]
-        .join(' ')
-        .toLowerCase();
+      const img = item.querySelector('img');
+      if (!img) return;
 
-      item.style.display = text.includes(query) ? '' : 'none';
+      const searchableText = [
+        img.getAttribute('data-title') || '',
+        img.getAttribute('data-description') || '',
+        img.getAttribute('data-location') || '',
+        img.getAttribute('data-camera') || '',
+        img.getAttribute('data-date') || '',
+        img.getAttribute('alt') || ''
+      ].join(' ').toLowerCase();
+
+      item.style.display = searchableText.includes(value) ? 'flex' : 'none';
     });
+  });
+
+  function updatePlaceholder() {
+    const lang = document.documentElement.lang || 'en';
+    const key = lang === 'el' ? 'data-el-placeholder' : 'data-en-placeholder';
+    const value = input.getAttribute(key);
+    if (value) input.placeholder = value;
+  }
+
+  updatePlaceholder();
+
+  document.querySelectorAll('.lang-btn').forEach((btn) => {
+    btn.addEventListener('click', updatePlaceholder);
   });
 }
 
@@ -296,17 +319,46 @@ function initGalleryLightbox() {
     lightbox.className = 'lightbox';
     lightbox.innerHTML = `
       <button class="lightbox-close" aria-label="Close">×</button>
-      <img src="" alt="">
+      <div class="lightbox-content-wrap">
+        <img src="" alt="">
+        <div class="lightbox-info">
+          <h3 class="lightbox-title"></h3>
+          <p class="lightbox-description"></p>
+          <div class="lightbox-meta">
+            <span class="lightbox-location"></span>
+            <span class="lightbox-date"></span>
+            <span class="lightbox-camera"></span>
+          </div>
+        </div>
+      </div>
     `;
     document.body.appendChild(lightbox);
   }
 
   const lightboxImg = lightbox.querySelector('img');
+  const lightboxTitle = lightbox.querySelector('.lightbox-title');
+  const lightboxDescription = lightbox.querySelector('.lightbox-description');
+  const lightboxLocation = lightbox.querySelector('.lightbox-location');
+  const lightboxDate = lightbox.querySelector('.lightbox-date');
+  const lightboxCamera = lightbox.querySelector('.lightbox-camera');
   const closeBtn = lightbox.querySelector('.lightbox-close');
 
-  function openLightbox(src, alt = '') {
-    lightboxImg.src = src;
-    lightboxImg.alt = alt;
+  function openLightbox(img) {
+    const title = img.getAttribute('data-title') || img.alt || '';
+    const description = img.getAttribute('data-description') || '';
+    const location = img.getAttribute('data-location') || '';
+    const date = img.getAttribute('data-date') || '';
+    const camera = img.getAttribute('data-camera') || '';
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || '';
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = description;
+
+    lightboxLocation.textContent = location ? `📍 ${location}` : '';
+    lightboxDate.textContent = date ? `📅 ${date}` : '';
+    lightboxCamera.textContent = camera ? `📷 ${camera}` : '';
+
     lightbox.classList.add('show');
     document.body.style.overflow = 'hidden';
   }
@@ -319,7 +371,7 @@ function initGalleryLightbox() {
   galleryImages.forEach((img) => {
     img.addEventListener('click', (e) => {
       e.preventDefault();
-      openLightbox(img.src, img.alt || '');
+      openLightbox(img);
     });
   });
 
@@ -455,6 +507,19 @@ function initLanguageButtons() {
 }
 
 /* =========================
+   FORCE SOCIAL LINKS
+========================= */
+function initForcedSocialLinks() {
+  document.querySelectorAll('.footer-social a, .social-links a').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.open(this.href, '_blank', 'noopener,noreferrer');
+    });
+  });
+}
+
+/* =========================
    INIT
 ========================= */
 window.addEventListener('scroll', () => {
@@ -484,4 +549,5 @@ document.addEventListener('DOMContentLoaded', () => {
   handleBackToTopVisibility();
   applyLazyLoadingToImages();
   updateThemeToggleIcon();
+  initForcedSocialLinks();
 });
