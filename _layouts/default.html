@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- BASIC -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- TITLE -->
   <title>
     {% if page.title == "Home" %}
       TravelFilm GR
@@ -12,38 +15,45 @@
     {% endif %}
   </title>
 
+  <!-- SEO -->
   <meta name="description" content="TravelFilm GR — travel photography, cinematic moments, and visual storytelling through curated images and stories.">
   <meta name="theme-color" content="#0b0b0b">
 
-  <!-- Fonts -->
+  <!-- OPEN GRAPH (SOCIAL PREVIEW) -->
+  <meta property="og:title" content="{{ page.title | default: 'TravelFilm GR' }}">
+  <meta property="og:description" content="Travel photography, cinematic moments, and visual storytelling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/hero.jpg' | absolute_url }}">
+
+  <!-- FAVICON (βάλε icon αν θες μετά) -->
+  <link rel="icon" href="/assets/images/favicon.png">
+
+  <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Theme + Language init -->
+  <!-- THEME + LANGUAGE INIT (no flash) -->
   <script>
     (function () {
-      const savedTheme = localStorage.getItem('theme');
-      const savedLang = localStorage.getItem('lang');
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      const savedLang = localStorage.getItem('lang') || 'en';
 
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
-
-      if (savedLang) {
-        document.documentElement.setAttribute('lang', savedLang);
-      }
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.setAttribute('lang', savedLang);
     })();
   </script>
 
   <!-- JS -->
   <script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
 </head>
 
 <body>
