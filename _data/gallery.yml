@@ -1,3 +1,12 @@
+- image: /assets/images/The Bel.jpg
+  alt: The Bel.jpg
+  category: Macro
+  description: "A hanging bell captured in a dark, minimal composition, emphasizing texture, stillness, and the absence of sound."
+  location: Greece
+  date: 2025-12-27
+  camera: Nikon D7000
+
+
 - image: /assets/images/The Look.jpg
   alt: The Look
   category: Pet
