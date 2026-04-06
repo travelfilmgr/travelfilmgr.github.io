@@ -1,3 +1,12 @@
+- image: /assets/images/Timeless Tower.jpg
+  alt: Timeless Tower
+  category: Architecture
+  description: "A timeless stone clock tower standing tall against a clear sky, framed by natural elements and subtle urban details."
+  location: Greece,Volos
+  date: 2026-1-05
+  camera: Nikon D7000
+
+
 - image: /assets/images/Lost in Fog.jpg
   alt: Lost in Fog.jpg
   category: Architecture
