@@ -112,9 +112,6 @@ permalink: /about/
           TikTok
         </a>
 
-        <a href="mailto:travelfilm.gr@gmail.com">
-          <span data-en="Email" data-el="Email">Email</span>
-        </a>
       </div>
 
       <p
