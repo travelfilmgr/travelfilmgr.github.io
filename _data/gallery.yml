@@ -1,3 +1,12 @@
+- image: /assets/images/Nature’s Lines.jpg
+  alt: Nature’s Lines
+  category: Nature
+  description: "A detailed close-up of a leaf, showcasing its natural symmetry and intricate vein patterns in rich green tones."
+  location: Greece
+  date: 2026-1-10
+  camera: Nikon D7000
+
+
 - image: /assets/images/Timeless Tower.jpg
   alt: Timeless Tower
   category: Architecture
