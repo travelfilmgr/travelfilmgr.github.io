@@ -1,3 +1,12 @@
+- image: /assets/images/Depths of Vikos.jpg
+  alt: Depths of Vikos.jpg
+  category: Landscape
+  description: "A cinematic panoramic view of Vikos Gorge, framed by a wooden shelter, showcasing the dramatic depth and raw beauty of one of Greece’s most iconic landscapes."
+  location: Greece,Vikos
+  date: 2024-11-10
+  camera: Samsung a34
+
+
 - image: /assets/images/Rose Buds.jpg
   alt: Rose Buds.jpg
   category: Macro
