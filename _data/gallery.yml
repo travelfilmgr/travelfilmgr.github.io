@@ -77,3 +77,13 @@
   location: Greece
   date: 2026-2-5
   camera: Nikon D7000
+
+  
+- image: "/assets/images/Cross in the Light.jpg"
+  alt: Cross in the Light
+  category: Architecture
+  description: "A silhouette of a church cross against the sky with the sun behind it."
+  location: Greece
+  date: 2025-10-25
+  camera: Nikon D7000
+ 
