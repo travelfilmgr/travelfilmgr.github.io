@@ -1,3 +1,12 @@
+- image: /assets/images/Veins of Nature.jpg
+  alt: Veins of Nature.jpg
+  category: Nature
+  description: "A detailed close-up of overlapping leaves, revealing intricate vein patterns and rich natural textures in varying shades of green."
+  location: Greece
+  date: 2026-1-10
+  camera: Nikon D7000
+
+  
 - image: /assets/images/Depths of Vikos.jpg
   alt: Depths of Vikos.jpg
   category: Landscape
