@@ -86,4 +86,13 @@
   location: Greece
   date: 2025-10-25
   camera: Nikon D7000
+
+
+- image: "/assets/images/Feeding Deer.jpg"
+  alt: Feeding Deer
+  category: Nature
+  description: "Two deer feeding on the ground in a natural forest setting, with more animals in the background."
+  location: Greece
+  date: 2025-12-27
+  camera: Nikon D7000
  
