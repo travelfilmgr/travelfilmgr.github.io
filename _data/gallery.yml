@@ -1,3 +1,12 @@
+- image: /assets/images/Street Lamp and Facade.jpg
+  alt: Street Lamp and Facade
+  category: Architecture
+  description: "A double street lamp captured in front of a building with architectural details."
+  location: Greece,Ano Gatzea Station
+  date: 2026-01-10
+  camera: Nikon D7000
+
+
 - image: /assets/images/Sleeping Cats.jpg
   alt: Sleeping Cats
   category: Street
