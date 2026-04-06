@@ -140,36 +140,36 @@ permalink: /about/
 
         <div class="gear-item">
           <h3 data-en="Lenses" data-el="Φακοί">Lenses</h3>
-          <p>Your lenses</p>
+          <p>Nikon Crop  AF-S DX Nikkor 18-105mm f/3.5-5.6G ED VR Standard</p>
         </div>
 
         <div class="gear-item">
           <h3 data-en="Drone" data-el="Drone">Drone</h3>
-          <p>Your drone</p>
+          <p>coming soon… if a kind sponsor appears!</p>
         </div>
 
         <div class="gear-item">
           <h3 data-en="Accessories" data-el="Αξεσουάρ">Accessories</h3>
           <p
-            data-en="Tripod, filters, microphone, and travel essentials"
-            data-el="Τρίποδο, φίλτρα, μικρόφωνο και ταξιδιωτικά απαραίτητα"
+            data-en="minimal setup for now — open for collaborations & sponsorships"
+            data-el="προς το παρόν βασικός εξοπλισμός — ανοιχτός σε συνεργασίες & χορηγίες"
           >
-            Tripod, filters, microphone, and travel essentials
+            minimal setup for now — open for collaborations & sponsorships
           </p>
         </div>
 
         <div class="gear-item">
           <h3 data-en="Editing" data-el="Επεξεργασία">Editing</h3>
-          <p>Lightroom, Photoshop, Premiere Pro</p>
+          <p>Lightroom</p>
         </div>
 
         <div class="gear-item">
           <h3 data-en="Other" data-el="Άλλα">Other</h3>
           <p
-            data-en="Creative tools and gear I use along the way"
-            data-el="Δημιουργικά εργαλεία και εξοπλισμός που χρησιμοποιώ στη διαδρομή"
+            data-en="?"
+            data-el="?"
           >
-            Creative tools and gear I use along the way
+            ?
           </p>
         </div>
 
