@@ -1,3 +1,12 @@
+- image: /assets/images/Edge of Silence.jpg
+  alt: Edge of Silence
+  category: Landscape
+  description: "A lone tree clings to the edge of a cliff, framing a vast landscape below and emphasizing the contrast between stillness and depth."
+  location: Greece
+  date: 2026-1-2
+  camera: Nikon D7000
+
+
 - image: /assets/images/Framed in Time.jpg
   alt: Framed in Time
   category: Architecture
