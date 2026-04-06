@@ -122,3 +122,13 @@
   location: Greece
   date: 2025-12-10
   camera: Nikon D7000
+
+
+- image: "/assets/images/Street Lamp.jpg"
+  alt: Street Lamp
+  category: Street
+  description: "A double street lamp captured from below, with trees and sky in the background."
+  location: Greece
+  date: 2025-11-15
+  camera: Nikon D7000
+
