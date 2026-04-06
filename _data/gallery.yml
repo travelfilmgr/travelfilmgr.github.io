@@ -1,3 +1,12 @@
+- image: /assets/images/Echoes in Red.jpg
+  alt: Echoes in Red.jpg
+  category: Street
+  description: "A series of delicate musical ornaments hang in suspension, highlighted through selective color to evoke a quiet, artistic atmosphere."
+  location: Greece
+  date: 2025-12-5
+  camera: Nikon D7000
+
+
 - image: /assets/images/A Street Frozen in Time.jpg
   alt: A Street Frozen in Time
   category: Street
