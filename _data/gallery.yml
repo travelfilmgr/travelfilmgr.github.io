@@ -3,7 +3,7 @@
   category: landscape
   description: "."
   location: Greece
-  date: 2026-03-20
+  date: 2026-01-20
   camera: Nikon D7000
 
 
@@ -139,4 +139,13 @@
   description: "A small train at the Milies station, set within a natural landscape with autumn-colored trees."
   location: Greece,Milies
   date: 2025-11-15
+  camera: Nikon D7000
+
+
+- image: "/assets/images/Ship on the Horizon.jpg"
+  alt: Ship on the Horizon
+  category: Landscape
+  description: "A cargo ship sailing on a calm sea, with distant mountains and a cloudy sky creating a moody atmosphere."
+  location: Greece,volos
+  date: 2025-1-15
   camera: Nikon D7000
