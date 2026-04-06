@@ -59,3 +59,12 @@
   location: Greece,Pelion
   date: 2025-12-27
   camera: Nikon D7000
+
+
+- image: "/assets/images/Old Bicycle by the Street.jpg"
+  alt: Old Bicycle by the Street
+  category: Street
+  description: "A bicycle leaning against a pole on a street, with a container and everyday objects around it."
+  location: Greece,Volos
+  date: 2026-1-15
+  camera: Nikon D7000
