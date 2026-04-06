@@ -1,3 +1,12 @@
+- image: /assets/images/Sleeping Cats.jpg
+  alt: Sleeping Cats
+  category: Street
+  description: "Two cats resting on chairs beside a table in an outdoor setting."
+  location: Greece
+  date: 2026-01-15
+  camera: Nikon D7000
+
+
 - image: /assets/images/Empty Table.jpg
   alt: Empty Table
   category: Street
