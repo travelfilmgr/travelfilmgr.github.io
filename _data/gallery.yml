@@ -1,3 +1,12 @@
+- image: /assets/images/Little Artist.jpg
+  alt: Little Artist
+  category: Others
+  description: "A playful close-up of a small mouse figurine holding a paintbrush, set against a soft and minimal background."
+  location: Greece
+  date: 2025-11-15
+  camera: Nikon D7000
+
+
 - image: /assets/images/Nature’s Lines.jpg
   alt: Nature’s Lines
   category: Nature
