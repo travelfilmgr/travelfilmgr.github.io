@@ -96,3 +96,11 @@
   date: 2025-12-27
   camera: Nikon D7000
  
+
+- image: "/assets/images/Coastal Landscape.jpg"
+  alt: Coastal Landscape 
+  category: Landscape
+  description: "A wide view of the sea with a green coastline in the foreground and mountains in the distance."
+  location: Greece
+  date: 2026-2-23
+  camera: Nikon D7000
