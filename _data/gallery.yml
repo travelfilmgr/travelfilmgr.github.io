@@ -1,3 +1,12 @@
+- image: /assets/images/Where Land Meets Sea.jpg
+  alt: Where Land Meets Sea
+  category: Landscape
+  description: "A panoramic coastal view combining natural terrain and industrial structures, where mountains fade into the sea under a clear sky."
+  location: Greece
+  date: 2026-2-15
+  camera: Nikon D7000
+
+
 - image: /assets/images/Little Artist.jpg
   alt: Little Artist
   category: Others
