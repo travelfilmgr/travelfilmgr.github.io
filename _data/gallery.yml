@@ -1,3 +1,12 @@
+- image: /assets/images/Rose Buds.jpg
+  alt: Rose Buds.jpg
+  category: Macro
+  description: "Dried rose buds hanging from a branch, captured in close-up against a blurred green background."
+  location: Greece
+  date: 2025-12-10
+  camera: Nikon D7000
+
+
 - image: /assets/images/Street Lamp and Facade.jpg
   alt: Street Lamp and Facade
   category: Architecture
