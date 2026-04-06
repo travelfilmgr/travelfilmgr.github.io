@@ -6,7 +6,6 @@ permalink: /terms/
 
 <div class="container fade-in" style="max-width:900px; margin:auto; padding-top:130px;">
 
-  <!-- LABEL -->
   <span
     data-en="Legal"
     data-el="Νομικά"
@@ -26,76 +25,149 @@ permalink: /terms/
     Legal
   </span>
 
-  <!-- TITLE -->
-  <h1 data-en="Terms & Disclaimer" data-el="Όροι & Αποποίηση Ευθύνης">
+  <h1
+    data-en="Terms & Disclaimer"
+    data-el="Όροι & Αποποίηση Ευθύνης"
+    style="margin-bottom:18px;"
+  >
     Terms & Disclaimer
   </h1>
 
-  <!-- INTRO -->
   <p
-    data-en="By using this website, you agree to the following terms and conditions."
-    data-el="Με τη χρήση αυτού του ιστότοπου, αποδέχεστε τους παρακάτω όρους και προϋποθέσεις."
-    style="margin-bottom:20px;"
+    data-en="This website is provided for informational, artistic, and personal portfolio purposes only. By accessing and using this website, you agree to the terms outlined below."
+    data-el="Αυτός ο ιστότοπος παρέχεται αποκλειστικά για ενημερωτικούς, καλλιτεχνικούς και προσωπικούς σκοπούς portfolio. Με την πρόσβαση και χρήση αυτού του ιστότοπου, αποδέχεστε τους όρους που αναφέρονται παρακάτω."
+    style="line-height:1.8; margin-bottom:22px;"
   >
-    By using this website, you agree to the following terms and conditions.
+    This website is provided for informational, artistic, and personal portfolio purposes only.
+    By accessing and using this website, you agree to the terms outlined below.
   </p>
 
-  <!-- CONTENT USE -->
-  <h2 data-en="Content Use" data-el="Χρήση Περιεχομένου">Content Use</h2>
-  <p
-    data-en="All photos, videos, and content on this website belong to TravelFilmGR unless otherwise stated. You may not copy, reproduce, or use them without permission."
-    data-el="Όλες οι φωτογραφίες, τα βίντεο και το περιεχόμενο αυτού του ιστότοπου ανήκουν στο TravelFilmGR εκτός αν αναφέρεται διαφορετικά. Δεν επιτρέπεται η αντιγραφή ή χρήση χωρίς άδεια."
+  <h2
+    data-en="Content Accuracy"
+    data-el="Ακρίβεια Περιεχομένου"
+    style="margin-bottom:10px;"
   >
-    All photos, videos, and content on this website belong to TravelFilmGR unless otherwise stated.
-    You may not copy, reproduce, or use them without permission.
+    Content Accuracy
+  </h2>
+  <p
+    data-en="The content presented on this website reflects personal experiences, creative expression, and subjective interpretation. While reasonable efforts are made to ensure accuracy, no guarantees are given that all information is complete, reliable, or up to date."
+    data-el="Το περιεχόμενο που παρουσιάζεται σε αυτόν τον ιστότοπο αντικατοπτρίζει προσωπικές εμπειρίες, δημιουργική έκφραση και υποκειμενική ερμηνεία. Παρόλο που καταβάλλεται εύλογη προσπάθεια για την εξασφάλιση της ακρίβειας, δεν παρέχεται καμία εγγύηση ότι όλες οι πληροφορίες είναι πλήρεις, αξιόπιστες ή ενημερωμένες."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    The content presented on this website reflects personal experiences, creative expression,
+    and subjective interpretation. While reasonable efforts are made to ensure accuracy,
+    no guarantees are given that all information is complete, reliable, or up to date.
   </p>
 
-  <!-- NO LIABILITY -->
-  <h2 data-en="No Liability" data-el="Αποποίηση Ευθύνης">No Liability</h2>
-  <p
-    data-en="The information on this website is provided for general and personal use only. I am not responsible for any errors, inaccuracies, or outcomes based on the content."
-    data-el="Οι πληροφορίες σε αυτόν τον ιστότοπο παρέχονται μόνο για γενική και προσωπική χρήση. Δεν φέρω ευθύνη για τυχόν λάθη ή αποτελέσματα που βασίζονται σε αυτές."
+  <h2
+    data-en="No Professional Advice"
+    data-el="Μη Παροχή Επαγγελματικών Συμβουλών"
+    style="margin-bottom:10px;"
   >
-    The information on this website is provided for general and personal use only.
-    I am not responsible for any errors or outcomes based on the content.
+    No Professional Advice
+  </h2>
+  <p
+    data-en="The content on this website does not constitute professional, legal, financial, or travel advice. Any actions taken based on the information provided are at your own risk."
+    data-el="Το περιεχόμενο αυτού του ιστότοπου δεν αποτελεί επαγγελματική, νομική, οικονομική ή ταξιδιωτική συμβουλή. Οποιεσδήποτε ενέργειες πραγματοποιούνται βάσει των παρεχόμενων πληροφοριών γίνονται με δική σας ευθύνη."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    The content on this website does not constitute professional, legal, financial,
+    or travel advice. Any actions taken based on the information provided are at your own risk.
   </p>
 
-  <!-- TRAVEL DISCLAIMER -->
-  <h2 data-en="Travel Information" data-el="Ταξιδιωτικές Πληροφορίες">Travel Information</h2>
-  <p
-    data-en="Travel information, locations, and tips may change over time. You are responsible for verifying any details before making decisions."
-    data-el="Οι ταξιδιωτικές πληροφορίες και τοποθεσίες μπορεί να αλλάξουν με τον χρόνο. Είστε υπεύθυνοι να επαληθεύσετε τις πληροφορίες πριν ενεργήσετε."
+  <h2
+    data-en="Limitation of Liability"
+    data-el="Περιορισμός Ευθύνης"
+    style="margin-bottom:10px;"
   >
-    Travel information, locations, and tips may change over time.
-    You are responsible for verifying details before acting on them.
+    Limitation of Liability
+  </h2>
+  <p
+    data-en="The website owner shall not be held liable for any direct or indirect loss, damage, or inconvenience resulting from the use of this website or reliance on its content. All content is provided “as is” without warranties of any kind."
+    data-el="Ο ιδιοκτήτης του ιστότοπου δεν φέρει ευθύνη για οποιαδήποτε άμεση ή έμμεση απώλεια, ζημία ή ταλαιπωρία που προκύπτει από τη χρήση αυτού του ιστότοπου ή από την εμπιστοσύνη στο περιεχόμενό του. Όλο το περιεχόμενο παρέχεται «ως έχει», χωρίς οποιαδήποτε εγγύηση."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    The website owner shall not be held liable for any direct or indirect loss, damage,
+    or inconvenience resulting from the use of this website or reliance on its content.
+    All content is provided “as is” without warranties of any kind.
   </p>
 
-  <!-- NON COMMERCIAL -->
-  <h2 data-en="Non-Commercial Use" data-el="Μη Εμπορική Χρήση">Non-Commercial Use</h2>
-  <p
-    data-en="This website is personal and not intended for commercial profit."
-    data-el="Αυτός ο ιστότοπος είναι προσωπικός και δεν έχει εμπορικό σκοπό."
+  <h2
+    data-en="Copyright"
+    data-el="Πνευματικά Δικαιώματα"
+    style="margin-bottom:10px;"
   >
-    This website is personal and not intended for commercial profit.
+    Copyright
+  </h2>
+  <p
+    data-en="All photographs, videos, and content on this website are the intellectual property of TravelFilmGR, unless otherwise stated. Unauthorized use, reproduction, or distribution is strictly prohibited."
+    data-el="Όλες οι φωτογραφίες, τα βίντεο και το περιεχόμενο αυτού του ιστότοπου αποτελούν πνευματική ιδιοκτησία του TravelFilmGR, εκτός εάν αναφέρεται διαφορετικά. Η μη εξουσιοδοτημένη χρήση, αναπαραγωγή ή διανομή απαγορεύεται αυστηρά."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    All photographs, videos, and content on this website are the intellectual property of TravelFilmGR,
+    unless otherwise stated. Unauthorized use, reproduction, or distribution is strictly prohibited.
   </p>
 
-  <!-- EXTERNAL LINKS -->
-  <h2 data-en="External Links" data-el="Εξωτερικοί Σύνδεσμοι">External Links</h2>
-  <p
-    data-en="This website may contain links to third-party platforms. I am not responsible for their content or policies."
-    data-el="Ο ιστότοπος μπορεί να περιέχει συνδέσμους προς τρίτες πλατφόρμες. Δεν φέρω ευθύνη για το περιεχόμενο ή τις πολιτικές τους."
+  <h2
+    data-en="Non-Commercial Use"
+    data-el="Μη Εμπορική Χρήση"
+    style="margin-bottom:10px;"
   >
-    This website may contain links to third-party platforms.
-    I am not responsible for their content or policies.
+    Non-Commercial Use
+  </h2>
+  <p
+    data-en="This website is a personal, non-commercial project and does not generate revenue or profit."
+    data-el="Αυτός ο ιστότοπος αποτελεί προσωπικό, μη εμπορικό project και δεν δημιουργεί έσοδα ή κέρδος."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    This website is a personal, non-commercial project and does not generate revenue or profit.
   </p>
 
-  <!-- CHANGES -->
-  <h2 data-en="Changes" data-el="Αλλαγές">Changes</h2>
-  <p
-    data-en="These terms may be updated at any time."
-    data-el="Οι όροι αυτοί ενδέχεται να αλλάξουν οποιαδήποτε στιγμή."
+  <h2
+    data-en="External Links"
+    data-el="Εξωτερικοί Σύνδεσμοι"
+    style="margin-bottom:10px;"
   >
-    These terms may be updated at any time.
+    External Links
+  </h2>
+  <p
+    data-en="This website may include links to third-party platforms such as social media. The website owner is not responsible for the content, policies, or practices of these external sites."
+    data-el="Αυτός ο ιστότοπος μπορεί να περιλαμβάνει συνδέσμους προς πλατφόρμες τρίτων, όπως μέσα κοινωνικής δικτύωσης. Ο ιδιοκτήτης του ιστότοπου δεν ευθύνεται για το περιεχόμενο, τις πολιτικές ή τις πρακτικές αυτών των εξωτερικών ιστοτόπων."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    This website may include links to third-party platforms such as social media.
+    The website owner is not responsible for the content, policies, or practices of these external sites.
+  </p>
+
+  <h2
+    data-en="Children’s Information"
+    data-el="Πληροφορίες για Ανήλικους"
+    style="margin-bottom:10px;"
+  >
+    Children’s Information
+  </h2>
+  <p
+    data-en="This website is intended for a general audience and does not knowingly collect any information from children."
+    data-el="Αυτός ο ιστότοπος απευθύνεται σε γενικό κοινό και δεν συλλέγει εν γνώσει του οποιεσδήποτε πληροφορίες από ανήλικους."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    This website is intended for a general audience and does not knowingly collect any information from children.
+  </p>
+
+  <h2
+    data-en="Changes"
+    data-el="Αλλαγές"
+    style="margin-bottom:10px;"
+  >
+    Changes
+  </h2>
+  <p
+    data-en="These terms may be updated at any time without prior notice. Continued use of the website implies acceptance of any changes."
+    data-el="Οι παρόντες όροι ενδέχεται να ενημερωθούν οποιαδήποτε στιγμή χωρίς προηγούμενη ειδοποίηση. Η συνεχής χρήση του ιστότοπου συνεπάγεται αποδοχή οποιωνδήποτε αλλαγών."
+    style="line-height:1.8; margin-bottom:22px;"
+  >
+    These terms may be updated at any time without prior notice.
+    Continued use of the website implies acceptance of any changes.
   </p>
 
 </div>
