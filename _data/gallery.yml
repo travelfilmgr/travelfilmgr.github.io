@@ -1,3 +1,12 @@
+- image: /assets/images/Alone at Sea.jpg
+  alt: Alone at Sea.jpg
+  category: Landscape
+  description: "A lone vessel crosses an endless, reflective sea, emphasizing scale, isolation, and the quiet power of minimal composition."
+  location: Greece
+  date: 2026-3-24
+  camera: Nikon D7000
+
+
 - image: /assets/images/Echoes in Red.jpg
   alt: Echoes in Red.jpg
   category: Street
