@@ -188,7 +188,7 @@ title: Home
 
   <div class="grid">
     {% if site.data.gallery.size > 0 %}
-      {% for shot in site.data.gallery limit:6 %}
+      {% for shot in site.data.gallery reversed limit:6 %}
         <div
           class="gallery-link gallery-item fade-in"
           data-category="{{ shot.category | downcase }}"
@@ -200,6 +200,11 @@ title: Home
             src="{{ shot.image }}"
             alt="{{ shot.alt }}"
             class="fade-in {{ shot.category | downcase }}"
+            data-title="{{ shot.alt | escape }}"
+            data-description="{{ shot.description | default: '' | escape }}"
+            data-location="{{ shot.location | default: '' | escape }}"
+            data-date="{{ shot.date | default: '' }}"
+            data-camera="{{ shot.camera | default: '' | escape }}"
             loading="lazy"
           >
           <div class="gallery-caption">{{ shot.alt }}</div>
