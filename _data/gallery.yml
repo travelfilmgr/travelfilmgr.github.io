@@ -104,3 +104,12 @@
   location: Greece
   date: 2026-2-23
   camera: Nikon D7000
+
+
+- image: "/assets/images/In Flight.jpg"
+  alt: In Flight
+  category: Nature
+  description: "A seagull captured in flight against a clear sky, isolated in the frame."
+  location: Greece
+  date: 2025-12-15
+  camera: Nikon D7000
