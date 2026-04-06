@@ -149,3 +149,12 @@
   location: Greece,volos
   date: 2025-1-15
   camera: Nikon D7000
+
+
+- image: "/assets/images/Nature Detail.jpg"
+  alt: Nature Detail
+  category: Nature
+  description: "A close view of a green branch with a blurred background of water and landscape."
+  location: Greece
+  date: 2026-2-17
+  camera: Nikon D7000
