@@ -68,3 +68,12 @@
   location: Greece,Volos
   date: 2026-1-15
   camera: Nikon D7000
+
+
+- image: "/assets/images/Bloom After Rain.jpg"
+  alt: Bloom After Rain
+  category: Macro
+  description: "A pink flower covered in water droplets, captured in close-up against a blurred green background."
+  location: Greece
+  date: 2026-2-5
+  camera: Nikon D7000
