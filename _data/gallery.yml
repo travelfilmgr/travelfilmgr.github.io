@@ -176,3 +176,12 @@
   location: Greece,Milies
   date: 2025-12-17
   camera: Nikon D7000
+
+
+ - image: "/assets/images/Deer Interaction.jpg"
+  alt: Forest Path
+  category: Nature
+  description: "Two deer feeding together in a natural setting, with their heads close to each other."
+  location: Greece
+  date: 2026-4-6
+  camera: Nikon D7000
