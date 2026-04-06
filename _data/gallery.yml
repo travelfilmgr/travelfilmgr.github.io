@@ -1,3 +1,12 @@
+- image: /assets/images/The Look.jpg
+  alt: The Look
+  category: Pet
+  description: "An intimate portrait of a cat, highlighting texture, expression, and a quiet, almost human-like presence."
+  location: Greece
+  date: 2026-3-20
+  camera: Nikon D7000
+
+
 - image: /assets/images/Alone at Sea.jpg
   alt: Alone at Sea.jpg
   category: Landscape
