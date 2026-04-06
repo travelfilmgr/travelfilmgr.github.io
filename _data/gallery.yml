@@ -41,3 +41,12 @@
   location: Greece,Volos
   date: 2025-12-20
   camera: Nikon D7000
+
+
+- image: "/assets/images/Autumn Road.jpg"
+  alt: Autumn Road
+  category: Landscape
+  description: "A winding road surrounded by trees with orange autumn leaves, creating a warm and natural landscape."
+  location: Greece,Pelion
+  date: 2025-11-20
+  camera: Samsung a34
