@@ -113,3 +113,12 @@
   location: Greece
   date: 2025-12-15
   camera: Nikon D7000
+
+
+- image: "/assets/images/Inside the Wagon.jpg"
+  alt: Inside the Wagon
+  category: Architecture
+  description: "A wooden train interior with long seating and windows, showing the view outside."
+  location: Greece
+  date: 2025-12-10
+  camera: Nikon D7000
