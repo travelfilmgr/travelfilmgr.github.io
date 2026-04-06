@@ -167,3 +167,12 @@
   location: Greece
   date: 2025-12-17
   camera: Nikon D7000
+
+
+- image: "/assets/images/Forest Path.jpg"
+  alt: Forest Path
+  category: Landscape
+  description: "A path with railway tracks running through a forest, surrounded by trees and autumn foliage."
+  location: Greece,Milies
+  date: 2025-12-17
+  camera: Nikon D7000
