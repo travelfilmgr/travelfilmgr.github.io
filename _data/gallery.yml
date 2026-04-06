@@ -1,3 +1,12 @@
+- image: /assets/images/A Street Frozen in Time.jpg
+  alt: A Street Frozen in Time
+  category: Street
+  description: "A vintage vehicle rests along a cobblestone street, surrounded by traditional architecture, capturing a timeless moment in a quiet village."
+  location: Greece.Pelion
+  date: 2026-2-5
+  camera: Nikon D7000
+
+
 - image: /assets/images/Edge of Silence.jpg
   alt: Edge of Silence
   category: Landscape
