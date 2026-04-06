@@ -23,3 +23,12 @@
   location: Greece
   date: 2026-03-20
   camera: Nikon D7000
+  
+
+- image: "/assets/images/Fragile Geometry.jpg"
+  alt: Fragile Geometry
+  category: Macro
+  description: "A close-up of a spider on its web, isolated against a blurred background that emphasizes the subject."
+  location: Greece
+  date: 2026-03-20
+  camera: Nikon D7000
