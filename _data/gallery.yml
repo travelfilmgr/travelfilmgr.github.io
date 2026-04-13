@@ -1,5 +1,14 @@
+- image: /assets/images/Silent Bloom.jpg
+  alt: Silent Bloom.jpg
+  category: Macro
+  description: "A timeless composition of blossoms captured in monochrome, where light and shadow shape a quiet, introspective mood. Stripped of color, the scene emphasizes texture, form, and the subtle elegance of nature in its purest expression."
+  location: Greece
+  date: 2026-04-13
+  camera: Nikon D7000
+
+
 - image: /assets/images/Whispers of Spring in Pink.jpg
-  alt: Whispers of Spring in Pink.jpg
+  alt: Whispers of Spring in Pink
   category: Macro
   description: "A delicate moment of spring unfolds through soft pink blossoms, set against a dreamy, blurred background. Nature reveals its most gentle side, blending color and texture into a scene of calm, beauty, and quiet renewal."
   location: Greece
