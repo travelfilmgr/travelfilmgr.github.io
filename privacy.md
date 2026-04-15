@@ -1,28 +1,34 @@
 ---
+
 layout: default
 title: Privacy Policy
 permalink: /privacy/
----
+--------------------
 
 <div class="container fade-in" style="max-width:900px; margin:auto; padding-top:130px;">
 
-  <span
-    data-en="Privacy"
-    data-el="Απόρρητο"
-    style="
-      display:inline-block;
-      margin-bottom:12px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.06);
-      border:1px solid rgba(255,255,255,0.1);
-      font-size:12px;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      color:var(--primary);
-    "
-  >
-    Privacy
+<span
+data-en="Privacy"
+data-el="Απόρρητο"
+style="
+display:inline-block;
+margin-bottom:12px;
+padding:6px 12px;
+border-radius:999px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.1);
+font-size:12px;
+letter-spacing:0.08em;
+text-transform:uppercase;
+color:var(--primary);
+"
+
+>
+
+```
+Privacy
+```
+
   </span>
 
   <h1 data-en="Privacy Policy" data-el="Πολιτική Απορρήτου" style="margin-bottom:18px;">
@@ -30,14 +36,15 @@ permalink: /privacy/
   </h1>
 
   <p
-    data-en="This website respects your privacy and is designed to operate without collecting personal data."
-    data-el="Αυτός ο ιστότοπος σέβεται την ιδιωτικότητά σας και έχει σχεδιαστεί ώστε να λειτουργεί χωρίς να συλλέγει προσωπικά δεδομένα."
+    data-en="This website respects your privacy and is designed to operate with minimal data collection."
+    data-el="Αυτός ο ιστότοπος σέβεται την ιδιωτικότητά σας και έχει σχεδιαστεί ώστε να λειτουργεί με ελάχιστη συλλογή δεδομένων."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website respects your privacy and is designed to operate without collecting personal data.
+    This website respects your privacy and is designed to operate with minimal data collection.
   </p>
 
   <!-- Data Controller -->
+
   <h2 data-en="Data Controller" data-el="Υπεύθυνος Επεξεργασίας" style="margin-bottom:10px;">
     Data Controller
   </h2>
@@ -50,66 +57,72 @@ permalink: /privacy/
   </p>
 
   <!-- Data Collection -->
+
   <h2 data-en="Data Collection" data-el="Συλλογή Δεδομένων" style="margin-bottom:10px;">
     Data Collection
   </h2>
   <p
-    data-en="This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are used."
-    data-el="Αυτός ο ιστότοπος δεν συλλέγει, δεν αποθηκεύει και δεν επεξεργάζεται προσωπικά δεδομένα των επισκεπτών. Δεν χρησιμοποιούνται φόρμες επικοινωνίας, λογαριασμοί χρηστών ή συστήματα παρακολούθησης."
+    data-en="This website does not actively collect personal data from visitors. However, basic technical data such as IP addresses and browser information may be processed automatically by third-party services for security and performance purposes."
+    data-el="Αυτός ο ιστότοπος δεν συλλέγει ενεργά προσωπικά δεδομένα επισκεπτών. Ωστόσο, βασικά τεχνικά δεδομένα όπως διευθύνσεις IP και πληροφορίες περιήγησης ενδέχεται να επεξεργάζονται αυτόματα από υπηρεσίες τρίτων για λόγους ασφάλειας και απόδοσης."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not collect, store, or process personal data from visitors. No contact forms, user accounts, or tracking systems are used.
+    This website does not actively collect personal data from visitors. However, basic technical data such as IP addresses and browser information may be processed automatically by third-party services for security and performance purposes.
   </p>
 
   <!-- Cookies -->
+
   <h2 data-en="Cookies" data-el="Cookies" style="margin-bottom:10px;">
     Cookies
   </h2>
   <p
-    data-en="This website does not use cookies or any tracking technologies."
-    data-el="Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies ή τεχνολογίες παρακολούθησης."
+    data-en="This website does not use tracking or advertising cookies. Essential cookies may be used by infrastructure services (such as Cloudflare) strictly for security, performance, and functionality purposes."
+    data-el="Αυτός ο ιστότοπος δεν χρησιμοποιεί cookies παρακολούθησης ή διαφήμισης. Ενδέχεται να χρησιμοποιούνται απαραίτητα cookies από υπηρεσίες υποδομής (όπως το Cloudflare) αποκλειστικά για λόγους ασφάλειας και λειτουργίας."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not use cookies or any tracking technologies.
+    This website does not use tracking or advertising cookies. Essential cookies may be used by infrastructure services (such as Cloudflare) strictly for security, performance, and functionality purposes.
   </p>
 
   <!-- Analytics -->
+
   <h2 data-en="Analytics" data-el="Στατιστικά" style="margin-bottom:10px;">
     Analytics
   </h2>
   <p
-    data-en="No analytics tools are currently used. Visitor activity is not tracked."
-    data-el="Δεν χρησιμοποιούνται προς το παρόν εργαλεία στατιστικών. Η δραστηριότητα των επισκεπτών δεν παρακολουθείται."
+    data-en="This website does not use advertising or profiling analytics tools. Basic, anonymized traffic data may be processed by infrastructure providers such as Cloudflare for security, performance, and abuse prevention."
+    data-el="Ο ιστότοπος δεν χρησιμοποιεί εργαλεία ανάλυσης για διαφήμιση ή προφίλ χρηστών. Βασικά ανωνυμοποιημένα δεδομένα επισκεψιμότητας ενδέχεται να επεξεργάζονται από παρόχους υποδομής όπως το Cloudflare για λόγους ασφάλειας και απόδοσης."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    No analytics tools are currently used. Visitor activity is not tracked.
+    This website does not use advertising or profiling analytics tools. Basic, anonymized traffic data may be processed by infrastructure providers such as Cloudflare for security, performance, and abuse prevention.
   </p>
 
   <!-- Hosting -->
+
   <h2 data-en="Hosting" data-el="Φιλοξενία" style="margin-bottom:10px;">
     Hosting
   </h2>
   <p
-    data-en="This website is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses and server logs according to its own privacy policy."
-    data-el="Αυτός ο ιστότοπος φιλοξενείται στο GitHub Pages. Το GitHub ενδέχεται να συλλέγει τεχνικά δεδομένα όπως διευθύνσεις IP και αρχεία καταγραφής σύμφωνα με τη δική του πολιτική απορρήτου."
+    data-en="This website is hosted on GitHub Pages and uses Cloudflare as a content delivery and security service. These providers may process technical information such as IP addresses and server logs according to their own privacy policies."
+    data-el="Αυτός ο ιστότοπος φιλοξενείται στο GitHub Pages και χρησιμοποιεί το Cloudflare ως υπηρεσία διανομής περιεχομένου και ασφάλειας. Οι υπηρεσίες αυτές ενδέχεται να επεξεργάζονται τεχνικά δεδομένα όπως διευθύνσεις IP και αρχεία καταγραφής σύμφωνα με τις δικές τους πολιτικές απορρήτου."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website is hosted on GitHub Pages. GitHub may collect technical information such as IP addresses and server logs according to its own privacy policy.
+    This website is hosted on GitHub Pages and uses Cloudflare as a content delivery and security service. These providers may process technical information such as IP addresses and server logs according to their own privacy policies.
   </p>
 
   <!-- Legal Basis -->
+
   <h2 data-en="Legal Basis" data-el="Νομική Βάση" style="margin-bottom:10px;">
     Legal Basis
   </h2>
   <p
-    data-en="Since no personal data is collected or processed, no legal basis for processing is required under the General Data Protection Regulation (GDPR)."
-    data-el="Δεδομένου ότι δεν συλλέγονται ούτε επεξεργάζονται προσωπικά δεδομένα, δεν απαιτείται νομική βάση επεξεργασίας σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR)."
+    data-en="Any processing of technical data is based on legitimate interest (Article 6(1)(f) GDPR), in order to ensure the security, availability, and proper functioning of the website."
+    data-el="Η επεξεργασία τεχνικών δεδομένων βασίζεται στο έννομο συμφέρον (Άρθρο 6(1)(f) GDPR) για τη διασφάλιση της ασφάλειας και της σωστής λειτουργίας του ιστότοπου."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    Since no personal data is collected or processed, no legal basis for processing is required under the General Data Protection Regulation (GDPR).
+    Any processing of technical data is based on legitimate interest (Article 6(1)(f) GDPR), in order to ensure the security, availability, and proper functioning of the website.
   </p>
 
   <!-- Third-Party Links -->
+
   <h2 data-en="Third-Party Links" data-el="Σύνδεσμοι Τρίτων" style="margin-bottom:10px;">
     Third-Party Links
   </h2>
@@ -122,6 +135,7 @@ permalink: /privacy/
   </p>
 
   <!-- Contact -->
+
   <h2 data-en="Contact" data-el="Επικοινωνία" style="margin-bottom:10px;">
     Contact
   </h2>
@@ -134,6 +148,7 @@ permalink: /privacy/
   </p>
 
   <!-- Changes -->
+
   <h2 data-en="Changes" data-el="Αλλαγές" style="margin-bottom:10px;">
     Changes
   </h2>
