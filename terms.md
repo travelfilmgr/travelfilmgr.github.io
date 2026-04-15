@@ -83,13 +83,11 @@ permalink: /terms/
     Limitation of Liability
   </h2>
   <p
-    data-en="The website owner shall not be held liable for any direct or indirect loss, damage, or inconvenience resulting from the use of this website or reliance on its content. All content is provided “as is” without warranties of any kind."
-    data-el="Ο ιδιοκτήτης του ιστότοπου δεν φέρει ευθύνη για οποιαδήποτε άμεση ή έμμεση απώλεια, ζημία ή ταλαιπωρία που προκύπτει από τη χρήση αυτού του ιστότοπου ή από την εμπιστοσύνη στο περιεχόμενό του. Όλο το περιεχόμενο παρέχεται «ως έχει», χωρίς οποιαδήποτε εγγύηση."
+    data-en="To the maximum extent permitted by applicable law, the website owner shall not be liable for any direct or indirect loss, damage, or inconvenience resulting from the use of this website or reliance on its content. All content is provided “as is” without warranties of any kind."
+    data-el="Στον μέγιστο βαθμό που επιτρέπεται από το εφαρμοστέο δίκαιο, ο ιδιοκτήτης του ιστότοπου δεν φέρει ευθύνη για οποιαδήποτε άμεση ή έμμεση απώλεια, ζημία ή ταλαιπωρία που προκύπτει από τη χρήση αυτού του ιστότοπου ή από την εμπιστοσύνη στο περιεχόμενό του. Όλο το περιεχόμενο παρέχεται «ως έχει», χωρίς οποιαδήποτε εγγύηση."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    The website owner shall not be held liable for any direct or indirect loss, damage,
-    or inconvenience resulting from the use of this website or reliance on its content.
-    All content is provided “as is” without warranties of any kind.
+    To the maximum extent permitted by applicable law, the website owner shall not be liable for any direct or indirect loss, damage, or inconvenience resulting from the use of this website or reliance on its content. All content is provided “as is” without warranties of any kind.
   </p>
 
   <h2
@@ -109,18 +107,18 @@ permalink: /terms/
   </p>
 
   <h2
-    data-en="Non-Commercial Use"
-    data-el="Μη Εμπορική Χρήση"
+    data-en="Use of Website"
+    data-el="Χρήση Ιστότοπου"
     style="margin-bottom:10px;"
   >
-    Non-Commercial Use
+    Use of Website
   </h2>
   <p
-    data-en="This website is a personal, non-commercial project and does not generate revenue or profit."
-    data-el="Αυτός ο ιστότοπος αποτελεί προσωπικό, μη εμπορικό project και δεν δημιουργεί έσοδα ή κέρδος."
+    data-en="This website is a personal hobby project and portfolio. It does not operate as a business and does not generate revenue or commercial profit."
+    data-el="Αυτός ο ιστότοπος αποτελεί προσωπικό project και hobby portfolio. Δεν λειτουργεί ως επιχείρηση και δεν δημιουργεί έσοδα ή εμπορικό κέρδος."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website is a personal, non-commercial project and does not generate revenue or profit.
+    This website is a personal hobby project and portfolio. It does not operate as a business and does not generate revenue or commercial profit.
   </p>
 
   <h2
@@ -131,12 +129,12 @@ permalink: /terms/
     External Links
   </h2>
   <p
-    data-en="This website may include links to third-party platforms such as social media. The website owner is not responsible for the content, policies, or practices of these external sites."
-    data-el="Αυτός ο ιστότοπος μπορεί να περιλαμβάνει συνδέσμους προς πλατφόρμες τρίτων, όπως μέσα κοινωνικής δικτύωσης. Ο ιδιοκτήτης του ιστότοπου δεν ευθύνεται για το περιεχόμενο, τις πολιτικές ή τις πρακτικές αυτών των εξωτερικών ιστοτόπων."
+    data-en="This website may include links to third-party platforms such as social media. The website owner has no control over and is not responsible for the content, policies, or practices of these external sites."
+    data-el="Αυτός ο ιστότοπος μπορεί να περιλαμβάνει συνδέσμους προς πλατφόρμες τρίτων, όπως μέσα κοινωνικής δικτύωσης. Ο ιδιοκτήτης του ιστότοπου δεν έχει έλεγχο και δεν ευθύνεται για το περιεχόμενο, τις πολιτικές ή τις πρακτικές αυτών των εξωτερικών ιστοτόπων."
     style="line-height:1.8; margin-bottom:22px;"
   >
     This website may include links to third-party platforms such as social media.
-    The website owner is not responsible for the content, policies, or practices of these external sites.
+    The website owner has no control over and is not responsible for the content, policies, or practices of these external sites.
   </p>
 
   <h2
