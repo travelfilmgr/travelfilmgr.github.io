@@ -1,9 +1,18 @@
+- image: /assets/images/Scarlet Silence.jpg
+  alt: Scarlet Silence
+  category: Macro
+  description: "A solitary red poppy emerges from complete darkness, its delicate petals illuminated with striking intensity. The contrast between light and shadow highlights the fragility and elegance of nature, transforming a simple flower into a dramatic, almost surreal subject. A study in minimalism, color, and emotion."
+  location: Greece
+  date: 2026-04-13
+  camera: Nikon D7000
+
+
 - image: /assets/images/Silent Bloom.jpg
-  alt: Silent Bloom.jpg
+  alt: Silent Bloom
   category: Macro
   description: "A timeless composition of blossoms captured in monochrome, where light and shadow shape a quiet, introspective mood. Stripped of color, the scene emphasizes texture, form, and the subtle elegance of nature in its purest expression."
   location: Greece
-  date: 2026-04-13
+  date: 2026-04-12
   camera: Nikon D7000
 
 
