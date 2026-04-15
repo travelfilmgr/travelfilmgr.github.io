@@ -78,7 +78,7 @@
   <!-- FOOTER -->
   {% include footer.html %}
 
-   <!-- ANALYTICS NOTICE -->
+  <!-- ANALYTICS NOTICE -->
   <div
     id="analytics-banner"
     data-en="This website uses privacy-first, cookie-free analytics for basic traffic insights."
@@ -136,21 +136,6 @@
   </div>
 
   <script>
-    function closeAnalyticsBanner() {
-      const banner = document.getElementById('analytics-banner');
-      if (banner) {
-        banner.style.display = 'none';
-        localStorage.setItem('analyticsBannerClosed', 'true');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const banner = document.getElementById('analytics-banner');
-      if (localStorage.getItem('analyticsBannerClosed') === 'true' && banner) {
-        banner.style.display = 'none';
-      }
-    });
-  </script>
     function closeAnalyticsBanner() {
       const banner = document.getElementById('analytics-banner');
       if (banner) {
