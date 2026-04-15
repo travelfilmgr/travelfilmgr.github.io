@@ -78,11 +78,11 @@ permalink: /privacy/
     Analytics
   </h2>
   <p
-    data-en="No advertising or profiling analytics tools are currently used by this website. Basic, aggregated, or anonymized traffic information may be processed by infrastructure providers such as Cloudflare for security, performance, and abuse prevention."
-    data-el="Δεν χρησιμοποιούνται προς το παρόν εργαλεία στατιστικών για διαφήμιση ή δημιουργία προφίλ χρηστών από τον ιστότοπο. Βασικές συγκεντρωτικές ή ανωνυμοποιημένες πληροφορίες επισκεψιμότητας ενδέχεται να υποβάλλονται σε επεξεργασία από παρόχους υποδομής όπως το Cloudflare για λόγους ασφάλειας, απόδοσης και πρόληψης καταχρήσεων."
+    data-en="This website uses privacy-first, cookie-free analytics provided by Cloudflare. These analytics do not track individual users, do not use cookies, and do not collect personally identifiable information. Only aggregated and anonymized traffic data is processed for the purpose of understanding website performance and improving user experience."
+    data-el="Αυτός ο ιστότοπος χρησιμοποιεί privacy-first analytics χωρίς cookies μέσω του Cloudflare. Τα στατιστικά αυτά δεν παρακολουθούν μεμονωμένους χρήστες, δεν χρησιμοποιούν cookies και δεν συλλέγουν προσωπικά δεδομένα. Επεξεργάζονται μόνο συγκεντρωτικά και ανωνυμοποιημένα δεδομένα επισκεψιμότητας με σκοπό τη βελτίωση της απόδοσης και της εμπειρίας χρήστη."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    No advertising or profiling analytics tools are currently used by this website. Basic, aggregated, or anonymized traffic information may be processed by infrastructure providers such as Cloudflare for security, performance, and abuse prevention.
+    This website uses privacy-first, cookie-free analytics provided by Cloudflare. These analytics do not track individual users, do not use cookies, and do not collect personally identifiable information. Only aggregated and anonymized traffic data is processed for the purpose of understanding website performance and improving user experience.
   </p>
 
   <!-- Hosting -->
