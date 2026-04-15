@@ -81,8 +81,6 @@
   <!-- ANALYTICS NOTICE -->
   <div
     id="analytics-banner"
-    data-en="This website uses privacy-first, cookie-free analytics for basic traffic insights."
-    data-el="Αυτός ο ιστότοπος χρησιμοποιεί privacy-first analytics χωρίς cookies για βασικά στατιστικά επισκεψιμότητας."
     style="
       position: fixed;
       bottom: 0;
@@ -106,44 +104,48 @@
     >
       This website uses privacy-first, cookie-free analytics for basic traffic insights.
     </span>
-
-   <button
-  type="button"
-  aria-label="Close notice"
-  onclick="closeAnalyticsBanner()"
-  style="
-    position: absolute;
-    right: 12px;
-    top: 10px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    z-index: 10000;
-  "
->
-  ×
-</button>
   </div>
+
+  <button
+    type="button"
+    aria-label="Close notice"
+    onclick="closeAnalyticsBanner()"
+    style="
+      position: fixed;
+      right: 12px;
+      bottom: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 10000;
+    "
+  >
+    ×
+  </button>
 
   <script>
     function closeAnalyticsBanner() {
       const banner = document.getElementById('analytics-banner');
       if (banner) {
         banner.style.display = 'none';
-        localStorage.setItem('analyticsBannerClosed', 'true');
       }
+      localStorage.setItem('analyticsBannerClosed', 'true');
+      const buttons = document.querySelectorAll('[aria-label="Close notice"]');
+      buttons.forEach(btn => btn.style.display = 'none');
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-      const banner = document.getElementById('analytics-banner');
-      if (localStorage.getItem('analyticsBannerClosed') === 'true' && banner) {
-        banner.style.display = 'none';
+      if (localStorage.getItem('analyticsBannerClosed') === 'true') {
+        const banner = document.getElementById('analytics-banner');
+        if (banner) banner.style.display = 'none';
+        const buttons = document.querySelectorAll('[aria-label="Close notice"]');
+        buttons.forEach(btn => btn.style.display = 'none');
       }
     });
   </script>
