@@ -42,11 +42,7 @@ permalink: /terms/
     By accessing and using this website, you agree to the terms outlined below.
   </p>
 
-  <h2
-    data-en="Content Accuracy"
-    data-el="Ακρίβεια Περιεχομένου"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="Content Accuracy" data-el="Ακρίβεια Περιεχομένου" style="margin-bottom:10px;">
     Content Accuracy
   </h2>
   <p
@@ -59,11 +55,7 @@ permalink: /terms/
     no guarantees are given that all information is complete, reliable, or up to date.
   </p>
 
-  <h2
-    data-en="No Professional Advice"
-    data-el="Μη Παροχή Επαγγελματικών Συμβουλών"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="No Professional Advice" data-el="Μη Παροχή Επαγγελματικών Συμβουλών" style="margin-bottom:10px;">
     No Professional Advice
   </h2>
   <p
@@ -75,11 +67,7 @@ permalink: /terms/
     or travel advice. Any actions taken based on the information provided are at your own risk.
   </p>
 
-  <h2
-    data-en="Limitation of Liability"
-    data-el="Περιορισμός Ευθύνης"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="Limitation of Liability" data-el="Περιορισμός Ευθύνης" style="margin-bottom:10px;">
     Limitation of Liability
   </h2>
   <p
@@ -90,11 +78,7 @@ permalink: /terms/
     To the maximum extent permitted by applicable law, the website owner shall not be liable for any direct or indirect loss, damage, or inconvenience resulting from the use of this website or reliance on its content. All content is provided “as is” without warranties of any kind.
   </p>
 
-  <h2
-    data-en="Copyright"
-    data-el="Πνευματικά Δικαιώματα"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="Copyright" data-el="Πνευματικά Δικαιώματα" style="margin-bottom:10px;">
     Copyright
   </h2>
   <p
@@ -106,26 +90,19 @@ permalink: /terms/
     unless otherwise stated. Unauthorized use, reproduction, or distribution is strictly prohibited.
   </p>
 
-  <h2
-    data-en="Use of Website"
-    data-el="Χρήση Ιστότοπου"
-    style="margin-bottom:10px;"
-  >
+  <!-- ✅ FIXED SECTION -->
+  <h2 data-en="Use of Website" data-el="Χρήση Ιστότοπου" style="margin-bottom:10px;">
     Use of Website
   </h2>
   <p
-    data-en="This website is a personal hobby project and portfolio. It does not operate as a business and does not generate revenue or commercial profit."
-    data-el="Αυτός ο ιστότοπος αποτελεί προσωπικό project και hobby portfolio. Δεν λειτουργεί ως επιχείρηση και δεν δημιουργεί έσοδα ή εμπορικό κέρδος."
+    data-en="This website is a personal project and portfolio. It is primarily intended for showcasing creative work and may include collaborations or partnerships."
+    data-el="Αυτός ο ιστότοπος αποτελεί προσωπικό project και portfolio. Χρησιμοποιείται κυρίως για την παρουσίαση δημιουργικού έργου και ενδέχεται να περιλαμβάνει συνεργασίες."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website is a personal hobby project and portfolio. It does not operate as a business and does not generate revenue or commercial profit.
+    This website is a personal project and portfolio. It is primarily intended for showcasing creative work and may include collaborations or partnerships.
   </p>
 
-  <h2
-    data-en="External Links"
-    data-el="Εξωτερικοί Σύνδεσμοι"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="External Links" data-el="Εξωτερικοί Σύνδεσμοι" style="margin-bottom:10px;">
     External Links
   </h2>
   <p
@@ -137,11 +114,7 @@ permalink: /terms/
     The website owner has no control over and is not responsible for the content, policies, or practices of these external sites.
   </p>
 
-  <h2
-    data-en="Children’s Information"
-    data-el="Πληροφορίες για Ανήλικους"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="Children’s Information" data-el="Πληροφορίες για Ανήλικους" style="margin-bottom:10px;">
     Children’s Information
   </h2>
   <p
@@ -152,11 +125,7 @@ permalink: /terms/
     This website is intended for a general audience and does not knowingly collect any information from children.
   </p>
 
-  <h2
-    data-en="Changes"
-    data-el="Αλλαγές"
-    style="margin-bottom:10px;"
-  >
+  <h2 data-en="Changes" data-el="Αλλαγές" style="margin-bottom:10px;">
     Changes
   </h2>
   <p
