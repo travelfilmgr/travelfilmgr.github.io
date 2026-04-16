@@ -30,11 +30,11 @@ permalink: /privacy/
   </h1>
 
   <p
-    data-en="This website respects your privacy and is designed to operate with minimal data collection."
-    data-el="Αυτός ο ιστότοπος σέβεται την ιδιωτικότητά σας και έχει σχεδιαστεί ώστε να λειτουργεί με ελάχιστη συλλογή δεδομένων."
+    data-en="This website respects your privacy and operates with minimal data collection."
+    data-el="Αυτός ο ιστότοπος σέβεται την ιδιωτικότητά σας και λειτουργεί με ελάχιστη συλλογή δεδομένων."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website respects your privacy and is designed to operate with minimal data collection.
+    This website respects your privacy and operates with minimal data collection.
   </p>
 
   <!-- Data Controller -->
@@ -54,11 +54,11 @@ permalink: /privacy/
     Data Collection
   </h2>
   <p
-    data-en="This website does not actively collect personal data such as names, email addresses, contact form submissions, or user accounts. However, limited technical data such as IP addresses, browser information, device information, and access timestamps may be processed automatically by third-party infrastructure and security services for security, performance, and abuse prevention purposes."
-    data-el="Αυτός ο ιστότοπος δεν συλλέγει ενεργά προσωπικά δεδομένα όπως ονόματα, διευθύνσεις email, υποβολές φορμών επικοινωνίας ή λογαριασμούς χρηστών. Ωστόσο, περιορισμένα τεχνικά δεδομένα όπως διευθύνσεις IP, πληροφορίες περιήγησης, πληροφορίες συσκευής και χρόνοι πρόσβασης ενδέχεται να υποβάλλονται αυτόματα σε επεξεργασία από υπηρεσίες τρίτων που σχετίζονται με την υποδομή και την ασφάλεια, για σκοπούς ασφάλειας, απόδοσης και πρόληψης καταχρήσεων."
+    data-en="This website does not actively collect personal data such as names, email addresses, or user accounts. Basic technical data such as IP address and browser information may be processed automatically by third-party services for security and proper website operation."
+    data-el="Αυτός ο ιστότοπος δεν συλλέγει ενεργά προσωπικά δεδομένα όπως ονόματα, email ή λογαριασμούς χρηστών. Βασικά τεχνικά δεδομένα όπως διευθύνσεις IP και πληροφορίες περιήγησης ενδέχεται να επεξεργάζονται αυτόματα από υπηρεσίες τρίτων για λόγους ασφάλειας και σωστής λειτουργίας."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not actively collect personal data such as names, email addresses, contact form submissions, or user accounts. However, limited technical data such as IP addresses, browser information, device information, and access timestamps may be processed automatically by third-party infrastructure and security services for security, performance, and abuse prevention purposes.
+    This website does not actively collect personal data such as names, email addresses, or user accounts. Basic technical data such as IP address and browser information may be processed automatically by third-party services for security and proper website operation.
   </p>
 
   <!-- Cookies -->
@@ -66,11 +66,11 @@ permalink: /privacy/
     Cookies
   </h2>
   <p
-    data-en="This website does not use advertising or tracking cookies under its own operation. However, strictly necessary cookies may be used by infrastructure and security providers such as Cloudflare for security, performance, and proper website functionality."
-    data-el="Αυτός ο ιστότοπος δεν χρησιμοποιεί διαφημιστικά ή cookies παρακολούθησης στο πλαίσιο της δικής του λειτουργίας. Ωστόσο, ενδέχεται να χρησιμοποιούνται απολύτως απαραίτητα cookies από παρόχους υποδομής και ασφάλειας όπως το Cloudflare για λόγους ασφάλειας, απόδοσης και ορθής λειτουργίας του ιστότοπου."
+    data-en="This website does not use advertising or tracking cookies. However, strictly necessary cookies may be used by services such as Cloudflare for security and proper functionality."
+    data-el="Αυτός ο ιστότοπος δεν χρησιμοποιεί διαφημιστικά ή cookies παρακολούθησης. Ωστόσο, ενδέχεται να χρησιμοποιούνται απολύτως απαραίτητα cookies από υπηρεσίες όπως το Cloudflare για λόγους ασφάλειας και σωστής λειτουργίας."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website does not use advertising or tracking cookies under its own operation. However, strictly necessary cookies may be used by infrastructure and security providers such as Cloudflare for security, performance, and proper website functionality.
+    This website does not use advertising or tracking cookies. However, strictly necessary cookies may be used by services such as Cloudflare for security and proper functionality.
   </p>
 
   <!-- Analytics -->
@@ -78,23 +78,23 @@ permalink: /privacy/
     Analytics
   </h2>
   <p
-    data-en="This website uses privacy-first, cookie-free web analytics provided by Cloudflare. According to Cloudflare, these analytics do not use cookies and are designed to provide basic traffic insights without identifying individual visitors across websites. Only aggregated and limited traffic information is used to understand website performance and improve the user experience."
-    data-el="Αυτός ο ιστότοπος χρησιμοποιεί privacy-first web analytics χωρίς cookies μέσω του Cloudflare. Σύμφωνα με το Cloudflare, τα στατιστικά αυτά δεν χρησιμοποιούν cookies και έχουν σχεδιαστεί ώστε να παρέχουν βασικές πληροφορίες επισκεψιμότητας χωρίς αναγνώριση μεμονωμένων επισκεπτών μεταξύ διαφορετικών ιστοτόπων. Χρησιμοποιούνται μόνο συγκεντρωτικά και περιορισμένα δεδομένα επισκεψιμότητας με σκοπό την κατανόηση της απόδοσης του ιστότοπου και τη βελτίωση της εμπειρίας χρήστη."
+    data-en="This website uses privacy-first, cookie-free analytics provided by Cloudflare to understand basic traffic usage. These analytics do not use cookies and do not identify individual visitors."
+    data-el="Αυτός ο ιστότοπος χρησιμοποιεί privacy-first analytics χωρίς cookies μέσω του Cloudflare για βασικά στατιστικά επισκεψιμότητας. Τα στατιστικά αυτά δεν χρησιμοποιούν cookies και δεν αναγνωρίζουν μεμονωμένους επισκέπτες."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website uses privacy-first, cookie-free web analytics provided by Cloudflare. According to Cloudflare, these analytics do not use cookies and are designed to provide basic traffic insights without identifying individual visitors across websites. Only aggregated and limited traffic information is used to understand website performance and improve the user experience.
+    This website uses privacy-first, cookie-free analytics provided by Cloudflare to understand basic traffic usage. These analytics do not use cookies and do not identify individual visitors.
   </p>
 
   <!-- Hosting -->
-  <h2 data-en="Hosting & Third-Party Services" data-el="Φιλοξενία & Υπηρεσίες Τρίτων" style="margin-bottom:10px;">
-    Hosting & Third-Party Services
+  <h2 data-en="Hosting & Services" data-el="Φιλοξενία & Υπηρεσίες" style="margin-bottom:10px;">
+    Hosting & Services
   </h2>
   <p
-    data-en="This website is hosted on GitHub Pages and uses Cloudflare as a content delivery, analytics, and security provider. These providers may process technical information such as IP addresses, request metadata, and server logs according to their own privacy policies. Depending on the provider infrastructure, data may be processed in the European Union, the United States, or other countries where these providers operate."
-    data-el="Αυτός ο ιστότοπος φιλοξενείται στο GitHub Pages και χρησιμοποιεί το Cloudflare ως πάροχο διανομής περιεχομένου, στατιστικών και ασφάλειας. Οι πάροχοι αυτοί ενδέχεται να επεξεργάζονται τεχνικά δεδομένα όπως διευθύνσεις IP, metadata αιτημάτων και αρχεία καταγραφής σύμφωνα με τις δικές τους πολιτικές απορρήτου. Ανάλογα με την υποδομή των παρόχων, τα δεδομένα ενδέχεται να υποβάλλονται σε επεξεργασία στην Ευρωπαϊκή Ένωση, στις Ηνωμένες Πολιτείες ή και σε άλλες χώρες όπου δραστηριοποιούνται οι πάροχοι αυτοί."
+    data-en="This website is hosted on GitHub Pages and uses Cloudflare for performance and security. These services may process technical data such as IP address according to their own privacy policies."
+    data-el="Αυτός ο ιστότοπος φιλοξενείται στο GitHub Pages και χρησιμοποιεί το Cloudflare για απόδοση και ασφάλεια. Οι υπηρεσίες αυτές ενδέχεται να επεξεργάζονται τεχνικά δεδομένα όπως διευθύνσεις IP σύμφωνα με τις δικές τους πολιτικές απορρήτου."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website is hosted on GitHub Pages and uses Cloudflare as a content delivery, analytics, and security provider. These providers may process technical information such as IP addresses, request metadata, and server logs according to their own privacy policies. Depending on the provider infrastructure, data may be processed in the European Union, the United States, or other countries where these providers operate.
+    This website is hosted on GitHub Pages and uses Cloudflare for performance and security. These services may process technical data such as IP address according to their own privacy policies.
   </p>
 
   <!-- Legal Basis -->
@@ -102,11 +102,11 @@ permalink: /privacy/
     Legal Basis
   </h2>
   <p
-    data-en="To the extent that personal data is processed, such processing is relied upon under legitimate interest (Article 6(1)(f) GDPR), in order to ensure the security, availability, performance, and proper functioning of the website. Where applicable under local law, certain audience measurement technologies may also operate under exemptions recognized for strictly limited analytics purposes."
-    data-el="Στον βαθμό που πραγματοποιείται επεξεργασία προσωπικών δεδομένων, αυτή βασίζεται στο έννομο συμφέρον (Άρθρο 6(1)(f) GDPR), με σκοπό τη διασφάλιση της ασφάλειας, της διαθεσιμότητας, της απόδοσης και της ορθής λειτουργίας του ιστότοπου. Όπου αυτό προβλέπεται από την τοπική νομοθεσία, ορισμένες τεχνολογίες μέτρησης κοινού ενδέχεται επίσης να λειτουργούν βάσει εξαιρέσεων που αναγνωρίζονται για αυστηρά περιορισμένους σκοπούς στατιστικής μέτρησης."
+    data-en="Processing of technical data is based on legitimate interest (Article 6(1)(f) GDPR) for security and proper website operation."
+    data-el="Η επεξεργασία τεχνικών δεδομένων βασίζεται στο έννομο συμφέρον (Άρθρο 6(1)(f) GDPR) για λόγους ασφάλειας και σωστής λειτουργίας του ιστότοπου."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    To the extent that personal data is processed, such processing is relied upon under legitimate interest (Article 6(1)(f) GDPR), in order to ensure the security, availability, performance, and proper functioning of the website. Where applicable under local law, certain audience measurement technologies may also operate under exemptions recognized for strictly limited analytics purposes.
+    Processing of technical data is based on legitimate interest (Article 6(1)(f) GDPR) for security and proper website operation.
   </p>
 
   <!-- User Rights -->
@@ -114,11 +114,11 @@ permalink: /privacy/
     User Rights
   </h2>
   <p
-    data-en="Under applicable data protection law, you may have the right to request access to, correction of, deletion of, restriction of, or objection to the processing of your personal data. Because this website does not directly maintain user accounts or directly store personal profiles, the practical scope of such rights may be limited in some cases."
-    data-el="Σύμφωνα με την ισχύουσα νομοθεσία περί προστασίας δεδομένων, ενδέχεται να έχετε το δικαίωμα να ζητήσετε πρόσβαση, διόρθωση, διαγραφή, περιορισμό της επεξεργασίας ή εναντίωση στην επεξεργασία των προσωπικών σας δεδομένων. Επειδή ο ιστότοπος αυτός δεν διατηρεί άμεσα λογαριασμούς χρηστών ούτε αποθηκεύει απευθείας προσωπικά προφίλ, η πρακτική έκταση αυτών των δικαιωμάτων ενδέχεται σε ορισμένες περιπτώσεις να είναι περιορισμένη."
+    data-en="Under data protection laws, users may have rights such as access, correction, or deletion of their data. As this website does not directly store personal data, these rights may be limited in practice."
+    data-el="Σύμφωνα με τη νομοθεσία προστασίας δεδομένων, οι χρήστες ενδέχεται να έχουν δικαιώματα όπως πρόσβαση, διόρθωση ή διαγραφή δεδομένων. Καθώς ο ιστότοπος δεν αποθηκεύει άμεσα προσωπικά δεδομένα, τα δικαιώματα αυτά ενδέχεται να είναι περιορισμένα."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    Under applicable data protection law, you may have the right to request access to, correction of, deletion of, restriction of, or objection to the processing of your personal data. Because this website does not directly maintain user accounts or directly store personal profiles, the practical scope of such rights may be limited in some cases.
+    Under data protection laws, users may have rights such as access, correction, or deletion of their data. As this website does not directly store personal data, these rights may be limited in practice.
   </p>
 
   <!-- Third-Party Links -->
@@ -126,11 +126,11 @@ permalink: /privacy/
     Third-Party Links
   </h2>
   <p
-    data-en="This website may contain links to external platforms such as Instagram or TikTok. These external services operate independently from this website and may process personal data according to their own privacy policies and terms."
-    data-el="Αυτός ο ιστότοπος μπορεί να περιέχει συνδέσμους προς εξωτερικές πλατφόρμες όπως το Instagram ή το TikTok. Οι εξωτερικές αυτές υπηρεσίες λειτουργούν ανεξάρτητα από τον παρόντα ιστότοπο και ενδέχεται να επεξεργάζονται προσωπικά δεδομένα σύμφωνα με τις δικές τους πολιτικές απορρήτου και όρους χρήσης."
+    data-en="This website may contain links to external platforms such as Instagram or TikTok. These platforms operate independently and may process data according to their own policies."
+    data-el="Αυτός ο ιστότοπος μπορεί να περιέχει συνδέσμους προς εξωτερικές πλατφόρμες όπως το Instagram ή το TikTok. Οι πλατφόρμες αυτές λειτουργούν ανεξάρτητα και ενδέχεται να επεξεργάζονται δεδομένα σύμφωνα με τις δικές τους πολιτικές."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This website may contain links to external platforms such as Instagram or TikTok. These external services operate independently from this website and may process personal data according to their own privacy policies and terms.
+    This website may contain links to external platforms such as Instagram or TikTok. These platforms operate independently and may process data according to their own policies.
   </p>
 
   <!-- Contact -->
@@ -138,11 +138,11 @@ permalink: /privacy/
     Contact
   </h2>
   <p
-    data-en="If you have any questions regarding this Privacy Policy, you may contact the site owner through the available social media accounts linked on this website."
-    data-el="Εάν έχετε οποιαδήποτε ερώτηση σχετικά με την παρούσα Πολιτική Απορρήτου, μπορείτε να επικοινωνήσετε με τον διαχειριστή του ιστότοπου μέσω των διαθέσιμων λογαριασμών social media που αναφέρονται σε αυτόν τον ιστότοπο."
+    data-en="For any questions regarding this Privacy Policy, you can contact the site owner via social media."
+    data-el="Για οποιαδήποτε ερώτηση σχετικά με την Πολιτική Απορρήτου, μπορείτε να επικοινωνήσετε μέσω των social media."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    If you have any questions regarding this Privacy Policy, you may contact the site owner through the available social media accounts linked on this website.
+    For any questions regarding this Privacy Policy, you can contact the site owner via social media.
   </p>
 
   <!-- Changes -->
@@ -150,11 +150,11 @@ permalink: /privacy/
     Changes
   </h2>
   <p
-    data-en="This Privacy Policy may be updated from time to time to reflect operational, legal, or regulatory changes. Any updated version will be published on this page."
-    data-el="Η παρούσα Πολιτική Απορρήτου ενδέχεται να ενημερώνεται κατά καιρούς ώστε να αντανακλά λειτουργικές, νομικές ή κανονιστικές αλλαγές. Κάθε ενημερωμένη έκδοση θα δημοσιεύεται σε αυτή τη σελίδα."
+    data-en="This Privacy Policy may be updated in the future. Any changes will be posted on this page."
+    data-el="Η Πολιτική Απορρήτου ενδέχεται να ενημερωθεί στο μέλλον. Οποιεσδήποτε αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα."
     style="line-height:1.8; margin-bottom:22px;"
   >
-    This Privacy Policy may be updated from time to time to reflect operational, legal, or regulatory changes. Any updated version will be published on this page.
+    This Privacy Policy may be updated in the future. Any changes will be posted on this page.
   </p>
 
 </div>
