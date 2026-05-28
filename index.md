@@ -26,27 +26,27 @@ title: Home
     </span>
 
     <h1
-      data-en="Travel • Photography • Stories"
-      data-el="Ταξίδια • Φωτογραφία • Ιστορίες"
+      data-en="Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities"
+      data-el="Ταξίδια • Φωτογραφία • Roadtrips • Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Outdoor Δραστηριότητες"
       style="
         font-size:clamp(2.15rem, 4vw, 3.6rem);
         line-height:1.08;
         white-space:normal;
       "
     >
-      Travel • Photography • Stories
+      Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities
     </h1>
 
     <p
-      data-en="Explore places, moods, and moments through a cinematic visual journey."
-      data-el="Εξερεύνησε μέρη, ατμόσφαιρες και στιγμές μέσα από ένα κινηματογραφικό οπτικό ταξίδι."
+      data-en="Documenting roadtrips, moto life, fishing, and outdoor adventures through a cinematic lens."
+      data-el="Καταγράφοντας roadtrips, ζωή με τη μηχανή, ψάρεμα και outdoor περιπέτειες μέσα από έναν κινηματογραφικό φακό."
       style="margin-top:14px;"
     >
-      Explore places, moods, and moments through a cinematic visual journey.
+      Documenting roadtrips, moto life, fishing, and outdoor adventures through a cinematic lens.
     </p>
 
     <p
-      data-en="live in freadome"
+      data-en="live in freedom"
       data-el="ζήσε ελεύθερα"
       style="
         margin-top:10px;
@@ -57,7 +57,7 @@ title: Home
         font-weight:600;
       "
     >
-      live in freadome
+      live in freedom
     </p>
 
     <a href="/gallery/" class="btn">
@@ -72,12 +72,12 @@ title: Home
     <h2 data-en="Welcome" data-el="Καλώς Ήρθες" style="margin-bottom:14px;">Welcome</h2>
 
     <p
-      data-en="A visual journey through landscapes, people, cities, and fleeting moments captured along the way. For me, photography is more than an image — it is atmosphere, emotion, light, and the story a place leaves behind."
-      data-el="Ένα οπτικό ταξίδι μέσα από τοπία, ανθρώπους, πόλεις και φευγαλέες στιγμές που αποτυπώνονται στη διαδρομή. Για μένα, η φωτογραφία είναι κάτι περισσότερο από μια εικόνα — είναι ατμόσφαιρα, συναίσθημα, φως και η ιστορία που αφήνει πίσω του ένας τόπος."
+      data-en="A visual journey through landscapes, roadtrips, motorcycle adventures, fishing, and fleeting moments captured along the way. For me, life outdoors is more than an image — it is atmosphere, emotion, light, and the story every adventure leaves behind."
+      data-el="Ένα οπτικό ταξίδι μέσα από τοπία, roadtrips, περιπέτειες με τη μοτοσικλέτα, ψάρεμα και φευγαλέες στιγμές που αποτυπώνονται στη διαδρομή. Για μένα, η ζωή στη φύση είναι κάτι παραπάνω από μια εικόνα — είναι ατμόσφαιρα, συναίσθημα, φως και η ιστορία που αφήνει πίσω της η κάθε περιπέτεια."
       style="color: var(--muted); max-width: 800px; line-height:1.8;"
     >
-      A visual journey through landscapes, people, cities, and fleeting moments captured along the way.
-      For me, photography is more than an image — it is atmosphere, emotion, light, and the story a place leaves behind.
+      A visual journey through landscapes, roadtrips, motorcycle adventures, fishing, and fleeting moments captured along the way. 
+      For me, life outdoors is more than an image — it is atmosphere, emotion, light, and the story every adventure leaves behind.
     </p>
   </div>
 </section>
@@ -243,11 +243,11 @@ title: Home
     </h2>
 
     <p
-      data-en="Travel, photography, visual storytelling, and creative collaborations — this space reflects the work, passion, and atmosphere behind every frame."
-      data-el="Ταξίδια, φωτογραφία, οπτική αφήγηση και δημιουργικές συνεργασίες — αυτός ο χώρος αντικατοπτρίζει τη δουλειά, το πάθος και την ατμόσφαιρα πίσω από κάθε καρέ."
+      data-en="Roadtrips, motorcycle adventures, fishing, photography, and creative collaborations — this space reflects the lifestyle, passion, and atmosphere behind every adventure."
+      data-el="Roadtrips, περιπέτειες με τη μοτοσικλέτα, ψάρεμα, φωτογραφία και δημιουργικές συνεργασίες — αυτός ο χώρος αντικατοπτρίζει τον τρόπο ζωής, το πάθος και την ατμόσφαιρα πίσω από κάθε περιπέτεια."
       style="color: var(--muted); max-width:700px; margin:0 auto; line-height:1.8;"
     >
-      Travel, photography, visual storytelling, and creative collaborations — this space reflects the work, passion, and atmosphere behind every frame.
+      Roadtrips, motorcycle adventures, fishing, photography, and creative collaborations — this space reflects the lifestyle, passion, and atmosphere behind every adventure.
     </p>
 
     <a href="/about/" class="btn">
