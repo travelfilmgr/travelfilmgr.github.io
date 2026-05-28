@@ -29,9 +29,11 @@ title: Home
       data-en="Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities"
       data-el="Ταξίδια • Φωτογραφία • Roadtrips • Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Outdoor Δραστηριότητες"
       style="
-        font-size:clamp(2.15rem, 4vw, 3.6rem);
-        line-height:1.08;
-        white-space:normal;
+        font-size: clamp(1.6rem, 3vw, 2.5rem);
+        line-height: 1.2;
+        max-width: 900px;
+        margin: 0 auto;
+        white-space: normal;
       "
     >
       Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities
