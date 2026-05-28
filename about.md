@@ -6,49 +6,42 @@ permalink: /about/
 
 <div class="about-page">
 
-  <!-- HERO -->
   <section class="about-hero fade-in">
     <div class="container about-hero-inner">
       <div class="about-text">
         <span class="about-label" data-en="About Me" data-el="Σχετικά με Εμένα">About Me</span>
         <h1>TravelFilm GR</h1>
-        <p class="about-subtitle" data-en="Roadtrips • Moto Journeys • Fishing • Cinematic Outdoor Photography" data-el="Roadtrips • Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Κινηματογραφική Φωτογραφία Φύσης">
-          Roadtrips • Moto Journeys • Fishing • Cinematic Outdoor Photography
+        <p class="about-subtitle" data-en="Moto Journeys • Fishing • Roadtrips • Outdoor Storytelling" data-el="Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Roadtrips • Αφήγηση Περιπέτειας">
+          Moto Journeys • Fishing • Roadtrips • Outdoor Storytelling
         </p>
-        <p class="about-description" data-en="I capture the essence of the journey — whether on two wheels or off the beaten path. This space is a collection of roadtrips, fishing spots, and outdoor memories, all documented through a cinematic lens." data-el="Αποτυπώνω την ουσία της διαδρομής — είτε σε δύο ρόδες είτε στα μονοπάτια της φύσης. Αυτός ο χώρος είναι μια συλλογή από roadtrips, στιγμές ψαρέματος και αναμνήσεις από την ύπαιθρο, καταγεγραμμένα μέσα από έναν κινηματογραφικό φακό.">
-          I capture the essence of the journey — whether on two wheels or off the beaten path. This space is a collection of roadtrips, fishing spots, and outdoor memories, all documented through a cinematic lens.
+        <p class="about-description" data-en="I live for the freedom of the road and the thrill of the outdoors. Whether on two wheels exploring hidden paths or waiting for the perfect catch, I document the journey through a cinematic lens. This is a collection of memories, adventures, and the lifestyle of living in freedom." data-el="Ζω για την ελευθερία του δρόμου και τη συγκίνηση της φύσης. Είτε εξερευνώντας κρυφά μονοπάτια με τη μηχανή μου, είτε περιμένοντας την τέλεια ψαριά, αποτυπώνω το ταξίδι μέσα από έναν κινηματογραφικό φακό. Αυτή είναι μια συλλογή αναμνήσεων, περιπετειών και του τρόπου ζωής που σημαίνει «Live in Freedom».">
+          I live for the freedom of the road and the thrill of the outdoors. Whether on two wheels exploring hidden paths or waiting for the perfect catch, I document the journey through a cinematic lens. This is a collection of memories, adventures, and the lifestyle of living in freedom.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- WHO I AM -->
   <section class="container fade-in">
     <div class="about-card">
-      <h2 data-en="Who I Am" data-el="Ποιος Είμαι">Who I Am</h2>
-      <p data-en="I am an adventurer, a rider, and a creator. I love discovering new places, hitting the road on my motorcycle, and turning those experiences into visual stories. Whether I'm exploring a new trail or waiting for the perfect catch at a fishing spot, I aim to capture the mood and rhythm of the moment." data-el="Είμαι εξερευνητής, αναβάτης και δημιουργός. Αγαπώ να ανακαλύπτω νέα μέρη, να βγαίνω στον δρόμο με τη μηχανή μου και να μετατρέπω αυτές τις εμπειρίες σε οπτικές ιστορίες. Είτε εξερευνώ ένα νέο μονοπάτι είτε περιμένω την τέλεια στιγμή στο ψάρεμα, στόχος μου είναι να αποτυπώνω τη διάθεση και τον ρυθμό της στιγμής.">
-        I am an adventurer, a rider, and a creator. I love discovering new places, hitting the road on my motorcycle, and turning those experiences into visual stories. Whether I'm exploring a new trail or waiting for the perfect catch at a fishing spot, I aim to capture the mood and rhythm of the moment.
+      <h2 data-en="Adventure, Moto & Fishing" data-el="Περιπέτεια, Moto & Ψάρεμα">Adventure, Moto & Fishing</h2>
+      <p data-en="I am an outdoor enthusiast, a rider, and a creator. I don't just visit places; I experience them. My life revolves around the hum of the engine on a long roadtrip and the patience required for a great day of fishing. For me, every trip—no matter if it's on asphalt or a dirt trail—is a chance to capture the soul of the landscape." data-el="Είμαι λάτρης της φύσης, μοτοσικλετιστής και δημιουργός. Δεν επισκέπτομαι απλώς μέρη, τα βιώνω. Η ζωή μου περιστρέφεται γύρω από τον ήχο της μηχανής σε ένα μεγάλο roadtrip και την υπομονή που απαιτεί μια καλή μέρα για ψάρεμα. Για μένα, κάθε ταξίδι—είτε στην άσφαλτο είτε στο χώμα—είναι μια ευκαιρία να αποτυπώσω την ψυχή του τοπίου.">
+        I am an outdoor enthusiast, a rider, and a creator. I don't just visit places; I experience them. My life revolves around the hum of the engine on a long roadtrip and the patience required for a great day of fishing. For me, every trip—no matter if it's on asphalt or a dirt trail—is a chance to capture the soul of the landscape.
       </p>
-      <p data-en="I do not focus on perfection. I focus on what feels real — the raw atmosphere of a roadtrip, the silence of a fishing spot at dawn, the thrill of the ride, and the details that make a journey unique." data-el="Δεν εστιάζω στην τελειότητα. Εστιάζω σε αυτό που μοιάζει αληθινό — στην ωμή ατμόσφαιρα ενός roadtrip, τη σιωπή ενός τόπου για ψάρεμα την αυγή, τη συγκίνηση της οδήγησης και τις λεπτομέρειες που κάνουν ένα ταξίδι μοναδικό.">
-        I do not focus on perfection. I focus on what feels real — the raw atmosphere of a roadtrip, the silence of a fishing spot at dawn, the thrill of the ride, and the details that make a journey unique.
+      <p data-en="TravelFilm GR is my way of documenting this unfiltered, outdoor lifestyle. It is about the connection between the person, the machine, and nature." data-el="Το TravelFilm GR είναι ο τρόπος μου να καταγράφω αυτόν τον αφιλτράριστο, outdoor τρόπο ζωής. Αφορά τη σύνδεση ανάμεσα στον άνθρωπο, τη μηχανή και τη φύση.">
+        TravelFilm GR is my way of documenting this unfiltered, outdoor lifestyle. It is about the connection between the person, the machine, and nature.
       </p>
     </div>
   </section>
 
-  <!-- WHAT I CREATE -->
   <section class="container fade-in">
     <div class="about-card">
-      <h2 data-en="What I Create" data-el="Τι Δημιουργώ">What I Create</h2>
-      <p data-en="Through photography, cinematic sequences, and outdoor storytelling, I create work that feels immersive and honest. My goal is to transport the viewer to the road or the water, letting them feel the atmosphere of the adventure." data-el="Μέσα από φωτογραφία, κινηματογραφικές ακολουθίες και outdoor αφήγηση, δημιουργώ έργο που μοιάζει βιωματικό και ειλικρινές. Στόχος μου είναι να μεταφέρω τον θεατή στον δρόμο ή στο νερό, αφήνοντάς τον να νιώσει την ατμόσφαιρα της περιπέτειας.">
-        Through photography, cinematic sequences, and outdoor storytelling, I create work that feels immersive and honest. My goal is to transport the viewer to the road or the water, letting them feel the atmosphere of the adventure.
-      </p>
-      <p data-en="Some stories are fast-paced and energetic like a ride. Others are quiet and contemplative like a morning on the water. What connects them is the desire to capture life as it happens, without filters, just pure passion for the journey." data-el="Κάποιες ιστορίες είναι γρήγορες και γεμάτες ενέργεια, όπως μια βόλτα με τη μηχανή. Άλλες είναι ήσυχες και στοχαστικές, όπως ένα πρωινό στο νερό. Αυτό που τις ενώνει είναι η επιθυμία να αποτυπώνω τη ζωή όπως συμβαίνει, χωρίς φίλτρα, με αγνό πάθος για το ταξίδι.">
-        Some stories are fast-paced and energetic like a ride. Others are quiet and contemplative like a morning on the water. What connects them is the desire to capture life as it happens, without filters, just pure passion for the journey.
+      <h2 data-en="Outdoor Storytelling" data-el="Αφήγηση Περιπέτειας">Outdoor Storytelling</h2>
+      <p data-en="My work bridges the gap between adrenaline and tranquility. I create visual stories that capture the high-energy moments of riding and the quiet, zen-like focus of fishing. My goal is to make you feel the wind, the engine's power, and the peace of the water through every photo and video." data-el="Η δουλειά μου γεφυρώνει το χάσμα ανάμεσα στην αδρεναλίνη και την ηρεμία. Δημιουργώ οπτικές ιστορίες που αποτυπώνουν τις στιγμές υψηλής ενέργειας πάνω στη μηχανή και την ήσυχη, zen συγκέντρωση του ψαρέματος. Στόχος μου είναι να σας κάνω να νιώσετε τον αέρα, τη δύναμη της μηχανής και την ειρήνη του νερού μέσα από κάθε φωτογραφία και βίντεο.">
+        My work bridges the gap between adrenaline and tranquility. I create visual stories that capture the high-energy moments of riding and the quiet, zen-like focus of fishing. My goal is to make you feel the wind, the engine's power, and the peace of the water through every photo and video.
       </p>
     </div>
   </section>
 
-  <!-- SOCIAL -->
   <section class="container fade-in">
     <div class="about-card">
       <h2 data-en="Follow My Journey" data-el="Ακολούθησε το Ταξίδι Μου">Follow My Journey</h2>
@@ -63,12 +56,10 @@ permalink: /about/
     </div>
   </section>
 
-  <!-- EQUIPMENT -->
   <section class="container fade-in">
     <div class="about-card">
       <h2 data-en="My Equipment" data-el="Ο Εξοπλισμός Μου">My Equipment</h2>
 
-      <!-- PHOTOGRAPHY GEAR -->
       <h3 data-en="Photography Gear" data-el="Εξοπλισμός Φωτογραφίας" style="margin-top: 20px;">Photography Gear</h3>
       <div class="gear-grid">
         <div class="gear-item">
@@ -85,7 +76,6 @@ permalink: /about/
         </div>
       </div>
 
-      <!-- FISHING GEAR -->
       <h3 data-en="Fishing Gear" data-el="Εξοπλισμός Ψαρέματος" style="margin-top: 20px;">Fishing Gear</h3>
       <div class="gear-grid">
         <div class="gear-item">
@@ -98,7 +88,6 @@ permalink: /about/
         </div>
       </div>
 
-      <!-- VEHICLES -->
       <h3 data-en="Vehicles" data-el="Οχήματα" style="margin-top: 20px;">Vehicles</h3>
       <div class="gear-grid">
         <div class="gear-item">
