@@ -12,13 +12,11 @@ permalink: /about/
       <div class="about-text">
         <span class="about-label" data-en="About Me" data-el="Σχετικά με Εμένα">About Me</span>
         <h1>TravelFilm GR</h1>
-        <p class="about-subtitle" data-en="Travel Photography • Cinematic Moments • Visual Storytelling" data-el="Ταξιδιωτική Φωτογραφία • Κινηματογραφικές Στιγμές • Οπτική Αφήγηση">
-          Travel Photography • Cinematic Moments • Visual Storytelling
+        <p class="about-subtitle" data-en="Roadtrips • Moto Journeys • Fishing • Cinematic Outdoor Photography" data-el="Roadtrips • Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Κινηματογραφική Φωτογραφία Φύσης">
+          Roadtrips • Moto Journeys • Fishing • Cinematic Outdoor Photography
         </p>
-        <p class="about-description" data-en="I capture places the way they feel in the moment — through light, atmosphere, movement, and emotion. This space is a personal collection of travel memories, photography, and visual stories created with passion." data-el="Αποτυπώνω τα μέρη όπως νιώθουν τη στιγμή — μέσα από φως, ατμόσφαιρα, κίνηση και συναίσθημα. Αυτός ο χώρος είναι μια προσωπική συλλογή ταξιδιωτικών αναμνήσεων, φωτογραφίας και οπτικών ιστοριών φτιαγμένων με πάθος.">
-          I capture places the way they feel in the moment — through light, atmosphere,
-          movement, and emotion. This space is a personal collection of travel memories,
-          photography, and visual stories created with passion.
+        <p class="about-description" data-en="I capture the essence of the journey — whether on two wheels or off the beaten path. This space is a collection of roadtrips, fishing spots, and outdoor memories, all documented through a cinematic lens." data-el="Αποτυπώνω την ουσία της διαδρομής — είτε σε δύο ρόδες είτε στα μονοπάτια της φύσης. Αυτός ο χώρος είναι μια συλλογή από roadtrips, στιγμές ψαρέματος και αναμνήσεις από την ύπαιθρο, καταγεγραμμένα μέσα από έναν κινηματογραφικό φακό.">
+          I capture the essence of the journey — whether on two wheels or off the beaten path. This space is a collection of roadtrips, fishing spots, and outdoor memories, all documented through a cinematic lens.
         </p>
       </div>
     </div>
@@ -28,14 +26,11 @@ permalink: /about/
   <section class="container fade-in">
     <div class="about-card">
       <h2 data-en="Who I Am" data-el="Ποιος Είμαι">Who I Am</h2>
-      <p data-en="I am someone who loves traveling, discovering new places, and turning simple moments into visual memories through photography and film. For me, every destination has its own mood, its own rhythm, and its own story worth capturing." data-el="Είμαι ένας άνθρωπος που αγαπά τα ταξίδια, την ανακάλυψη νέων τόπων και τη μετατροπή απλών στιγμών σε οπτικές αναμνήσεις μέσα από τη φωτογραφία και το βίντεο. Για μένα, κάθε προορισμός έχει τη δική του ατμόσφαιρα, τον δικό του ρυθμό και τη δική του ιστορία που αξίζει να αποτυπωθεί.">
-        I am someone who loves traveling, discovering new places, and turning simple moments into visual memories through photography and film. For me, every destination has its own mood, its own rhythm, and its own story worth capturing.
+      <p data-en="I am an adventurer, a rider, and a creator. I love discovering new places, hitting the road on my motorcycle, and turning those experiences into visual stories. Whether I'm exploring a new trail or waiting for the perfect catch at a fishing spot, I aim to capture the mood and rhythm of the moment." data-el="Είμαι εξερευνητής, αναβάτης και δημιουργός. Αγαπώ να ανακαλύπτω νέα μέρη, να βγαίνω στον δρόμο με τη μηχανή μου και να μετατρέπω αυτές τις εμπειρίες σε οπτικές ιστορίες. Είτε εξερευνώ ένα νέο μονοπάτι είτε περιμένω την τέλεια στιγμή στο ψάρεμα, στόχος μου είναι να αποτυπώνω τη διάθεση και τον ρυθμό της στιγμής.">
+        I am an adventurer, a rider, and a creator. I love discovering new places, hitting the road on my motorcycle, and turning those experiences into visual stories. Whether I'm exploring a new trail or waiting for the perfect catch at a fishing spot, I aim to capture the mood and rhythm of the moment.
       </p>
-      <p data-en="I do not focus on perfection. I focus on what feels real — the light of a place, the atmosphere of a street, the silence of a landscape, and the emotion hidden in small details that most people pass by." data-el="Δεν εστιάζω στην τελειότητα. Εστιάζω σε αυτό που μοιάζει αληθινό — στο φως ενός τόπου, στην ατμόσφαιρα ενός δρόμου, στη σιωπή ενός τοπίου και στο συναίσθημα που κρύβεται σε μικρές λεπτομέρειες που οι περισσότεροι προσπερνούν.">
-        I do not focus on perfection. I focus on what feels real — the light of a place, the atmosphere of a street, the silence of a landscape, and the emotion hidden in small details that most people pass by.
-      </p>
-      <p data-en="TravelFilm GR is not just about images. It is about preserving the feeling of being there." data-el="Το TravelFilm GR δεν αφορά μόνο εικόνες. Αφορά τη διατήρηση του συναισθήματος του να βρίσκεσαι εκεί.">
-        TravelFilm GR is not just about images. It is about preserving the feeling of being there.
+      <p data-en="I do not focus on perfection. I focus on what feels real — the raw atmosphere of a roadtrip, the silence of a fishing spot at dawn, the thrill of the ride, and the details that make a journey unique." data-el="Δεν εστιάζω στην τελειότητα. Εστιάζω σε αυτό που μοιάζει αληθινό — στην ωμή ατμόσφαιρα ενός roadtrip, τη σιωπή ενός τόπου για ψάρεμα την αυγή, τη συγκίνηση της οδήγησης και τις λεπτομέρειες που κάνουν ένα ταξίδι μοναδικό.">
+        I do not focus on perfection. I focus on what feels real — the raw atmosphere of a roadtrip, the silence of a fishing spot at dawn, the thrill of the ride, and the details that make a journey unique.
       </p>
     </div>
   </section>
@@ -44,11 +39,11 @@ permalink: /about/
   <section class="container fade-in">
     <div class="about-card">
       <h2 data-en="What I Create" data-el="Τι Δημιουργώ">What I Create</h2>
-      <p data-en="Through photography, short cinematic moments, and curated visual content, I try to create work that feels immersive, honest, and atmospheric. My goal is not simply to show a place, but to let people feel something when they see it." data-el="Μέσα από φωτογραφία, μικρές κινηματογραφικές στιγμές και προσεγμένο οπτικό περιεχόμενο, προσπαθώ να δημιουργώ έργο που μοιάζει ατμοσφαιρικό, ειλικρινές και βιωματικό. Ο στόχος μου δεν είναι απλώς να δείξω έναν τόπο, αλλά να κάνω τον κόσμο να νιώσει κάτι όταν τον βλέπει.">
-        Through photography, short cinematic moments, and curated visual content, I try to create work that feels immersive, honest, and atmospheric. My goal is not simply to show a place, but to let people feel something when they see it.
+      <p data-en="Through photography, cinematic sequences, and outdoor storytelling, I create work that feels immersive and honest. My goal is to transport the viewer to the road or the water, letting them feel the atmosphere of the adventure." data-el="Μέσα από φωτογραφία, κινηματογραφικές ακολουθίες και outdoor αφήγηση, δημιουργώ έργο που μοιάζει βιωματικό και ειλικρινές. Στόχος μου είναι να μεταφέρω τον θεατή στον δρόμο ή στο νερό, αφήνοντάς τον να νιώσει την ατμόσφαιρα της περιπέτειας.">
+        Through photography, cinematic sequences, and outdoor storytelling, I create work that feels immersive and honest. My goal is to transport the viewer to the road or the water, letting them feel the atmosphere of the adventure.
       </p>
-      <p data-en="Some images are quiet and minimal. Others are dramatic, vibrant, or full of movement. What connects them all is the same intention: to capture moments as they truly happen." data-el="Κάποιες εικόνες είναι ήσυχες και μινιμαλιστικές. Άλλες είναι δραματικές, ζωντανές ή γεμάτες κίνηση. Αυτό που τις ενώνει όλες είναι η ίδια πρόθεση: να αποτυπώνονται οι στιγμές όπως πραγματικά συμβαίνουν.">
-        Some images are quiet and minimal. Others are dramatic, vibrant, or full of movement. What connects them all is the same intention: to capture moments as they truly happen.
+      <p data-en="Some stories are fast-paced and energetic like a ride. Others are quiet and contemplative like a morning on the water. What connects them is the desire to capture life as it happens, without filters, just pure passion for the journey." data-el="Κάποιες ιστορίες είναι γρήγορες και γεμάτες ενέργεια, όπως μια βόλτα με τη μηχανή. Άλλες είναι ήσυχες και στοχαστικές, όπως ένα πρωινό στο νερό. Αυτό που τις ενώνει είναι η επιθυμία να αποτυπώνω τη ζωή όπως συμβαίνει, χωρίς φίλτρα, με αγνό πάθος για το ταξίδι.">
+        Some stories are fast-paced and energetic like a ride. Others are quiet and contemplative like a morning on the water. What connects them is the desire to capture life as it happens, without filters, just pure passion for the journey.
       </p>
     </div>
   </section>
@@ -59,11 +54,11 @@ permalink: /about/
       <h2 data-en="Follow My Journey" data-el="Ακολούθησε το Ταξίδι Μου">Follow My Journey</h2>
       <div class="social-links">
         <a href="https://www.instagram.com/travelfilm_gr/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://youtube.com/@travelfilmgronwheels" target="_blank" rel="noopener noreferrer">YouTube (Roadtrips & Moto)</a>
-        <a href="https://www.tiktok.com/@travelfilm.gr" target="_blank" rel="noopener noreferrer">TikTok (Main)</a>
-        <a href="https://www.tiktok.com/@travelfilm_gr_bitetime" target="_blank" rel="noopener noreferrer">TikTok (Fishing)</a>
-        <a href="https://www.facebook.com/groups/2767308660294715/" target="_blank" rel="noopener noreferrer">FB Group (Fishing)</a>
-        <a href="https://www.facebook.com/groups/1807472790067727/" target="_blank" rel="noopener noreferrer">FB Group (Photography)</a>
+        <a href="https://youtube.com/@travelfilmgronwheels" target="_blank" rel="noopener noreferrer">YouTube: Roadtrips & Moto</a>
+        <a href="https://www.tiktok.com/@travelfilm.gr" target="_blank" rel="noopener noreferrer">TikTok: Personal</a>
+        <a href="https://www.tiktok.com/@travelfilm_gr_bitetime" target="_blank" rel="noopener noreferrer">TikTok: Fishing</a>
+        <a href="https://www.facebook.com/groups/2767308660294715/" target="_blank" rel="noopener noreferrer">Facebook: Fishing Community</a>
+        <a href="https://www.facebook.com/groups/1807472790067727/" target="_blank" rel="noopener noreferrer">Facebook: Photography Community</a>
       </div>
     </div>
   </section>
@@ -115,8 +110,6 @@ permalink: /about/
           <p>-</p>
         </div>
       </div>
-
     </div>
   </section>
-
 </div>
