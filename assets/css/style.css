@@ -340,6 +340,127 @@ html[lang="el"] .lang-btn[data-lang="el"] {
 }
 
 /* =========================
+   MOBILE HEADER FIX
+   Keeps all navigation accessible without overlap.
+========================= */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 14px;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    gap: 7px 10px;
+  }
+
+  .header-left {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .social-icons {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .lang-switch {
+    gap: 4px;
+    margin-left: auto;
+  }
+
+  .lang-btn,
+  .theme-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  header nav {
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1px 0 3px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  header nav a {
+    flex: 0 0 auto;
+    margin-left: 0;
+    padding: 5px 9px;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+
+  header nav a:first-child {
+    padding-left: 2px;
+  }
+
+  header nav a:last-child {
+    padding-right: 2px;
+  }
+
+  header a::after {
+    bottom: -2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo a {
+    font-size: 1rem;
+  }
+
+  .header-left {
+    gap: 6px;
+  }
+
+  .social-icons {
+    gap: 4px;
+  }
+
+  .social-icons a {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .lang-switch {
+    gap: 3px;
+  }
+
+  .lang-btn,
+  .theme-toggle {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  header nav a {
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.78rem;
+  }
+}
+
+/* =========================
    HERO (CINEMATIC) - MOBILE PRO SAFE
 ========================= */
 .hero {
@@ -503,7 +624,6 @@ html[data-theme="light"] .search-input {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(10px);
-  will-change: transform;
   content-visibility: auto;
   contain-intrinsic-size: auto 320px;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
@@ -654,7 +774,6 @@ html[data-theme="light"] .card {
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  will-change: transform;
   content-visibility: auto;
   contain-intrinsic-size: auto 380px;
   transition: transform var(--transition), box-shadow var(--transition);
@@ -943,7 +1062,6 @@ html[data-theme="light"] .social-links a {
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 18px;
   padding: 20px;
-  will-change: transform;
   transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
@@ -991,7 +1109,6 @@ html[data-theme="light"] .gear-item {
   position: relative;
   background: rgba(255,255,255,0.03);
   box-shadow: 0 14px 28px rgba(0,0,0,0.16);
-  will-change: transform;
   content-visibility: auto;
   contain-intrinsic-size: auto 300px;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
@@ -1324,7 +1441,6 @@ html[data-theme="light"] .filters button {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.75s ease, transform 0.75s ease;
-  will-change: opacity, transform;
 }
 
 .fade-in.show {
@@ -1556,4 +1672,120 @@ html[data-theme="light"] .post-bottom-link {
 
 .post-bottom-link a:hover {
   transform: translateX(-4px);
+}
+
+/* =========================
+   MOBILE LAYOUT SAFETY
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .featured-overlay {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .featured-post img {
+    height: 420px;
+  }
+
+  .post-article {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .post-container {
+    padding: 30px 20px;
+    border-radius: 22px;
+  }
+
+  .lightbox {
+    padding: 18px;
+  }
+
+  .lightbox img {
+    max-width: 94vw;
+    max-height: 66vh;
+  }
+
+  .lightbox-nav {
+    width: 46px;
+    height: 46px;
+    font-size: 1.5rem;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .featured-post {
+    border-radius: 22px;
+  }
+
+  .featured-post img {
+    height: 360px;
+  }
+
+  .featured-overlay h1 {
+    font-size: 1.9rem;
+  }
+
+  .featured-overlay p {
+    font-size: 0.92rem;
+  }
+
+  .post-container {
+    padding: 26px 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-link {
+    min-height: 190px;
+    padding: 7px;
+    border-radius: 14px;
+  }
+
+  .grid img {
+    border-radius: 10px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
