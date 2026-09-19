@@ -1,3 +1,12 @@
+- image: /assets/images/little cat 2.jpg
+  alt: little cat
+  category: Pet
+  description: little cat
+  location: Greece
+  date: 2026-09-19
+  camera: Nikon D7000
+
+
 - image: /assets/images/little_cat[1].jpg
   alt: little cat
   category: Pet
