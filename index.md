@@ -1,4 +1,3 @@
-```liquid
 ---
 layout: default
 title: Home
@@ -99,6 +98,7 @@ title: Home
   ">
     <div>
       <h2 data-en="Latest Roadtrips" data-el="Τελευταία Roadtrips" style="margin-bottom:10px;">Latest Roadtrips</h2>
+
       <p
         data-en="Recent visual stories, routes, and notes from the road."
         data-el="Πρόσφατες οπτικές ιστορίες, διαδρομές και σημειώσεις από τον δρόμο."
@@ -113,19 +113,34 @@ title: Home
       text-decoration:none;
       font-weight:600;
     ">
-      <span data-en="View all roadtrips →" data-el="Δες όλα τα roadtrips →">View all roadtrips →</span>
+      <span data-en="View all roadtrips →" data-el="Δες όλα τα roadtrips →">
+        View all roadtrips →
+      </span>
     </a>
   </div>
 
   <div class="cards">
     {% if my_roadtrips.size > 0 %}
+
       {% for trip in my_roadtrips limit:3 %}
+
         <div class="card">
-          <a href="{{ trip.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
+          <a
+            href="{{ trip.url | relative_url }}"
+            style="text-decoration:none; color:inherit; display:block;"
+          >
 
             {% if trip.image %}
+
               {% assign trip_image_filename = trip.image | split: '/' | last %}
-              {% assign trip_thumbnail_filename = trip_image_filename | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' | replace: '.jpeg', '.webp' | replace: '.JPEG', '.webp' %}
+
+              {% assign trip_thumbnail_filename =
+                trip_image_filename
+                | replace: '.jpg', '.webp'
+                | replace: '.JPG', '.webp'
+                | replace: '.jpeg', '.webp'
+                | replace: '.JPEG', '.webp'
+              %}
 
               <img
                 src="/assets/images/gallery-thumbs/{{ trip_thumbnail_filename }}"
@@ -136,10 +151,13 @@ title: Home
                 width="600"
                 height="400"
               >
+
             {% endif %}
 
             <div style="padding:18px;">
+
               {% if trip.category %}
+
                 <span style="
                   display:inline-block;
                   margin-bottom:10px;
@@ -154,28 +172,45 @@ title: Home
                 ">
                   {{ trip.category }}
                 </span>
+
               {% endif %}
 
-              <h3 style="padding:0; margin-bottom:10px;">{{ trip.title }}</h3>
+              <h3 style="padding:0; margin-bottom:10px;">
+                {{ trip.title }}
+              </h3>
 
               {% if trip.excerpt %}
+
                 <p style="color:var(--muted); line-height:1.7;">
                   {{ trip.excerpt | strip_html | truncate: 110 }}
                 </p>
+
               {% endif %}
+
             </div>
 
           </a>
         </div>
+
       {% endfor %}
+
     {% else %}
-      <p data-en="No roadtrips yet." data-el="Δεν υπάρχουν roadtrips ακόμα." style="color: var(--muted);">No roadtrips yet.</p>
+
+      <p
+        data-en="No roadtrips yet."
+        data-el="Δεν υπάρχουν roadtrips ακόμα."
+        style="color: var(--muted);"
+      >
+        No roadtrips yet.
+      </p>
+
     {% endif %}
   </div>
 </section>
 
 <!-- GALLERY PREVIEW -->
 <section class="container fade-in">
+
   <div style="
     display:flex;
     justify-content:space-between;
@@ -184,8 +219,17 @@ title: Home
     flex-wrap:wrap;
     margin-bottom:18px;
   ">
+
     <div>
-      <h2 data-en="Latest Shots" data-el="Τελευταίες Λήψεις" style="margin-bottom:10px;">Latest Shots</h2>
+
+      <h2
+        data-en="Latest Shots"
+        data-el="Τελευταίες Λήψεις"
+        style="margin-bottom:10px;"
+      >
+        Latest Shots
+      </h2>
+
       <p
         data-en="A small selection of recent frames, moments, and visual highlights from my gallery."
         data-el="Μια μικρή επιλογή από πρόσφατα καρέ, στιγμές και οπτικά highlights από το gallery μου."
@@ -193,6 +237,7 @@ title: Home
       >
         A small selection of recent frames, moments, and visual highlights from my gallery.
       </p>
+
     </div>
 
     <a href="/gallery/" style="
@@ -200,16 +245,31 @@ title: Home
       text-decoration:none;
       font-weight:600;
     ">
-      <span data-en="Explore gallery →" data-el="Εξερεύνησε το gallery →">Explore gallery →</span>
+      <span
+        data-en="Explore gallery →"
+        data-el="Εξερεύνησε το gallery →"
+      >
+        Explore gallery →
+      </span>
     </a>
+
   </div>
 
   <div class="grid">
+
     {% if site.data.gallery.size > 0 %}
+
       {% for shot in site.data.gallery reversed limit:6 %}
 
         {% assign image_filename = shot.image | split: '/' | last %}
-        {% assign thumbnail_filename = image_filename | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' | replace: '.jpeg', '.webp' | replace: '.JPEG', '.webp' %}
+
+        {% assign thumbnail_filename =
+          image_filename
+          | replace: '.jpg', '.webp'
+          | replace: '.JPG', '.webp'
+          | replace: '.jpeg', '.webp'
+          | replace: '.JPEG', '.webp'
+        %}
 
         <div
           class="gallery-link gallery-item"
@@ -235,20 +295,37 @@ title: Home
             height="450"
           >
 
-          <div class="gallery-caption">{{ shot.alt }}</div>
+          <div class="gallery-caption">
+            {{ shot.alt }}
+          </div>
 
         </div>
 
       {% endfor %}
+
     {% else %}
-      <p data-en="No shots yet." data-el="Δεν υπάρχουν λήψεις ακόμα." style="color: var(--muted);">No shots yet.</p>
+
+      <p
+        data-en="No shots yet."
+        data-el="Δεν υπάρχουν λήψεις ακόμα."
+        style="color: var(--muted);"
+      >
+        No shots yet.
+      </p>
+
     {% endif %}
+
   </div>
 </section>
 
 <!-- CTA -->
 <section class="container fade-in">
-  <div class="card" style="text-align:center; padding:48px 30px;">
+
+  <div
+    class="card"
+    style="text-align:center; padding:48px 30px;"
+  >
+
     <span
       data-en="Let’s Connect"
       data-el="Ας Συνδεθούμε"
@@ -263,26 +340,41 @@ title: Home
         font-size:12px;
         letter-spacing:0.08em;
         text-transform:uppercase;
+        font-weight:600;
       "
     >
       Let’s Connect
     </span>
 
-    <h2 data-en="Open to New Opportunities" data-el="Ανοιχτός σε Νέες Ευκαιρίες" style="margin-bottom:12px;">
+    <h2
+      data-en="Open to New Opportunities"
+      data-el="Ανοιχτός σε Νέες Ευκαιρίες"
+      style="margin-bottom:12px;"
+    >
       Open to New Opportunities
     </h2>
 
     <p
       data-en="Roadtrips, motorcycle adventures, fishing, photography, and creative collaborations — this space reflects the lifestyle, passion, and atmosphere behind every adventure."
       data-el="Roadtrips, περιπέτειες με τη μοτοσικλέτα, ψάρεμα, φωτογραφία και δημιουργικές συνεργασίες — αυτός ο χώρος αντικατοπτρίζει τον τρόπο ζωής, το πάθος και την ατμόσφαιρα πίσω από κάθε περιπέτεια."
-      style="color: var(--muted); max-width:700px; margin:0 auto; line-height:1.8;"
+      style="
+        color: var(--muted);
+        max-width:700px;
+        margin:0 auto;
+        line-height:1.8;
+      "
     >
       Roadtrips, motorcycle adventures, fishing, photography, and creative collaborations — this space reflects the lifestyle, passion, and atmosphere behind every adventure.
     </p>
 
     <a href="/about/" class="btn">
-      <span data-en="Contact Me" data-el="Επικοινώνησε Μαζί Μου">Contact Me</span>
+      <span
+        data-en="Contact Me"
+        data-el="Επικοινώνησε Μαζί Μου"
+      >
+        Contact Me
+      </span>
     </a>
+
   </div>
 </section>
-```
