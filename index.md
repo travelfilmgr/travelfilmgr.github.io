@@ -1,3 +1,4 @@
+```liquid
 ---
 layout: default
 title: Home
@@ -78,7 +79,7 @@ title: Home
       data-el="Ένα οπτικό ταξίδι μέσα από τοπία, roadtrips, περιπέτειες με τη μοτοσικλέτα, ψάρεμα και φευγαλέες στιγμές που αποτυπώνονται στη διαδρομή. Για μένα, η ζωή στη φύση είναι κάτι παραπάνω από μια εικόνα — είναι ατμόσφαιρα, συναίσθημα, φως και η ιστορία που αφήνει πίσω της η κάθε περιπέτεια."
       style="color: var(--muted); max-width: 800px; line-height:1.8;"
     >
-      A visual journey through landscapes, roadtrips, motorcycle adventures, fishing, and fleeting moments captured along the way. 
+      A visual journey through landscapes, roadtrips, motorcycle adventures, fishing, and fleeting moments captured along the way.
       For me, life outdoors is more than an image — it is atmosphere, emotion, light, and the story every adventure leaves behind.
     </p>
   </div>
@@ -121,8 +122,20 @@ title: Home
       {% for trip in my_roadtrips limit:3 %}
         <div class="card">
           <a href="{{ trip.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
+
             {% if trip.image %}
-              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy" decoding="async" width="600" height="400">
+              {% assign trip_image_filename = trip.image | split: '/' | last %}
+              {% assign trip_thumbnail_filename = trip_image_filename | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' | replace: '.jpeg', '.webp' | replace: '.JPEG', '.webp' %}
+
+              <img
+                src="/assets/images/gallery-thumbs/{{ trip_thumbnail_filename }}"
+                data-full="{{ trip.image }}"
+                alt="{{ trip.title }}"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              >
             {% endif %}
 
             <div style="padding:18px;">
@@ -151,6 +164,7 @@ title: Home
                 </p>
               {% endif %}
             </div>
+
           </a>
         </div>
       {% endfor %}
@@ -193,6 +207,10 @@ title: Home
   <div class="grid">
     {% if site.data.gallery.size > 0 %}
       {% for shot in site.data.gallery reversed limit:6 %}
+
+        {% assign image_filename = shot.image | split: '/' | last %}
+        {% assign thumbnail_filename = image_filename | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' | replace: '.jpeg', '.webp' | replace: '.JPEG', '.webp' %}
+
         <div
           class="gallery-link gallery-item"
           data-category="{{ shot.category | downcase }}"
@@ -200,8 +218,10 @@ title: Home
           data-tags="{{ shot.category }} {{ shot.alt }}"
           aria-label="{{ shot.alt }}"
         >
+
           <img
-            src="{{ shot.image }}"
+            src="/assets/images/gallery-thumbs/{{ thumbnail_filename }}"
+            data-full="{{ shot.image }}"
             alt="{{ shot.alt }}"
             class="{{ shot.category | downcase }}"
             data-title="{{ shot.alt | escape }}"
@@ -214,8 +234,11 @@ title: Home
             width="600"
             height="450"
           >
+
           <div class="gallery-caption">{{ shot.alt }}</div>
+
         </div>
+
       {% endfor %}
     {% else %}
       <p data-en="No shots yet." data-el="Δεν υπάρχουν λήψεις ακόμα." style="color: var(--muted);">No shots yet.</p>
@@ -262,3 +285,4 @@ title: Home
     </a>
   </div>
 </section>
+```
