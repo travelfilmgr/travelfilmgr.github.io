@@ -1,3 +1,12 @@
+- image: /assets/images/Canopy Sunburst.jpg
+  alt: Canopy Sunburst 
+  category: Nature
+  description: Διασπορά ηλιακού φωτός μέσα από την πυκνή κόμη των δέντρων, με έντονες ακτίνες (sunburst) και διαγώνια δομή κορμών.
+  location: Greece,pavliani
+  date: 2026-09-19
+  camera: Nikon D7000
+
+
 - image: /assets/images/Σκηνή  Απρόσμενη Φιγούρα.jpg
   alt: Σκηνή  Απρόσμενη Φιγούρα
   category: Nature
