@@ -1,5 +1,5 @@
 /* =========================
-   THEME SYSTEM
+    THEME SYSTEM
 ========================= */
 function applySavedTheme() {
   const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -27,7 +27,7 @@ function updateThemeToggleIcon() {
 }
 
 /* =========================
-   LANGUAGE SYSTEM
+    LANGUAGE SYSTEM
 ========================= */
 function applyTranslations(lang) {
   document.documentElement.setAttribute('lang', lang);
@@ -68,21 +68,39 @@ function applySavedLanguage() {
 }
 
 /* =========================
-   SCROLL REVEAL
+    SCROLL REVEAL (Optimized w/ rAF)
 ========================= */
-function revealOnScroll() {
+let scrollTicking = false;
+function onScrollEvents() {
   const elements = document.querySelectorAll('.fade-in');
-
   elements.forEach((el) => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight - 80) {
       el.classList.add('show');
     }
   });
+
+  const btn = document.querySelector('.back-to-top');
+  if (btn) {
+    if (window.scrollY > 320) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }
+
+  scrollTicking = false;
+}
+
+function handleScrollThrottled() {
+  if (!scrollTicking) {
+    window.requestAnimationFrame(onScrollEvents);
+    scrollTicking = true;
+  }
 }
 
 /* =========================
-   GALLERY THEME SYSTEM
+    GALLERY THEME SYSTEM
 ========================= */
 function setGalleryTheme(cat) {
   const body = document.body;
@@ -112,7 +130,7 @@ function setGalleryTheme(cat) {
 }
 
 /* =========================
-   GALLERY FILTER SYSTEM
+    GALLERY FILTER SYSTEM
 ========================= */
 function filterImages(cat, event) {
   const gallery = document.querySelector('.gallery-page');
@@ -125,7 +143,9 @@ function filterImages(cat, event) {
 
   buttons.forEach((btn) => btn.classList.remove('active'));
 
-  if (event && event.target) {
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add('active');
+  } else if (event && event.target) {
     event.target.classList.add('active');
   }
 
@@ -176,7 +196,7 @@ function filterImages(cat, event) {
 }
 
 /* =========================
-   BLOG THEME SYSTEM
+    BLOG THEME SYSTEM
 ========================= */
 function setBlogTheme(cat) {
   const body = document.body;
@@ -202,7 +222,7 @@ function setBlogTheme(cat) {
 }
 
 /* =========================
-   BLOG FILTER SYSTEM
+    BLOG FILTER SYSTEM
 ========================= */
 function filterPosts(cat, event) {
   const blog = document.querySelector('.blog-page');
@@ -213,7 +233,9 @@ function filterPosts(cat, event) {
 
   buttons.forEach((btn) => btn.classList.remove('active'));
 
-  if (event && event.target) {
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add('active');
+  } else if (event && event.target) {
     event.target.classList.add('active');
   }
 
@@ -246,7 +268,7 @@ function filterPosts(cat, event) {
 }
 
 /* =========================
-   GALLERY SEARCH
+    GALLERY SEARCH
 ========================= */
 function initGallerySearch() {
   const input = document.getElementById('gallerySearch');
@@ -301,7 +323,7 @@ function initGallerySearch() {
 }
 
 /* =========================
-   BLOG SEARCH
+    BLOG SEARCH
 ========================= */
 function initBlogSearch() {
   const searchInput = document.querySelector('[data-blog-search]');
@@ -329,7 +351,7 @@ function initBlogSearch() {
 }
 
 /* =========================
-   GALLERY LIGHTBOX
+    GALLERY LIGHTBOX
 ========================= */
 function initGalleryLightbox() {
   const gallery = document.querySelector('.gallery-page');
@@ -482,7 +504,7 @@ function initGalleryLightbox() {
 }
 
 /* =========================
-   READING TIME
+    READING TIME
 ========================= */
 function updateReadingTime(lang = 'en') {
   const readingTimeEl = document.querySelector('.post-reading-time');
@@ -500,7 +522,7 @@ function updateReadingTime(lang = 'en') {
 }
 
 /* =========================
-   COPY LINK BUTTON
+    COPY LINK BUTTON
 ========================= */
 function initCopyLinkButton() {
   const copyBtn = document.querySelector('.copy-link-btn');
@@ -528,7 +550,7 @@ function initCopyLinkButton() {
 }
 
 /* =========================
-   BACK TO TOP
+    BACK TO TOP
 ========================= */
 function createBackToTopButton() {
   if (document.querySelector('.back-to-top')) return;
@@ -546,19 +568,8 @@ function createBackToTopButton() {
   document.body.appendChild(btn);
 }
 
-function handleBackToTopVisibility() {
-  const btn = document.querySelector('.back-to-top');
-  if (!btn) return;
-
-  if (window.scrollY > 320) {
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-}
-
 /* =========================
-   LAZY LOAD SAFETY
+    LAZY LOAD SAFETY
 ========================= */
 function applyLazyLoadingToImages() {
   const images = document.querySelectorAll('img:not([loading])');
@@ -568,7 +579,7 @@ function applyLazyLoadingToImages() {
 }
 
 /* =========================
-   THEME BUTTON INIT
+    THEME BUTTON INIT
 ========================= */
 function initThemeToggle() {
   const themeToggle = document.querySelector('.theme-toggle');
@@ -579,7 +590,7 @@ function initThemeToggle() {
 }
 
 /* =========================
-   LANGUAGE BUTTON INIT
+    LANGUAGE BUTTON INIT
 ========================= */
 function initLanguageButtons() {
   const langButtons = document.querySelectorAll('.lang-btn');
@@ -587,7 +598,7 @@ function initLanguageButtons() {
 
   langButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
+    const lang = btn.dataset.lang;
       if (lang) {
         setLang(lang);
       }
@@ -596,7 +607,7 @@ function initLanguageButtons() {
 }
 
 /* =========================
-   FORCE SOCIAL LINKS
+    FORCE SOCIAL LINKS
 ========================= */
 function initForcedSocialLinks() {
   document.querySelectorAll('.footer-social a, .social-links a').forEach((link) => {
@@ -609,34 +620,23 @@ function initForcedSocialLinks() {
 }
 
 /* =========================
-   INIT
+    INIT (Clean single trigger)
 ========================= */
-window.addEventListener('scroll', () => {
-  revealOnScroll();
-  handleBackToTopVisibility();
-});
-
-window.addEventListener('load', () => {
-  applySavedTheme();
-  applySavedLanguage();
-  revealOnScroll();
-  handleBackToTopVisibility();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   applySavedTheme();
   applySavedLanguage();
 
-  revealOnScroll();
+  createBackToTopButton();
+  onScrollEvents();
   initGalleryLightbox();
   initGallerySearch();
   initBlogSearch();
   initCopyLinkButton();
   initThemeToggle();
   initLanguageButtons();
-  createBackToTopButton();
-  handleBackToTopVisibility();
   applyLazyLoadingToImages();
   updateThemeToggleIcon();
   initForcedSocialLinks();
+
+  window.addEventListener('scroll', handleScrollThrottled, { passive: true });
 });
