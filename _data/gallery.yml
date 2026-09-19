@@ -1,3 +1,12 @@
+- image: /assets/images/Woodland Bridge.jpg
+  alt: ΔWoodland Bridge
+  category: Nature
+  description: Λήψη ξύλινης πεζογέφυρας που διασχίζει βαθμιδωτό δασικό ρυάκι/καταρράκτη, πλαισιωμένη από πυκνή πράσινη βλάστηση και φυσικό φωτισμό της κόμης.
+  location: Greece,pavliani
+  date: 2026-09-19
+  camera: Nikon D7000
+
+
 - image: /assets/images/Δασικός Αυτοκινητόδρομος.jpg
   alt: Δασικός Αυτοκινητόδρομος
   category: Nature
