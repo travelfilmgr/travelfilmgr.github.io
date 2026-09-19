@@ -490,6 +490,16 @@ html[lang="el"] .lang-btn[data-lang="el"] {
   to { transform: scale(1.05); }
 }
 
+/* =========================
+   MOBILE PERFORMANCE FIX
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 .hero::before {
   content: "";
   position: absolute;
