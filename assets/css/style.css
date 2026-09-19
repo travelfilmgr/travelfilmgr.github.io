@@ -468,7 +468,7 @@ html[lang="el"] .lang-btn[data-lang="el"] {
   width: 100vw;
   left: 50%;
   margin-left: -50vw;
-  background: url("/assets/images/hero.jpg") center/cover no-repeat scroll;
+  background: url("/assets/images/hero.webp") center/cover no-repeat scroll;
   display: flex;
   align-items: center;
   justify-content: center;
