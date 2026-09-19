@@ -1,3 +1,12 @@
+- image: /assets/images/Stream Flow.jpg
+  alt: Stream Flow.
+  category: Nature
+  description: Καταγραφή μικρού φυσικού καταρράκτη / ροής νερού σε ρεματιά με έντονα πράσινα φύκια/βρύα και πλαισίωση από δέντρα.
+  location: Greece,pavliani
+  date: 2026-09-19
+  camera: Nikon D7000
+
+
 - image: /assets/images/Canopy Sunburst.jpg
   alt: Canopy Sunburst 
   category: Nature
