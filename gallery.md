@@ -61,7 +61,7 @@ permalink: /gallery/
   </div>
 
   <!-- FILTERS -->
-  <section class="container fade-in" style="padding-top:0;">
+  <section class="container" style="padding-top:0;">
     <div class="filters">
       <button onclick="filterImages('all', event)" class="active">All</button>
       <button onclick="filterImages('nature', event)">Nature</button>
@@ -80,7 +80,7 @@ permalink: /gallery/
   </section>
 
   <!-- GALLERY GRID -->
-  <section class="container fade-in">
+  <section class="container">
     <div class="grid" id="galleryGrid">
 
       {% for shot in site.data.gallery %}
@@ -90,7 +90,7 @@ permalink: /gallery/
         >
           <img
             src="{{ shot.image }}"
-            class="fade-in {{ shot.category | downcase }}"
+            class="{{ shot.category | downcase }}"
             alt="{{ shot.alt }}"
             data-title="{{ shot.alt | escape }}"
             data-description="{{ shot.description | default: '' | escape }}"
@@ -98,6 +98,9 @@ permalink: /gallery/
             data-date="{{ shot.date | default: '' }}"
             data-camera="{{ shot.camera | default: '' | escape }}"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="450"
           >
 
           <!-- HOVER CAPTION -->
@@ -118,7 +121,7 @@ permalink: /gallery/
   </section>
 
   <!-- FOOTER TEXT -->
-  <section class="container fade-in" style="text-align:center;">
+  <section class="container" style="text-align:center;">
     <p
       data-en="Every image tells a story — captured, not created."
       data-el="Κάθε εικόνα λέει μια ιστορία — αποτυπωμένη, όχι δημιουργημένη."
