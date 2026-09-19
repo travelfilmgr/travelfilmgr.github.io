@@ -28,22 +28,16 @@ excerpt: "Επισκέφτηκα πρόσφατα το πάρκο αναψυχή
   <!-- GALLERY -->
   <h3 style="margin-top: 50px; margin-bottom: 20px; font-size: 1.5rem;">Φωτογραφικό Υλικό</h3>
   
-  <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-    <img src="/assets/images/Παυλιανίτικα Καλούδια.jpg" alt="Παυλιανίτικα Καλούδια" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Μουσική Γέφυρα.jpg" alt="Μουσική Γέφυρα" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Natural Cascade & Stream.jpg" alt="Natural Cascade & Stream" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Woodland Bridge.jpg" alt="Woodland Bridge" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Δασικός Αυτοκινητόδρομος.jpg" alt="Δασικός Αυτοκινητόδρομος" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Το Παγκάκι του Κοψομεδιασμένου.jpg" alt="Το Παγκάκι του Κοψομεδιασμένου" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Streamside Pause.jpg" alt="Streamside Pause" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Wheel of Fortune.jpg" alt="Wheel of Fortune" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Σουρεαλιστική Ανάπαυλα.jpg" alt="Σουρεαλιστική Ανάπαυλα" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Stream Flow.jpg" alt="Stream Flow" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Canopy Sunburst.jpg" alt="Canopy Sunburst" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Σκηνή Απρόσμενη Φιγούρα.jpg" alt="Σκηνή Απρόσμενη Φιγούρα" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Το Πιο Επικίνδυνο Είδος.jpg" alt="Το Πιο Επικίνδυνο Είδος" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Η Ποταμιά.jpg" alt="Η Ποταμιά" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
-    <img src="/assets/images/Ιχνηλάτηση του Παραλόγου.jpg" alt="Ιχνηλάτηση του Παραλόγου" style="width: 100%; height: 260px; object-fit: cover; border-radius: 10px;" loading="lazy">
+  <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+    
+    {% assign photos = "Παυλιανίτικα Καλούδια|Μουσική Γέφυρα|Natural Cascade & Stream|Woodland Bridge|Δασικός Αυτοκινητόδρομος|Το Παγκάκι του Κοψομεδιασμένου|Streamside Pause|Wheel of Fortune|Σουρεαλιστική Ανάπαυλα|Stream Flow|Canopy Sunburst|Σκηνή Απρόσμενη Φιγούρα|Το Πιο Επικίνδυνο Είδος|Η Ποταμιά|Ιχνηλάτηση του Παραλόγου" | split: "|" %}
+    
+    {% for photo in photos %}
+      <a href="/assets/images/{{ photo | uri_escape }}.jpg" class="gallery-link" data-title="{{ photo | escape }}" style="display: block; overflow: hidden; cursor: zoom-in; border-radius: 10px;">
+        <img src="/assets/images/{{ photo | uri_escape }}.jpg" alt="{{ photo }}" style="width: 100%; height: 260px; object-fit: cover; display: block;" loading="lazy">
+      </a>
+    {% endfor %}
+
   </div>
 
 </article>
