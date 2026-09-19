@@ -122,7 +122,7 @@ title: Home
         <div class="card">
           <a href="{{ trip.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
             {% if trip.image %}
-              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy">
+              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy" decoding="async" width="600" height="400">
             {% endif %}
 
             <div style="padding:18px;">
@@ -194,7 +194,7 @@ title: Home
     {% if site.data.gallery.size > 0 %}
       {% for shot in site.data.gallery reversed limit:6 %}
         <div
-          class="gallery-link gallery-item fade-in"
+          class="gallery-link gallery-item"
           data-category="{{ shot.category | downcase }}"
           data-title="{{ shot.alt }}"
           data-tags="{{ shot.category }} {{ shot.alt }}"
@@ -203,13 +203,16 @@ title: Home
           <img
             src="{{ shot.image }}"
             alt="{{ shot.alt }}"
-            class="fade-in {{ shot.category | downcase }}"
+            class="{{ shot.category | downcase }}"
             data-title="{{ shot.alt | escape }}"
             data-description="{{ shot.description | default: '' | escape }}"
             data-location="{{ shot.location | default: '' | escape }}"
             data-date="{{ shot.date | default: '' }}"
             data-camera="{{ shot.camera | default: '' | escape }}"
             loading="lazy"
+            decoding="async"
+            width="600"
+            height="450"
           >
           <div class="gallery-caption">{{ shot.alt }}</div>
         </div>
