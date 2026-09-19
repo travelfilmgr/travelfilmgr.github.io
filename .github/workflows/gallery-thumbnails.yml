@@ -20,7 +20,7 @@ jobs:
       - name: Create test thumbnail
         run: |
           mkdir -p assets/images/gallery-thumbs
-          magick "assets/images/Woodland Bridge.jpg" \
+          convert "assets/images/Woodland Bridge.jpg" \
             -auto-orient \
             -resize "800x800>" \
             -strip \
