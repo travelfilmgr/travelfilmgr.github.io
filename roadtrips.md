@@ -4,56 +4,140 @@ title: Roadtrips
 permalink: /roadtrips/
 ---
 
-<div class="container fade-in" style="padding: 40px 20px; max-width: 900px; margin: 0 auto;">
-  <span style="display:inline-block; margin-bottom:12px; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--primary);">
-    Roadtrips / In Situ
-  </span>
+<div class="blog-page">
 
-  <h1 data-en="Roadtrips" data-el="Roadtrips">Roadtrips</h1>
-  <p style="color:var(--muted); margin-bottom:32px;">
-    <span data-en="Welcome to my roadtrips." data-el="Καλώς ήρθατε στα roadtrips μου.">Welcome to my roadtrips.</span>
-  </p>
+  <!-- Τραβάμε ΟΛΑ τα αρχεία .md που βρίσκονται μέσα στον φάκελο roadtrips/ -->
+  {% assign my_roadtrips = site.pages | where_exp: "item", "item.path contains 'roadtrips/'" | sort: "date" | reverse %}
+  {% assign featured = my_roadtrips.first %}
 
-  <article style="line-height: 1.8; color: var(--text); font-size: 1.05rem;">
-    <p>
-      Επισκέφτηκα πρόσφατα το πάρκο αναψυχής της Παύλιανης —ένα έργο πνοής φτιαγμένο από την τοπική ομάδα, τον σύλλογο και την κοινότητα της περιοχής, στην οποία αξίζουν πραγματικά πολλά συγχαρητήρια. Το πάρκο αναψυχής βρίσκεται μέσα στο δάσος, στη δροσιά, στη φύση· είναι μια πραγματική όξυνση καθαρού αέρα, ένα μέρος απόλυτης ηρεμίας και ψυχαγωγίας.
-    </p>
-    <p>
-      Πριν φτάσεις καν στο πάρκο, καταλαβαίνεις πού έχεις έρθει: παντού επιγραφές, έξυπνα λογοπαιγνία και παιχνίδια με το φυσικό τοπίο. Φτάνοντας και περνώντας την είσοδο του πάρκου στα δεξιά, σε υποδέχεται ένα υπέροχο μαγαζάκι με μαγνητάκια και διάφορα σουβενίρ για να θυμάσαι την επίσκεψή σου εκεί. Ακριβώς δίπλα υπάρχει μια υπέροχη καντίνα για μια απαραίτητη στάση δροσιάς.
-    </p>
-    <p>
-      Προχωρώντας πιο μέσα, το δάσος αποκαλύπτει τρομερές δραστηριότητες και τρελά σκηνικά, όπως η διάσημη ξύλινη αερογέφυρα-πιάνο για τους τολμηρούς, που πατώντας σε αυτήν παίζει μουσική. Στη συνέχεια, πηγαίνοντας πιο βαθιά, συναντάς μονοπάτια με διαφορετικές δραστηριότητες: ποδοσφαιράκι, δοκούς ισορροπίας, μικρά γεφυράκια, αναρρίχηση και πολλά άλλα. Στη μέση της διαδρομής υπάρχει μια απρόσμενη, υπέροχη πλαζ με ξαπλώστρες και ομπρέλες.
-    </p>
-    <p>
-      Πιο μέσα υπάρχουν στάσεις για ξεκούραση και άραγμα κάτω από τη σκιά και τη δροσιά του δάσους. Περνώντας από όλα αυτά, η διαδρομή καταλήγει στον Iron Throne. Όλη η διαδρομή είναι συνολικά 6 χιλιόμετρα, αλλά όποτε κουραστείς, μπορείς να αράξεις στα απίθανα παγκάκια, τις κούνιες του πάρκου ή να γυρίσεις πίσω από την ίδια διαδρομή. Όλο το πάρκο είναι πεντακάθαρο και περιποιημένο, ένα μέρος που αξίζει την προσοχή μας, όπως επίσης και τη στήριξή μας στον εθελοντικό κουμπαρά που υπάρχει στο δάσος.
-    </p>
-  </article>
+  <!-- HERO FEATURED ROADTRIP -->
+  <section class="blog-hero fade-in">
+    {% if featured %}
+      <a href="{{ featured.url | relative_url }}" class="featured-post">
+        {% if featured.image %}
+          <img src="{{ featured.image }}" alt="{{ featured.title }}" loading="lazy">
+        {% endif %}
 
-  <!-- GALLERY WITH TITLES -->
-  <div class="post-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 48px 0 0 0;">
-    <div>
-      <img src="/assets/images/Παυλιανίτικα Καλούδια.jpg" alt="Παυλιανίτικα Καλούδια" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Παυλιανίτικα Καλούδια</p>
+        <div class="featured-overlay">
+          <span class="featured-label" data-en="Featured Roadtrip" data-el="Προτεινόμενο Roadtrip">Featured Roadtrip</span>
+          <h1>{{ featured.title }}</h1>
+
+          {% if featured.excerpt %}
+            <p>
+              {{ featured.excerpt | strip_html | truncate: 160 }}
+            </p>
+          {% endif %}
+        </div>
+      </a>
+    {% endif %}
+  </section>
+
+  <!-- TITLE / INTRO -->
+  <section class="container fade-in blog-intro">
+    <span
+      data-en="In Situ"
+      data-el="In Situ"
+      style="
+        display:inline-block;
+        margin-bottom:12px;
+        padding:6px 12px;
+        border-radius:999px;
+        background:rgba(255,255,255,0.06);
+        border:1px solid rgba(255,255,255,0.1);
+        font-size:12px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+        color:var(--primary);
+      "
+    >
+      In Situ
+    </span>
+
+    <h2 data-en="Roadtrips & Routes" data-el="Roadtrips & Διαδρομές">Roadtrips & Routes</h2>
+
+    <p
+      data-en="Visual stories, routes, and notes from my roadtrips."
+      data-el="Οπτικές ιστορίες, διαδρομές και σημειώσεις από τις εξορμήσεις μου."
+      style="max-width:720px; margin:12px auto 0; color:var(--muted); line-height:1.8;"
+    >
+      Visual stories, routes, and notes from my roadtrips.
+    </p>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="container fade-in" style="padding-top:0; padding-bottom:10px;">
+    <div class="search-wrap">
+      <input
+        type="text"
+        class="search-input"
+        data-blog-search
+        data-placeholder-en="Search roadtrips..."
+        data-placeholder-el="Αναζήτηση roadtrips..."
+        placeholder="Search roadtrips..."
+        aria-label="Search roadtrips"
+      >
     </div>
-    <div>
-      <img src="/assets/images/Μουσική Γέφυρα.jpg" alt="Μουσική Γέφυρα" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Μουσική Γέφυρα</p>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <section class="container fade-in">
+    <div class="filters blog-filters">
+      <button onclick="filterPosts('all', event)" class="active" data-en="All" data-el="Όλα">All</button>
+      <button onclick="filterPosts('mountain', event)" data-en="Mountain" data-el="Βουνό">Mountain</button>
+      <button onclick="filterPosts('forest', event)" data-en="Forest" data-el="Δάσος">Forest</button>
+      <button onclick="filterPosts('seaside', event)" data-en="Seaside" data-el="Θάλασσα">Seaside</button>
+      <button onclick="filterPosts('villages', event)" data-en="Villages" data-el="Χωριά">Villages</button>
+      <button onclick="filterPosts('off-road', event)" data-en="Off-Road" data-el="Off-Road">Off-Road</button>
     </div>
-    <div>
-      <img src="/assets/images/Natural Cascade & Stream.jpg" alt="Natural Cascade & Stream" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Natural Cascade & Stream</p>
+  </section>
+
+  <!-- ROADTRIPS GRID -->
+  <section class="container fade-in">
+    <div class="cards blog-grid">
+
+      {% for trip in my_roadtrips %}
+        <div
+          class="card blog-post-card fade-in"
+          data-category="{{ trip.category | default: 'other' | downcase }}"
+          data-title="{{ trip.title | escape }}"
+          data-tags="{{ trip.category | default: 'other' }} {{ trip.title | escape }} {{ trip.excerpt | strip_html | escape }}"
+        >
+          <a href="{{ trip.url | relative_url }}" class="blog-post-link">
+
+            {% if trip.image %}
+              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy">
+            {% endif %}
+
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-tag">
+                  {{ trip.category | default: 'other' }}
+                </span>
+
+                {% if trip.date %}
+                  <span class="blog-date">
+                    {{ trip.date | date: "%d %b %Y" }}
+                  </span>
+                {% endif %}
+              </div>
+
+              <h3>{{ trip.title }}</h3>
+
+              {% if trip.excerpt %}
+                <p>
+                  {{ trip.excerpt | strip_html | truncate: 130 }}
+                </p>
+              {% endif %}
+            </div>
+
+          </a>
+        </div>
+      {% endfor %}
+
     </div>
-    <div>
-      <img src="/assets/images/Woodland Bridge.jpg" alt="Woodland Bridge" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Woodland Bridge</p>
-    </div>
-    <div>
-      <img src="/assets/images/Δασικός Αυτοκινητόδρομος.jpg" alt="Δασικός Αυτοκινητόδρομος" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Δασικός Αυτοκινητόδρομος</p>
-    </div>
-    <div>
-      <img src="/assets/images/Το Παγκάκι του Κοψομεδιασμένου.jpg" alt="Το Παγκάκι του Κοψομεδιασμένου" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Το Παγκάκι του Κοψομεδιασμένου</p>
+  </section>
+
+</div>      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Το Παγκάκι του Κοψομεδιασμένου</p>
     </div>
     <div>
       <img src="/assets/images/Streamside Pause.jpg" alt="Streamside Pause" style="width:100%; border-radius:8px; display:block;">
