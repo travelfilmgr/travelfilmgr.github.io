@@ -26,8 +26,8 @@ title: Home
     </span>
 
     <h1
-      data-en="Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities"
-      data-el="Ταξίδια • Φωτογραφία • Roadtrips • Ταξίδια με Μοτοσικλέτα • Ψάρεμα • Outdoor Δραστηριότητες"
+      data-en="Travel • Photography • Roadtrips • Moto Journeys  • Outdoor Activities"
+      data-el="Ταξίδια • Φωτογραφία • Roadtrips • Ταξίδια με Μοτοσικλέτα • Outdoor Δραστηριότητες"
       style="
         font-size: clamp(1.6rem, 3vw, 2.5rem);
         line-height: 1.2;
@@ -36,15 +36,15 @@ title: Home
         white-space: normal;
       "
     >
-      Travel • Photography • Roadtrips • Moto Journeys • Fishing • Outdoor Activities
+      Travel • Photography • Roadtrips • Moto Journeys •  Outdoor Activities
     </h1>
 
     <p
-      data-en="Documenting roadtrips, moto life, fishing, and outdoor adventures through a cinematic lens."
+      data-en="Documenting roadtrips, moto life, and outdoor adventures through a cinematic lens."
       data-el="Καταγράφοντας roadtrips, ζωή με τη μηχανή, ψάρεμα και outdoor περιπέτειες μέσα από έναν κινηματογραφικό φακό."
       style="margin-top:14px;"
     >
-      Documenting roadtrips, moto life, fishing, and outdoor adventures through a cinematic lens.
+      Documenting roadtrips, moto life and outdoor adventures through a cinematic lens.
     </p>
 
     <p
@@ -74,7 +74,7 @@ title: Home
     <h2 data-en="Welcome" data-el="Καλώς Ήρθες" style="margin-bottom:14px;">Welcome</h2>
 
     <p
-      data-en="A visual journey through landscapes, roadtrips, motorcycle adventures, fishing, and fleeting moments captured along the way. For me, life outdoors is more than an image — it is atmosphere, emotion, light, and the story every adventure leaves behind."
+      data-en="A visual journey through landscapes, roadtrips, motorcycle adventures and fleeting moments captured along the way. For me, life outdoors is more than an image — it is atmosphere, emotion, light, and the story every adventure leaves behind."
       data-el="Ένα οπτικό ταξίδι μέσα από τοπία, roadtrips, περιπέτειες με τη μοτοσικλέτα, ψάρεμα και φευγαλέες στιγμές που αποτυπώνονται στη διαδρομή. Για μένα, η ζωή στη φύση είναι κάτι παραπάνω από μια εικόνα — είναι ατμόσφαιρα, συναίσθημα, φως και η ιστορία που αφήνει πίσω της η κάθε περιπέτεια."
       style="color: var(--muted); max-width: 800px; line-height:1.8;"
     >
