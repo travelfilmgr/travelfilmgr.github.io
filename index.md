@@ -84,8 +84,10 @@ title: Home
   </div>
 </section>
 
-<!-- BLOG POSTS -->
+<!-- LATEST ROADTRIPS -->
 <section class="container fade-in">
+  {% assign my_roadtrips = site.pages | where_exp: "item", "item.path contains 'roadtrips/'" | sort: "date" | reverse %}
+
   <div style="
     display:flex;
     justify-content:space-between;
@@ -95,36 +97,36 @@ title: Home
     margin-bottom:18px;
   ">
     <div>
-      <h2 data-en="Latest Posts" data-el="Τελευταία Άρθρα" style="margin-bottom:10px;">Latest Posts</h2>
+      <h2 data-en="Latest Roadtrips" data-el="Τελευταία Roadtrips" style="margin-bottom:10px;">Latest Roadtrips</h2>
       <p
-        data-en="Recent travel notes, visual stories, and photography-inspired moments from the road."
-        data-el="Πρόσφατες ταξιδιωτικές σημειώσεις, οπτικές ιστορίες και φωτογραφικές στιγμές από τη διαδρομή."
+        data-en="Recent visual stories, routes, and notes from the road."
+        data-el="Πρόσφατες οπτικές ιστορίες, διαδρομές και σημειώσεις από τον δρόμο."
         style="color:var(--muted); max-width:680px; line-height:1.7;"
       >
-        Recent travel notes, visual stories, and photography-inspired moments from the road.
+        Recent visual stories, routes, and notes from the road.
       </p>
     </div>
 
-    <a href="/blog/" style="
+    <a href="/roadtrips/" style="
       color:var(--primary);
       text-decoration:none;
       font-weight:600;
     ">
-      <span data-en="View all posts →" data-el="Δες όλα τα άρθρα →">View all posts →</span>
+      <span data-en="View all roadtrips →" data-el="Δες όλα τα roadtrips →">View all roadtrips →</span>
     </a>
   </div>
 
   <div class="cards">
-    {% if site.posts.size > 0 %}
-      {% for post in site.posts limit:3 %}
+    {% if my_roadtrips.size > 0 %}
+      {% for trip in my_roadtrips limit:3 %}
         <div class="card">
-          <a href="{{ post.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
-            {% if post.image %}
-              <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy">
+          <a href="{{ trip.url | relative_url }}" style="text-decoration:none; color:inherit; display:block;">
+            {% if trip.image %}
+              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy">
             {% endif %}
 
             <div style="padding:18px;">
-              {% if post.category %}
+              {% if trip.category %}
                 <span style="
                   display:inline-block;
                   margin-bottom:10px;
@@ -137,15 +139,15 @@ title: Home
                   font-weight:600;
                   text-transform:uppercase;
                 ">
-                  {{ post.category }}
+                  {{ trip.category }}
                 </span>
               {% endif %}
 
-              <h3 style="padding:0; margin-bottom:10px;">{{ post.title }}</h3>
+              <h3 style="padding:0; margin-bottom:10px;">{{ trip.title }}</h3>
 
-              {% if post.excerpt %}
+              {% if trip.excerpt %}
                 <p style="color:var(--muted); line-height:1.7;">
-                  {{ post.excerpt | strip_html | truncate: 110 }}
+                  {{ trip.excerpt | strip_html | truncate: 110 }}
                 </p>
               {% endif %}
             </div>
@@ -153,7 +155,7 @@ title: Home
         </div>
       {% endfor %}
     {% else %}
-      <p data-en="No posts yet." data-el="Δεν υπάρχουν άρθρα ακόμα." style="color: var(--muted);">No posts yet.</p>
+      <p data-en="No roadtrips yet." data-el="Δεν υπάρχουν roadtrips ακόμα." style="color: var(--muted);">No roadtrips yet.</p>
     {% endif %}
   </div>
 </section>
