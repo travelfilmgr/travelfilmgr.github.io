@@ -12,24 +12,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Icons (Safe async load) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
 
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- Theme + Language init -->
+  <!-- Theme + Language init (safe no-flash) -->
   <script>
     (function () {
-      const savedTheme = localStorage.getItem('theme');
-      const savedLang = localStorage.getItem('lang');
-
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
-
-      if (savedLang) {
-        document.documentElement.setAttribute('lang', savedLang);
-      }
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const savedLang = localStorage.getItem('lang');
+        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedLang) document.documentElement.setAttribute('lang', savedLang);
+      } catch (e) {}
     })();
   </script>
 
@@ -45,7 +44,7 @@
 
       {% if page.image %}
         <div class="post-hero">
-          <img src="{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+          <img src="{{ page.image }}" alt="{{ page.title }}" fetchpriority="high">
         </div>
       {% endif %}
 
