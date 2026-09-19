@@ -1,3 +1,12 @@
+- image: /assets/images/Μουσική Γέφυρα.jpg
+  alt: Μουσική Γέφυρα
+  category: Nature
+  description: Λήψη κρεμαστής πεζογέφυρας της οποίας το κατάστρωμα είναι βαμμένο/διαμορφωμένο ως πλήκτρα πιάνου, διασχίζοντας δασικό άνοιγμα με έντονο ηλιακό φως και παρακείμενη πετρόχτιστη δομή
+  location: Greece,pavliani
+  date: 2026-09-19
+  camera: Nikon D7000
+
+
 - image: /assets/images/Natural Cascade & Stream.jpg
   alt: Natural Cascade & Stream
   category: Nature
