@@ -12,13 +12,38 @@ permalink: /roadtrips/
   <!-- HERO FEATURED ROADTRIP -->
   <section class="blog-hero fade-in">
     {% if featured %}
+
+      {% assign featured_image_filename = featured.image | split: '/' | last %}
+      {% assign featured_thumbnail_filename = featured_image_filename
+        | replace: '.jpg', '.webp'
+        | replace: '.JPG', '.webp'
+        | replace: '.jpeg', '.webp'
+        | replace: '.JPEG', '.webp'
+      %}
+
       <a href="{{ featured.url | relative_url }}" class="featured-post">
+
         {% if featured.image %}
-          <img src="{{ featured.image }}" alt="{{ featured.title }}" loading="lazy">
+          <img
+            src="/assets/images/gallery-thumbs/{{ featured_thumbnail_filename }}"
+            data-full="{{ featured.image }}"
+            alt="{{ featured.title }}"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="700"
+          >
         {% endif %}
 
         <div class="featured-overlay">
-          <span class="featured-label" data-en="Featured Roadtrip" data-el="Προτεινόμενο Roadtrip">Featured Roadtrip</span>
+          <span
+            class="featured-label"
+            data-en="Featured Roadtrip"
+            data-el="Προτεινόμενο Roadtrip"
+          >
+            Featured Roadtrip
+          </span>
+
           <h1>{{ featured.title }}</h1>
 
           {% if featured.excerpt %}
@@ -27,12 +52,14 @@ permalink: /roadtrips/
             </p>
           {% endif %}
         </div>
+
       </a>
     {% endif %}
   </section>
 
   <!-- TITLE / INTRO -->
   <section class="container fade-in blog-intro">
+
     <span
       data-en="In Situ"
       data-el="In Situ"
@@ -52,20 +79,36 @@ permalink: /roadtrips/
       In Situ
     </span>
 
-    <h2 data-en="Roadtrips & Routes" data-el="Roadtrips & Διαδρομές">Roadtrips & Routes</h2>
+    <h2
+      data-en="Roadtrips & Routes"
+      data-el="Roadtrips & Διαδρομές"
+    >
+      Roadtrips & Routes
+    </h2>
 
     <p
       data-en="Visual stories, routes, and notes from my roadtrips."
       data-el="Οπτικές ιστορίες, διαδρομές και σημειώσεις από τις εξορμήσεις μου."
-      style="max-width:720px; margin:12px auto 0; color:var(--muted); line-height:1.8;"
+      style="
+        max-width:720px;
+        margin:12px auto 0;
+        color:var(--muted);
+        line-height:1.8;
+      "
     >
       Visual stories, routes, and notes from my roadtrips.
     </p>
+
   </section>
 
   <!-- SEARCH -->
-  <section class="container fade-in" style="padding-top:0; padding-bottom:10px;">
+  <section
+    class="container fade-in"
+    style="padding-top:0; padding-bottom:10px;"
+  >
+
     <div class="search-wrap">
+
       <input
         type="text"
         class="search-input"
@@ -75,67 +118,172 @@ permalink: /roadtrips/
         placeholder="Search roadtrips..."
         aria-label="Search roadtrips"
       >
+
     </div>
+
   </section>
 
   <!-- FILTER BUTTONS -->
   <section class="container fade-in">
+
     <div class="filters blog-filters">
-      <button onclick="filterPosts('all', event)" class="active" data-en="All" data-el="Όλα">All</button>
-      <button onclick="filterPosts('mountain', event)" data-en="Mountain" data-el="Βουνό">Mountain</button>
-      <button onclick="filterPosts('forest', event)" data-en="Forest" data-el="Δάσος">Forest</button>
-      <button onclick="filterPosts('seaside', event)" data-en="Seaside" data-el="Θάλασσα">Seaside</button>
-      <button onclick="filterPosts('villages', event)" data-en="Villages" data-el="Χωριά">Villages</button>
-      <button onclick="filterPosts('off-road', event)" data-en="Off-Road" data-el="Off-Road">Off-Road</button>
+
+      <button
+        onclick="filterPosts('all', event)"
+        class="active"
+        data-en="All"
+        data-el="Όλα"
+      >
+        All
+      </button>
+
+      <button
+        onclick="filterPosts('mountain', event)"
+        data-en="Mountain"
+        data-el="Βουνό"
+      >
+        Mountain
+      </button>
+
+      <button
+        onclick="filterPosts('forest', event)"
+        data-en="Forest"
+        data-el="Δάσος"
+      >
+        Forest
+      </button>
+
+      <button
+        onclick="filterPosts('seaside', event)"
+        data-en="Seaside"
+        data-el="Θάλασσα"
+      >
+        Seaside
+      </button>
+
+      <button
+        onclick="filterPosts('villages', event)"
+        data-en="Villages"
+        data-el="Χωριά"
+      >
+        Villages
+      </button>
+
+      <button
+        onclick="filterPosts('off-road', event)"
+        data-en="Off-Road"
+        data-el="Off-Road"
+      >
+        Off-Road
+      </button>
+
     </div>
+
   </section>
 
   <!-- ROADTRIPS GRID -->
   <section class="container fade-in">
+
     <div class="cards blog-grid">
 
       {% for trip in roadtrips %}
+
+        {% assign trip_image_filename = trip.image | split: '/' | last %}
+
+        {% assign trip_thumbnail_filename = trip_image_filename
+          | replace: '.jpg', '.webp'
+          | replace: '.JPG', '.webp'
+          | replace: '.jpeg', '.webp'
+          | replace: '.JPEG', '.webp'
+        %}
+
         <div
           class="card blog-post-card fade-in"
           data-category="{{ trip.category | default: 'other' | downcase }}"
           data-title="{{ trip.title | escape }}"
           data-tags="{{ trip.category | default: 'other' }} {{ trip.title | escape }} {{ trip.excerpt | strip_html | escape }}"
         >
-          <!-- ΦΩΤΟΓΡΑΦΙΑ (lightbox) -->
+
+          <!-- PHOTO -->
           {% if trip.image %}
-            <a href="{{ trip.image }}" class="gallery-link" data-title="{{ trip.title | escape }}" style="display: block; overflow: hidden; cursor: zoom-in;">
-              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy" style="width: 100%; display: block;">
+
+            <a
+              href="{{ trip.image }}"
+              class="gallery-link"
+              data-title="{{ trip.title | escape }}"
+              style="
+                display:block;
+                overflow:hidden;
+                cursor:zoom-in;
+              "
+            >
+
+              <img
+                src="/assets/images/gallery-thumbs/{{ trip_thumbnail_filename }}"
+                data-full="{{ trip.image }}"
+                alt="{{ trip.title }}"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+                style="width:100%; display:block;"
+              >
+
             </a>
+
           {% endif %}
 
-          <!-- ΥΠΟΛΟΙΠΟ ΚΑΡΤΕΣ / ΤΙΤΛΟΣ (πάει στο άρθρο) -->
+          <!-- CARD CONTENT -->
           <div class="blog-card-content">
-            <a href="{{ trip.url | relative_url }}" class="blog-post-link" style="text-decoration: none; color: inherit; display: block;">
+
+            <a
+              href="{{ trip.url | relative_url }}"
+              class="blog-post-link"
+              style="
+                text-decoration:none;
+                color:inherit;
+                display:block;
+              "
+            >
+
               <div class="blog-meta">
+
                 <span class="blog-tag">
                   {{ trip.category | default: 'other' }}
                 </span>
 
                 {% if trip.date %}
+
                   <span class="blog-date">
                     {{ trip.date | date: "%d %b %Y" }}
                   </span>
+
                 {% endif %}
+
               </div>
 
-              <h3>{{ trip.title }}</h3>
+              <h3>
+                {{ trip.title }}
+              </h3>
 
               {% if trip.excerpt %}
+
                 <p>
                   {{ trip.excerpt | strip_html | truncate: 130 }}
                 </p>
+
               {% endif %}
+
             </a>
+
           </div>
+
         </div>
+
       {% endfor %}
 
     </div>
+
   </section>
 
 </div>
