@@ -40,7 +40,7 @@ permalink: /gallery/
       <p
         data-en="A curated collection of moments captured through travel, light, and emotion."
         data-el="Μια επιλεγμένη συλλογή στιγμών μέσα από ταξίδια, φως και συναίσθημα."
-        style="color: var(--muted); max-width:680px; margin:auto; line-height:1.7;"
+        style="color:var(--muted); max-width:680px; margin:auto; line-height:1.7;"
       >
         A curated collection of moments captured through travel, light, and emotion.
       </p>
@@ -84,12 +84,18 @@ permalink: /gallery/
     <div class="grid" id="galleryGrid">
 
       {% for shot in site.data.gallery %}
+
+        {% assign image_filename = shot.image | split: '/' | last %}
+        {% assign thumbnail_filename = image_filename | replace: '.jpg', '.webp' | replace: '.JPG', '.webp' | replace: '.jpeg', '.webp' | replace: '.JPEG', '.webp' %}
+
         <div
           class="gallery-link gallery-item"
           data-category="{{ shot.category | downcase }}"
         >
+
           <img
-            src="{{ shot.image }}"
+            src="/assets/images/gallery-thumbs/{{ thumbnail_filename }}"
+            data-full="{{ shot.image }}"
             class="{{ shot.category | downcase }}"
             alt="{{ shot.alt }}"
             data-title="{{ shot.alt | escape }}"
@@ -109,16 +115,22 @@ permalink: /gallery/
 
             {% if shot.location or shot.date %}
               <div class="gallery-caption-meta">
+
                 {% if shot.location %}
                   <span>{{ shot.location }}</span>
                 {% endif %}
+
                 {% if shot.date %}
                   <span>{{ shot.date }}</span>
                 {% endif %}
+
               </div>
             {% endif %}
+
           </div>
+
         </div>
+
       {% endfor %}
 
     </div>
@@ -130,7 +142,7 @@ permalink: /gallery/
       data-en="Every image tells a story — captured, not created."
       data-el="Κάθε εικόνα λέει μια ιστορία — αποτυπωμένη, όχι δημιουργημένη."
       style="
-        color: var(--muted);
+        color:var(--muted);
         margin-top:50px;
         font-size:0.95rem;
         letter-spacing:0.02em;
