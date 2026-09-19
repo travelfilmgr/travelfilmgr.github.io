@@ -36,27 +36,34 @@
   <meta name="twitter:image" content="{{ '/assets/images/og-image.jpg' | absolute_url }}">
 
   <!-- FAVICON -->
-  <link rel="icon" href="/assets/images/favicon.png">
+  <link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- ICONS (Safe async load για να μη μπλοκάρει το FCP) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-  <!-- THEME + LANGUAGE INIT (no flash) -->
+  <!-- THEME + LANGUAGE INIT (no flash, safe try-catch) -->
   <script>
     (function () {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      const savedLang = localStorage.getItem('lang') || 'en';
-
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.documentElement.setAttribute('lang', savedLang);
+      try {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const savedLang = localStorage.getItem('lang') || 'en';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('lang', savedLang);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute('lang', 'en');
+      }
     })();
   </script>
 
@@ -78,7 +85,7 @@
   <!-- FOOTER -->
   {% include footer.html %}
 
-  <!-- ANALYTICS NOTICE -->
+  <!-- ANALYTICS NOTICE (Ακριβώς τα ίδια IDs/classes, ελαφρύ background χωρίς mobile GPU lag) -->
   <div
     id="analytics-banner"
     style="
@@ -86,7 +93,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(11,11,11,0.96);
+      background: rgba(11,11,11,0.98);
       color: #fff;
       text-align: center;
       padding: 12px 64px 12px 16px;
@@ -94,9 +101,9 @@
       line-height: 1.6;
       z-index: 9999;
       border-top: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
       box-sizing: border-box;
       opacity: 1;
+      will-change: transform, opacity;
       transition: opacity 0.35s ease, transform 0.35s ease;
     "
   >
@@ -128,8 +135,8 @@
       font-weight: 500;
       cursor: pointer;
       z-index: 10000;
-      backdrop-filter: blur(8px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+      will-change: transform, opacity;
       transition: opacity 0.35s ease, transform 0.35s ease, background 0.25s ease;
     "
     onmouseover="this.style.background='rgba(255,255,255,0.20)'"
