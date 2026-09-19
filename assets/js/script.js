@@ -7,8 +7,11 @@ function applySavedTheme() {
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+  const currentTheme =
+    document.documentElement.getAttribute('data-theme') || 'dark';
+
   const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
   document.documentElement.setAttribute('data-theme', nextTheme);
   localStorage.setItem('theme', nextTheme);
   updateThemeToggleIcon();
@@ -18,11 +21,17 @@ function updateThemeToggleIcon() {
   const themeToggle = document.querySelector('.theme-toggle');
   if (!themeToggle) return;
 
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  themeToggle.innerHTML = currentTheme === 'dark' ? '☀️' : '🌙';
+  const currentTheme =
+    document.documentElement.getAttribute('data-theme') || 'dark';
+
+  themeToggle.innerHTML =
+    currentTheme === 'dark' ? '☀️' : '🌙';
+
   themeToggle.setAttribute(
     'aria-label',
-    currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+    currentTheme === 'dark'
+      ? 'Switch to light mode'
+      : 'Switch to dark mode'
   );
 }
 
@@ -33,8 +42,10 @@ function applyTranslations(lang) {
   document.documentElement.setAttribute('lang', lang);
 
   const elements = document.querySelectorAll('[data-en][data-el]');
+
   elements.forEach((el) => {
     const value = el.getAttribute(`data-${lang}`);
+
     if (value !== null) {
       el.textContent = value;
     }
@@ -68,35 +79,69 @@ function applySavedLanguage() {
 }
 
 /* =========================
-    SCROLL REVEAL (Optimized w/ rAF)
+    SCROLL REVEAL
+    Optimized with IntersectionObserver
 ========================= */
-let scrollTicking = false;
-function onScrollEvents() {
+function initScrollReveal() {
   const elements = document.querySelectorAll('.fade-in');
-  elements.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 80) {
-      el.classList.add('show');
-    }
-  });
 
-  const btn = document.querySelector('.back-to-top');
-  if (btn) {
-    if (window.scrollY > 320) {
-      btn.classList.add('show');
-    } else {
-      btn.classList.remove('show');
-    }
+  if (!elements.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    elements.forEach((el) => {
+      el.classList.add('show');
+    });
+
+    return;
   }
 
-  scrollTicking = false;
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.01
+    }
+  );
+
+  elements.forEach((el) => {
+    observer.observe(el);
+  });
 }
 
-function handleScrollThrottled() {
-  if (!scrollTicking) {
-    window.requestAnimationFrame(onScrollEvents);
-    scrollTicking = true;
+/* =========================
+    BACK TO TOP
+========================= */
+function updateBackToTopButton() {
+  const btn = document.querySelector('.back-to-top');
+
+  if (!btn) return;
+
+  if (window.scrollY > 320) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
   }
+}
+
+let backToTopTicking = false;
+
+function handleBackToTopScroll() {
+  if (backToTopTicking) return;
+
+  backToTopTicking = true;
+
+  window.requestAnimationFrame(() => {
+    updateBackToTopButton();
+    backToTopTicking = false;
+  });
 }
 
 /* =========================
@@ -132,16 +177,136 @@ function setGalleryTheme(cat) {
 /* =========================
     GALLERY FILTER SYSTEM
 ========================= */
-function filterImages(cat, event) {
+let currentGalleryFilter = 'all';
+let galleryFilterTimer = null;
+
+function getGallerySearchText(img) {
+  return [
+    img.getAttribute('data-title') || '',
+    img.getAttribute('data-description') || '',
+    img.getAttribute('data-location') || '',
+    img.getAttribute('data-camera') || '',
+    img.getAttribute('data-date') || '',
+    img.getAttribute('alt') || ''
+  ]
+    .join(' ')
+    .toLowerCase();
+}
+
+function galleryItemMatches(item, category, searchValue) {
+  const img = item.querySelector('img');
+
+  if (!img) return false;
+
+  const itemCategory =
+    (item.dataset.category || '').toLowerCase();
+
+  const categoryMatch =
+    category === 'all' ||
+    img.classList.contains(category) ||
+    itemCategory === category;
+
+  const searchMatch =
+    !searchValue ||
+    getGallerySearchText(img).includes(searchValue);
+
+  return categoryMatch && searchMatch;
+}
+
+function applyGalleryFilter(animate = true) {
   const gallery = document.querySelector('.gallery-page');
+
   if (!gallery) return;
 
-  const items = gallery.querySelectorAll('.gallery-link, .gallery-item');
-  const buttons = gallery.querySelectorAll('.filters button');
-  const searchInput = document.getElementById('gallerySearch');
-  const searchValue = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  const items =
+    gallery.querySelectorAll('.gallery-link, .gallery-item');
 
-  buttons.forEach((btn) => btn.classList.remove('active'));
+  const searchInput =
+    document.getElementById('gallerySearch');
+
+  const searchValue = searchInput
+    ? searchInput.value.trim().toLowerCase()
+    : '';
+
+  if (galleryFilterTimer) {
+    clearTimeout(galleryFilterTimer);
+    galleryFilterTimer = null;
+  }
+
+  items.forEach((item, i) => {
+    const match = galleryItemMatches(
+      item,
+      currentGalleryFilter,
+      searchValue
+    );
+
+    if (match) {
+      item.style.display = 'flex';
+
+      if (animate) {
+        item.style.transition = 'none';
+        item.style.opacity = '0';
+        item.style.transform =
+          'translateY(14px) scale(0.98)';
+
+        galleryFilterTimer = setTimeout(() => {
+          item.style.transition =
+            'opacity 0.35s ease, transform 0.35s ease';
+
+          item.style.opacity = '1';
+          item.style.transform =
+            'translateY(0) scale(1)';
+        }, Math.min(i * 18, 180));
+      } else {
+        item.style.transition = '';
+        item.style.opacity = '1';
+        item.style.transform = 'none';
+      }
+    } else {
+      item.style.transition = animate
+        ? 'opacity 0.2s ease, transform 0.2s ease'
+        : '';
+
+      item.style.opacity = animate ? '0' : '1';
+      item.style.transform = animate
+        ? 'scale(0.96)'
+        : 'none';
+
+      if (animate) {
+        const itemToHide = item;
+
+        setTimeout(() => {
+          if (
+            !galleryItemMatches(
+              itemToHide,
+              currentGalleryFilter,
+              searchValue
+            )
+          ) {
+            itemToHide.style.display = 'none';
+          }
+        }, 200);
+      } else {
+        item.style.display = 'none';
+      }
+    }
+  });
+}
+
+function filterImages(cat, event) {
+  const gallery = document.querySelector('.gallery-page');
+
+  if (!gallery) return;
+
+  currentGalleryFilter =
+    (cat || 'all').toLowerCase();
+
+  const buttons =
+    gallery.querySelectorAll('.filters button');
+
+  buttons.forEach((btn) => {
+    btn.classList.remove('active');
+  });
 
   if (event && event.currentTarget) {
     event.currentTarget.classList.add('active');
@@ -149,50 +314,8 @@ function filterImages(cat, event) {
     event.target.classList.add('active');
   }
 
-  setGalleryTheme(cat);
-
-  items.forEach((item, i) => {
-    const img = item.querySelector('img');
-    if (!img) return;
-
-    const itemCategory = (item.dataset.category || '').toLowerCase();
-    const categoryMatch =
-      cat === 'all' ||
-      img.classList.contains(cat) ||
-      itemCategory === cat;
-
-    const searchableText = [
-      img.getAttribute('data-title') || '',
-      img.getAttribute('data-description') || '',
-      img.getAttribute('data-location') || '',
-      img.getAttribute('data-camera') || '',
-      img.getAttribute('data-date') || '',
-      img.getAttribute('alt') || ''
-    ].join(' ').toLowerCase();
-
-    const searchMatch = !searchValue || searchableText.includes(searchValue);
-    const match = categoryMatch && searchMatch;
-
-    if (match) {
-      item.style.display = 'flex';
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(14px) scale(0.98)';
-
-      setTimeout(() => {
-        item.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0) scale(1)';
-      }, i * 25);
-    } else {
-      item.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
-      item.style.opacity = '0';
-      item.style.transform = 'scale(0.96)';
-
-      setTimeout(() => {
-        item.style.display = 'none';
-      }, 250);
-    }
-  });
+  setGalleryTheme(currentGalleryFilter);
+  applyGalleryFilter(true);
 }
 
 /* =========================
@@ -224,14 +347,26 @@ function setBlogTheme(cat) {
 /* =========================
     BLOG FILTER SYSTEM
 ========================= */
+let currentBlogFilter = 'all';
+let blogFilterTimer = null;
+
 function filterPosts(cat, event) {
   const blog = document.querySelector('.blog-page');
+
   if (!blog) return;
 
-  const posts = blog.querySelectorAll('.blog-post-card');
-  const buttons = blog.querySelectorAll('.blog-filters button');
+  currentBlogFilter =
+    (cat || 'all').toLowerCase();
 
-  buttons.forEach((btn) => btn.classList.remove('active'));
+  const posts =
+    blog.querySelectorAll('.blog-post-card');
+
+  const buttons =
+    blog.querySelectorAll('.blog-filters button');
+
+  buttons.forEach((btn) => {
+    btn.classList.remove('active');
+  });
 
   if (event && event.currentTarget) {
     event.currentTarget.classList.add('active');
@@ -239,30 +374,57 @@ function filterPosts(cat, event) {
     event.target.classList.add('active');
   }
 
-  setBlogTheme(cat);
+  setBlogTheme(currentBlogFilter);
+
+  if (blogFilterTimer) {
+    clearTimeout(blogFilterTimer);
+    blogFilterTimer = null;
+  }
 
   posts.forEach((post, i) => {
-    const postCat = (post.dataset.category || 'other').toLowerCase();
-    const match = cat === 'all' || postCat === cat;
+    const postCat =
+      (post.dataset.category || 'other').toLowerCase();
+
+    const match =
+      currentBlogFilter === 'all' ||
+      postCat === currentBlogFilter;
 
     if (match) {
       post.style.display = '';
-      post.style.opacity = '0';
-      post.style.transform = 'translateY(14px) scale(0.98)';
 
-      setTimeout(() => {
-        post.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+      post.style.transition = 'none';
+      post.style.opacity = '0';
+      post.style.transform =
+        'translateY(14px) scale(0.98)';
+
+      blogFilterTimer = setTimeout(() => {
+        post.style.transition =
+          'opacity 0.35s ease, transform 0.35s ease';
+
         post.style.opacity = '1';
-        post.style.transform = 'translateY(0) scale(1)';
-      }, i * 25);
+        post.style.transform =
+          'translateY(0) scale(1)';
+      }, Math.min(i * 18, 180));
     } else {
-      post.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      post.style.transition =
+        'opacity 0.2s ease, transform 0.2s ease';
+
       post.style.opacity = '0';
       post.style.transform = 'scale(0.96)';
 
+      const postToHide = post;
+
       setTimeout(() => {
-        post.style.display = 'none';
-      }, 250);
+        if (
+          !(
+            currentBlogFilter === 'all' ||
+            (postToHide.dataset.category || 'other')
+              .toLowerCase() === currentBlogFilter
+          )
+        ) {
+          postToHide.style.display = 'none';
+        }
+      }, 200);
     }
   });
 }
@@ -271,54 +433,41 @@ function filterPosts(cat, event) {
     GALLERY SEARCH
 ========================= */
 function initGallerySearch() {
-  const input = document.getElementById('gallerySearch');
-  const gallery = document.querySelector('.gallery-page');
-  const items = document.querySelectorAll('.gallery-item');
+  const input =
+    document.getElementById('gallerySearch');
 
-  if (!input || !items.length || !gallery) return;
+  const gallery =
+    document.querySelector('.gallery-page');
 
-  input.addEventListener('input', function () {
-    const value = this.value.toLowerCase();
-    const activeButton = gallery.querySelector('.filters button.active');
-    const activeCategory = activeButton
-      ? activeButton.textContent.trim().toLowerCase().replace(/\s+/g, '')
-      : 'all';
+  if (!input || !gallery) return;
 
-    items.forEach((item) => {
-      const img = item.querySelector('img');
-      if (!img) return;
-
-      const itemCategory = (item.dataset.category || '').toLowerCase();
-      const categoryMatch =
-        activeCategory === 'all' ||
-        img.classList.contains(activeCategory) ||
-        itemCategory === activeCategory;
-
-      const searchableText = [
-        img.getAttribute('data-title') || '',
-        img.getAttribute('data-description') || '',
-        img.getAttribute('data-location') || '',
-        img.getAttribute('data-camera') || '',
-        img.getAttribute('data-date') || '',
-        img.getAttribute('alt') || ''
-      ].join(' ').toLowerCase();
-
-      const searchMatch = searchableText.includes(value);
-      item.style.display = categoryMatch && searchMatch ? 'flex' : 'none';
-    });
+  input.addEventListener('input', () => {
+    applyGalleryFilter(false);
   });
 
   function updatePlaceholder() {
-    const lang = document.documentElement.lang || 'en';
-    const key = lang === 'el' ? 'data-el-placeholder' : 'data-en-placeholder';
+    const lang =
+      document.documentElement.lang || 'en';
+
+    const key =
+      lang === 'el'
+        ? 'data-el-placeholder'
+        : 'data-en-placeholder';
+
     const value = input.getAttribute(key);
-    if (value) input.placeholder = value;
+
+    if (value) {
+      input.placeholder = value;
+    }
   }
 
   updatePlaceholder();
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', updatePlaceholder);
+    btn.addEventListener(
+      'click',
+      updatePlaceholder
+    );
   });
 }
 
@@ -326,14 +475,20 @@ function initGallerySearch() {
     BLOG SEARCH
 ========================= */
 function initBlogSearch() {
-  const searchInput = document.querySelector('[data-blog-search]');
-  const blog = document.querySelector('.blog-page');
+  const searchInput =
+    document.querySelector('[data-blog-search]');
+
+  const blog =
+    document.querySelector('.blog-page');
+
   if (!searchInput || !blog) return;
 
-  const posts = blog.querySelectorAll('.blog-post-card');
+  const posts =
+    blog.querySelectorAll('.blog-post-card');
 
   searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim().toLowerCase();
+    const query =
+      searchInput.value.trim().toLowerCase();
 
     posts.forEach((post) => {
       const text = [
@@ -345,7 +500,18 @@ function initBlogSearch() {
         .join(' ')
         .toLowerCase();
 
-      post.style.display = text.includes(query) ? '' : 'none';
+      const category =
+        (post.dataset.category || 'other')
+          .toLowerCase();
+
+      const categoryMatch =
+        currentBlogFilter === 'all' ||
+        category === currentBlogFilter;
+
+      post.style.display =
+        categoryMatch && text.includes(query)
+          ? ''
+          : 'none';
     });
   });
 }
@@ -354,26 +520,48 @@ function initBlogSearch() {
     GALLERY LIGHTBOX
 ========================= */
 function initGalleryLightbox() {
-  const gallery = document.querySelector('.gallery-page');
+  const gallery =
+    document.querySelector('.gallery-page');
+
   if (!gallery) return;
 
-  const galleryImages = Array.from(gallery.querySelectorAll('.grid img'));
+  const galleryImages =
+    Array.from(
+      gallery.querySelectorAll('.grid img')
+    );
+
   if (!galleryImages.length) return;
 
-  let lightbox = document.querySelector('.lightbox');
+  let lightbox =
+    document.querySelector('.lightbox');
 
   if (!lightbox) {
-    lightbox = document.createElement('div');
+    lightbox =
+      document.createElement('div');
+
     lightbox.className = 'lightbox';
+
     lightbox.innerHTML = `
       <button class="lightbox-close" aria-label="Close">×</button>
-      <button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>
-      <button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>
+
+      <button
+        class="lightbox-nav lightbox-prev"
+        aria-label="Previous image"
+      >‹</button>
+
+      <button
+        class="lightbox-nav lightbox-next"
+        aria-label="Next image"
+      >›</button>
+
       <div class="lightbox-content-wrap">
         <img src="" alt="">
+
         <div class="lightbox-info">
           <h3 class="lightbox-title"></h3>
+
           <p class="lightbox-description"></p>
+
           <div class="lightbox-meta">
             <span class="lightbox-location"></span>
             <span class="lightbox-date"></span>
@@ -382,142 +570,278 @@ function initGalleryLightbox() {
         </div>
       </div>
     `;
+
     document.body.appendChild(lightbox);
   }
 
-  const lightboxImg = lightbox.querySelector('img');
-  const lightboxTitle = lightbox.querySelector('.lightbox-title');
-  const lightboxDescription = lightbox.querySelector('.lightbox-description');
-  const lightboxLocation = lightbox.querySelector('.lightbox-location');
-  const lightboxDate = lightbox.querySelector('.lightbox-date');
-  const lightboxCamera = lightbox.querySelector('.lightbox-camera');
-  const closeBtn = lightbox.querySelector('.lightbox-close');
-  const prevBtn = lightbox.querySelector('.lightbox-prev');
-  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const lightboxImg =
+    lightbox.querySelector('img');
+
+  const lightboxTitle =
+    lightbox.querySelector('.lightbox-title');
+
+  const lightboxDescription =
+    lightbox.querySelector('.lightbox-description');
+
+  const lightboxLocation =
+    lightbox.querySelector('.lightbox-location');
+
+  const lightboxDate =
+    lightbox.querySelector('.lightbox-date');
+
+  const lightboxCamera =
+    lightbox.querySelector('.lightbox-camera');
+
+  const closeBtn =
+    lightbox.querySelector('.lightbox-close');
+
+  const prevBtn =
+    lightbox.querySelector('.lightbox-prev');
+
+  const nextBtn =
+    lightbox.querySelector('.lightbox-next');
 
   let currentIndex = 0;
 
   function getVisibleImages() {
     return galleryImages.filter((img) => {
-      const item = img.closest('.gallery-item, .gallery-link');
+      const item =
+        img.closest(
+          '.gallery-item, .gallery-link'
+        );
+
       if (!item) return false;
-      return window.getComputedStyle(item).display !== 'none';
+
+      return (
+        window.getComputedStyle(item).display !==
+        'none'
+      );
     });
   }
 
   function renderLightbox(img) {
-    const title = img.getAttribute('data-title') || img.alt || '';
-    const description = img.getAttribute('data-description') || '';
-    const location = img.getAttribute('data-location') || '';
-    const date = img.getAttribute('data-date') || '';
-    const camera = img.getAttribute('data-camera') || '';
+    const title =
+      img.getAttribute('data-title') ||
+      img.alt ||
+      '';
 
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt || '';
-    lightboxTitle.textContent = title;
-    lightboxDescription.textContent = description;
-    lightboxLocation.textContent = location ? `📍 ${location}` : '';
-    lightboxDate.textContent = date ? `📅 ${date}` : '';
-    lightboxCamera.textContent = camera ? `📷 ${camera}` : '';
+    const description =
+      img.getAttribute('data-description') ||
+      '';
+
+    const location =
+      img.getAttribute('data-location') ||
+      '';
+
+    const date =
+      img.getAttribute('data-date') ||
+      '';
+
+    const camera =
+      img.getAttribute('data-camera') ||
+      '';
+
+    lightboxImg.src =
+      img.currentSrc || img.src;
+
+    lightboxImg.alt =
+      img.alt || '';
+
+    lightboxTitle.textContent =
+      title;
+
+    lightboxDescription.textContent =
+      description;
+
+    lightboxLocation.textContent =
+      location
+        ? `📍 ${location}`
+        : '';
+
+    lightboxDate.textContent =
+      date
+        ? `📅 ${date}`
+        : '';
+
+    lightboxCamera.textContent =
+      camera
+        ? `📷 ${camera}`
+        : '';
   }
 
   function openLightbox(index) {
-    const visibleImages = getVisibleImages();
+    const visibleImages =
+      getVisibleImages();
+
     if (!visibleImages.length) return;
 
-    const clickedImage = galleryImages[index];
-    const visibleIndex = visibleImages.indexOf(clickedImage);
-    currentIndex = visibleIndex !== -1 ? visibleIndex : 0;
+    const clickedImage =
+      galleryImages[index];
 
-    renderLightbox(visibleImages[currentIndex]);
+    const visibleIndex =
+      visibleImages.indexOf(clickedImage);
+
+    currentIndex =
+      visibleIndex !== -1
+        ? visibleIndex
+        : 0;
+
+    renderLightbox(
+      visibleImages[currentIndex]
+    );
+
     lightbox.classList.add('show');
-    document.body.style.overflow = 'hidden';
+
+    document.body.style.overflow =
+      'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('show');
-    document.body.style.overflow = '';
+
+    document.body.style.overflow =
+      '';
   }
 
   function showNextImage() {
-    const visibleImages = getVisibleImages();
+    const visibleImages =
+      getVisibleImages();
+
     if (!visibleImages.length) return;
 
-    currentIndex = (currentIndex + 1) % visibleImages.length;
-    renderLightbox(visibleImages[currentIndex]);
+    currentIndex =
+      (currentIndex + 1) %
+      visibleImages.length;
+
+    renderLightbox(
+      visibleImages[currentIndex]
+    );
   }
 
   function showPrevImage() {
-    const visibleImages = getVisibleImages();
+    const visibleImages =
+      getVisibleImages();
+
     if (!visibleImages.length) return;
 
-    currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
-    renderLightbox(visibleImages[currentIndex]);
+    currentIndex =
+      (currentIndex - 1 +
+        visibleImages.length) %
+      visibleImages.length;
+
+    renderLightbox(
+      visibleImages[currentIndex]
+    );
   }
 
-  galleryImages.forEach((img, index) => {
-    img.addEventListener('click', (e) => {
-      e.preventDefault();
-      openLightbox(index);
-    });
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
+  galleryImages.forEach(
+    (img, index) => {
+      img.addEventListener(
+        'click',
+        (e) => {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      );
     }
-  });
+  );
+
+  lightbox.addEventListener(
+    'click',
+    (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    }
+  );
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener(
+      'click',
+      closeLightbox
+    );
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showNextImage();
-    });
+    nextBtn.addEventListener(
+      'click',
+      (e) => {
+        e.stopPropagation();
+        showNextImage();
+      }
+    );
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showPrevImage();
-    });
+    prevBtn.addEventListener(
+      'click',
+      (e) => {
+        e.stopPropagation();
+        showPrevImage();
+      }
+    );
   }
 
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('show')) return;
+  document.addEventListener(
+    'keydown',
+    (e) => {
+      if (
+        !lightbox.classList.contains('show')
+      ) {
+        return;
+      }
 
-    if (e.key === 'Escape') {
-      closeLightbox();
-    }
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
 
-    if (e.key === 'ArrowRight') {
-      showNextImage();
-    }
+      if (e.key === 'ArrowRight') {
+        showNextImage();
+      }
 
-    if (e.key === 'ArrowLeft') {
-      showPrevImage();
+      if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      }
     }
-  });
+  );
 }
 
 /* =========================
     READING TIME
 ========================= */
 function updateReadingTime(lang = 'en') {
-  const readingTimeEl = document.querySelector('.post-reading-time');
-  const postContent = document.querySelector('.post-content');
+  const readingTimeEl =
+    document.querySelector(
+      '.post-reading-time'
+    );
 
-  if (!readingTimeEl || !postContent) return;
+  const postContent =
+    document.querySelector(
+      '.post-content'
+    );
 
-  const words = postContent.innerText.trim().split(/\s+/).filter(Boolean).length;
-  const minutes = Math.max(1, Math.ceil(words / 200));
+  if (!readingTimeEl || !postContent) {
+    return;
+  }
+
+  const words =
+    postContent.innerText
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .length;
+
+  const minutes =
+    Math.max(
+      1,
+      Math.ceil(words / 200)
+    );
 
   readingTimeEl.textContent =
     lang === 'el'
-      ? `• ${minutes} λεπτό${minutes > 1 ? 'ά' : ''} ανάγνωση`
+      ? `• ${minutes} λεπτό${
+          minutes > 1 ? 'ά' : ''
+        } ανάγνωση`
       : `• ${minutes} min read`;
 }
 
@@ -525,45 +849,89 @@ function updateReadingTime(lang = 'en') {
     COPY LINK BUTTON
 ========================= */
 function initCopyLinkButton() {
-  const copyBtn = document.querySelector('.copy-link-btn');
+  const copyBtn =
+    document.querySelector(
+      '.copy-link-btn'
+    );
+
   if (!copyBtn) return;
 
-  copyBtn.addEventListener('click', async () => {
-    const originalHTML = copyBtn.innerHTML;
+  copyBtn.addEventListener(
+    'click',
+    async () => {
+      const originalHTML =
+        copyBtn.innerHTML;
 
-    try {
-      await navigator.clipboard.writeText(window.location.href);
+      try {
+        await navigator.clipboard.writeText(
+          window.location.href
+        );
 
-      const lang = document.documentElement.getAttribute('lang') || 'en';
-      copyBtn.innerHTML =
-        lang === 'el'
-          ? '<i class="fa-solid fa-check"></i><span>Αντιγράφηκε</span>'
-          : '<i class="fa-solid fa-check"></i><span>Copied</span>';
+        const lang =
+          document.documentElement
+            .getAttribute('lang') ||
+          'en';
 
-      setTimeout(() => {
-        copyBtn.innerHTML = originalHTML;
-      }, 1600);
-    } catch (error) {
-      console.error('Copy failed:', error);
+        copyBtn.innerHTML =
+          lang === 'el'
+            ? '<i class="fa-solid fa-check"></i><span>Αντιγράφηκε</span>'
+            : '<i class="fa-solid fa-check"></i><span>Copied</span>';
+
+        setTimeout(() => {
+          copyBtn.innerHTML =
+            originalHTML;
+        }, 1600);
+      } catch (error) {
+        console.error(
+          'Copy failed:',
+          error
+        );
+      }
     }
-  });
+  );
 }
 
 /* =========================
-    BACK TO TOP
+    BACK TO TOP BUTTON
 ========================= */
 function createBackToTopButton() {
-  if (document.querySelector('.back-to-top')) return;
+  if (
+    document.querySelector(
+      '.back-to-top'
+    )
+  ) {
+    return;
+  }
 
-  const btn = document.createElement('button');
-  btn.className = 'back-to-top';
-  btn.setAttribute('type', 'button');
-  btn.setAttribute('aria-label', 'Back to top');
+  const btn =
+    document.createElement(
+      'button'
+    );
+
+  btn.className =
+    'back-to-top';
+
+  btn.setAttribute(
+    'type',
+    'button'
+  );
+
+  btn.setAttribute(
+    'aria-label',
+    'Back to top'
+  );
+
   btn.innerHTML = '↑';
 
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  btn.addEventListener(
+    'click',
+    () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  );
 
   document.body.appendChild(btn);
 }
@@ -572,37 +940,58 @@ function createBackToTopButton() {
     LAZY LOAD SAFETY
 ========================= */
 function applyLazyLoadingToImages() {
-  const images = document.querySelectorAll('img:not([loading])');
-  images.forEach((img) => {
-    img.setAttribute('loading', 'lazy');
-  });
+  /*
+    Intentionally empty.
+
+    The pages already define loading behavior
+    for their images. We do not force loading="lazy"
+    globally because that can interfere with
+    important/above-the-fold images.
+  */
 }
 
 /* =========================
     THEME BUTTON INIT
 ========================= */
 function initThemeToggle() {
-  const themeToggle = document.querySelector('.theme-toggle');
+  const themeToggle =
+    document.querySelector(
+      '.theme-toggle'
+    );
+
   if (!themeToggle) return;
 
   updateThemeToggleIcon();
-  themeToggle.addEventListener('click', toggleTheme);
+
+  themeToggle.addEventListener(
+    'click',
+    toggleTheme
+  );
 }
 
 /* =========================
     LANGUAGE BUTTON INIT
 ========================= */
 function initLanguageButtons() {
-  const langButtons = document.querySelectorAll('.lang-btn');
+  const langButtons =
+    document.querySelectorAll(
+      '.lang-btn'
+    );
+
   if (!langButtons.length) return;
 
   langButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-    const lang = btn.dataset.lang;
-      if (lang) {
-        setLang(lang);
+    btn.addEventListener(
+      'click',
+      () => {
+        const lang =
+          btn.dataset.lang;
+
+        if (lang) {
+          setLang(lang);
+        }
       }
-    });
+    );
   });
 }
 
@@ -610,33 +999,60 @@ function initLanguageButtons() {
     FORCE SOCIAL LINKS
 ========================= */
 function initForcedSocialLinks() {
-  document.querySelectorAll('.footer-social a, .social-links a').forEach((link) => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      window.open(this.href, '_blank', 'noopener,noreferrer');
+  document
+    .querySelectorAll(
+      '.footer-social a, .social-links a'
+    )
+    .forEach((link) => {
+      link.addEventListener(
+        'click',
+        function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          window.open(
+            this.href,
+            '_blank',
+            'noopener,noreferrer'
+          );
+        }
+      );
     });
-  });
 }
 
 /* =========================
-    INIT (Clean single trigger)
+    INIT
 ========================= */
-document.addEventListener('DOMContentLoaded', () => {
-  applySavedTheme();
-  applySavedLanguage();
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    applySavedTheme();
+    applySavedLanguage();
 
-  createBackToTopButton();
-  onScrollEvents();
-  initGalleryLightbox();
-  initGallerySearch();
-  initBlogSearch();
-  initCopyLinkButton();
-  initThemeToggle();
-  initLanguageButtons();
-  applyLazyLoadingToImages();
-  updateThemeToggleIcon();
-  initForcedSocialLinks();
+    createBackToTopButton();
 
-  window.addEventListener('scroll', handleScrollThrottled, { passive: true });
-});
+    initScrollReveal();
+    updateBackToTopButton();
+
+    initGalleryLightbox();
+    initGallerySearch();
+    initBlogSearch();
+
+    initCopyLinkButton();
+
+    initThemeToggle();
+    initLanguageButtons();
+
+    applyLazyLoadingToImages();
+
+    updateThemeToggleIcon();
+
+    initForcedSocialLinks();
+
+    window.addEventListener(
+      'scroll',
+      handleBackToTopScroll,
+      { passive: true }
+    );
+  }
+);
