@@ -6,9 +6,8 @@ permalink: /roadtrips/
 
 <div class="blog-page">
 
-  <!-- Τραβάμε ΟΛΑ τα αρχεία .md που βρίσκονται μέσα στον φάκελο roadtrips/ -->
-  {% assign my_roadtrips = site.pages | where_exp: "item", "item.path contains 'roadtrips/'" | sort: "date" | reverse %}
-  {% assign featured = my_roadtrips.first %}
+  {% assign roadtrips = site.pages | where_exp: "item", "item.path contains 'roadtrips/'" | sort: "date" | reverse %}
+  {% assign featured = roadtrips.first %}
 
   <!-- HERO FEATURED ROADTRIP -->
   <section class="blog-hero fade-in">
@@ -95,7 +94,7 @@ permalink: /roadtrips/
   <section class="container fade-in">
     <div class="cards blog-grid">
 
-      {% for trip in my_roadtrips %}
+      {% for trip in roadtrips %}
         <div
           class="card blog-post-card fade-in"
           data-category="{{ trip.category | default: 'other' | downcase }}"
@@ -137,43 +136,4 @@ permalink: /roadtrips/
     </div>
   </section>
 
-</div>      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Το Παγκάκι του Κοψομεδιασμένου</p>
-    </div>
-    <div>
-      <img src="/assets/images/Streamside Pause.jpg" alt="Streamside Pause" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Streamside Pause</p>
-    </div>
-    <div>
-      <img src="/assets/images/Wheel of Fortune.jpg" alt="Wheel of Fortune" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Wheel of Fortune</p>
-    </div>
-    <div>
-      <img src="/assets/images/Σουρεαλιστική Ανάπαυλα.jpg" alt="Σουρεαλιστική Ανάπαυλα" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Σουρεαλιστική Ανάπαυλα</p>
-    </div>
-    <div>
-      <img src="/assets/images/Stream Flow.jpg" alt="Stream Flow" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Stream Flow</p>
-    </div>
-    <div>
-      <img src="/assets/images/Canopy Sunburst.jpg" alt="Canopy Sunburst" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Canopy Sunburst</p>
-    </div>
-    <div>
-      <img src="/assets/images/Σκηνή Απρόσμενη Φιγούρα.jpg" alt="Σκηνή Απρόσμενη Φιγούρα" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Σκηνή Απρόσμενη Φιγούρα</p>
-    </div>
-    <div>
-      <img src="/assets/images/Το Πιο Επικίνδυνο Είδος.jpg" alt="Το Πιο Επικίνδυνο Είδος" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Το Πιο Επικίνδυνο Είδος</p>
-    </div>
-    <div>
-      <img src="/assets/images/Η Ποταμιά.jpg" alt="Η Ποταμιά" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Η Ποταμιά</p>
-    </div>
-    <div>
-      <img src="/assets/images/Ιχνηλάτηση του Παραλόγου.jpg" alt="Ιχνηλάτηση του Παραλόγου" style="width:100%; border-radius:8px; display:block;">
-      <p style="font-size: 0.85em; color: var(--muted); margin-top: 8px;">Ιχνηλάτηση του Παραλόγου</p>
-    </div>
-  </div>
 </div>
