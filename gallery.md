@@ -106,12 +106,7 @@ permalink: /gallery/
         data-location="{{ shot.location | default: '' | escape }}"
         data-date="{{ shot.date | default: '' }}"
         data-camera="{{ shot.camera | default: '' | escape }}"
-        {% if forloop.first %}
-          loading="eager"
-          fetchpriority="high"
-        {% else %}
-          loading="lazy"
-        {% endif %}
+        loading="lazy"
         decoding="async"
         width="600"
         height="450"
