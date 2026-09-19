@@ -101,13 +101,16 @@ permalink: /roadtrips/
           data-title="{{ trip.title | escape }}"
           data-tags="{{ trip.category | default: 'other' }} {{ trip.title | escape }} {{ trip.excerpt | strip_html | escape }}"
         >
-          <a href="{{ trip.url | relative_url }}" class="blog-post-link">
+          <!-- ΦΩΤΟΓΡΑΦΙΑ (lightbox) -->
+          {% if trip.image %}
+            <a href="{{ trip.image }}" class="gallery-link" data-title="{{ trip.title | escape }}" style="display: block; overflow: hidden; cursor: zoom-in;">
+              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy" style="width: 100%; display: block;">
+            </a>
+          {% endif %}
 
-            {% if trip.image %}
-              <img src="{{ trip.image }}" alt="{{ trip.title }}" loading="lazy">
-            {% endif %}
-
-            <div class="blog-card-content">
+          <!-- ΥΠΟΛΟΙΠΟ ΚΑΡΤΕΣ / ΤΙΤΛΟΣ (πάει στο άρθρο) -->
+          <div class="blog-card-content">
+            <a href="{{ trip.url | relative_url }}" class="blog-post-link" style="text-decoration: none; color: inherit; display: block;">
               <div class="blog-meta">
                 <span class="blog-tag">
                   {{ trip.category | default: 'other' }}
@@ -127,9 +130,8 @@ permalink: /roadtrips/
                   {{ trip.excerpt | strip_html | truncate: 130 }}
                 </p>
               {% endif %}
-            </div>
-
-          </a>
+            </a>
+          </div>
         </div>
       {% endfor %}
 
