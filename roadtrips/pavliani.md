@@ -47,7 +47,7 @@ excerpt: "Επισκέφτηκα πρόσφατα το πάρκο αναψυχή
     style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;"
   >
 
-    {% assign photos = "Παυλιανίτικα Καλούδια|Μουσική Γέφυρα|Natural Cascade & Stream|Woodland Bridge|Δασικός Αυτοκινητόδρομος|Το Παγκάκι του Κοψομεδιασμένου|Streamside Pause|Wheel of Fortune|Σουρεαλιστική Ανάπαυλα|Stream Flow|Canopy Sunburst|Σκηνή Απρόσμενη Φιγούρα|Το Πιο Επικίνδυνο Είδος|Η Ποταμιά|Ιχνηλάτηση του Παραλόγου" | split: "|" %}
+    {% assign photos = "Παυλιανίτικα Καλούδια|Μουσική Γέφυρα|Natural Cascade & Stream|Woodland Bridge|Δασικός Αυτοκινητόδρομος|Το Παγκάκι του Κοψομεδιασμένου|Streamside Pause|Wheel of Fortune|Σουρεαλιστική Ανάπαυλα|Stream Flow|Canopy Sunburst|Σκηνή  Απρόσμενη Φιγούρα|Το Πιο Επικίνδυνο Είδος|Η Ποταμιά|Ιχνηλάτηση του Παραλόγου" | split: "|" %}
 
     {% for photo in photos %}
 
