@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Πάρκο Αναψυχής Παύλιανης"
+title: "Παύλιανη – Πάρκο Αναψυχής, Roadtrip & Φωτογραφίες"
 category: forest
 date: 2026-09-19
 image: /assets/images/Μουσική Γέφυρα.jpg
