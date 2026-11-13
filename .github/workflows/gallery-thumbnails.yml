@@ -28,6 +28,12 @@ jobs:
           while IFS= read -r -d '' file; do
             filename="$(basename "$file")"
             base="${filename%.*}"
+            thumbnail="assets/images/gallery-thumbs/${base}.webp"
+
+            if [ -f "$thumbnail" ]; then
+              echo "Skipping existing thumbnail: $filename"
+              continue
+            fi
 
             echo "Creating thumbnail: $filename"
 
@@ -36,7 +42,7 @@ jobs:
               -resize "800x800>" \
               -strip \
               -quality 80 \
-              "assets/images/gallery-thumbs/${base}.webp"
+              "$thumbnail"
           done
 
       - name: Commit thumbnails
