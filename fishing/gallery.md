@@ -106,43 +106,37 @@ body:has(.fishing-gallery-page) {
 
       {% assign fishing_count = 0 %}
 
-      {% for shot in site.data.gallery reversed %}
+      {% for shot in site.data.fishing_gallery reversed %}
 
-        {% assign shot_category = shot.category | downcase %}
+        {% assign image_filename = shot.image | split: '/' | last %}
 
-        {% if shot_category contains 'fishing' or shot_category contains 'ψαρε' %}
+        {% assign thumbnail_filename =
+          image_filename
+          | replace: '.jpg', '.webp'
+          | replace: '.JPG', '.webp'
+          | replace: '.jpeg', '.webp'
+          | replace: '.JPEG', '.webp'
+        %}
 
-          {% assign image_filename = shot.image | split: '/' | last %}
+        <a
+          class="item"
+          href="{{ shot.image | relative_url }}"
+        >
 
-          {% assign thumbnail_filename =
-            image_filename
-            | replace: '.jpg', '.webp'
-            | replace: '.JPG', '.webp'
-            | replace: '.jpeg', '.webp'
-            | replace: '.JPEG', '.webp'
-          %}
-
-          <a
-            class="item"
-            href="{{ shot.image | relative_url }}"
+          <img
+            src="{{ '/assets/images/gallery-thumbs/' | append: thumbnail_filename | relative_url }}"
+            alt="{{ shot.alt | escape }}"
+            loading="lazy"
+            decoding="async"
           >
 
-            <img
-              src="/assets/images/gallery-thumbs/{{ thumbnail_filename }}"
-              alt="{{ shot.alt | escape }}"
-              loading="lazy"
-              decoding="async"
-            >
+          <div class="caption">
+            {{ shot.alt | escape }}
+          </div>
 
-            <div class="caption">
-              {{ shot.alt }}
-            </div>
+        </a>
 
-          </a>
-
-          {% assign fishing_count = fishing_count | plus: 1 %}
-
-        {% endif %}
+        {% assign fishing_count = fishing_count | plus: 1 %}
 
       {% endfor %}
 
@@ -150,8 +144,8 @@ body:has(.fishing-gallery-page) {
 
         <p>
           Δεν έχουν προστεθεί ακόμη φωτογραφίες ψαρέματος.
-          Πρόσθεσε τις φωτογραφίες στο _data/gallery.yml
-          με category: Fishing.
+          Πρόσθεσε τις φωτογραφίες στο
+          _data/fishing_gallery.yml.
         </p>
 
       {% endif %}
