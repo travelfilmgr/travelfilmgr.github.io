@@ -60,9 +60,18 @@ body:has(.fishing-gallery-page) {
   background: #0b1d2d;
   border: 1px solid rgba(85,185,238,.18);
   text-decoration: none;
+  color: #eef7ff;
+  transition:
+    border-color .25s ease,
+    transform .25s ease;
 }
 
-.fishing-gallery-page img {
+.fishing-gallery-page .item:hover {
+  border-color: rgba(85,185,238,.55);
+  transform: translateY(-3px);
+}
+
+.fishing-gallery-page .item img {
   width: 100%;
   display: block;
   aspect-ratio: 4/3;
@@ -75,9 +84,54 @@ body:has(.fishing-gallery-page) {
   transform: scale(1.035);
 }
 
+/* PHOTO INFORMATION */
+
 .fishing-gallery-page .caption {
-  padding: 12px 14px;
-  color: #eef7ff;
+  padding: 16px;
+}
+
+.fishing-gallery-page .caption-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #f5f8fc;
+  margin-bottom: 10px;
+}
+
+.fishing-gallery-page .category-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(85,185,238,.12);
+  border: 1px solid rgba(85,185,238,.25);
+  color: #65c5f6;
+  font-size: .73rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.fishing-gallery-page .caption-description {
+  font-size: .87rem;
+  line-height: 1.65;
+  color: #b7cada;
+  margin-bottom: 14px;
+}
+
+.fishing-gallery-page .caption-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  color: #9fb9ce;
+  font-size: .8rem;
+  margin-bottom: 12px;
+}
+
+.fishing-gallery-page .caption-credit {
+  border-top: 1px solid rgba(85,185,238,.15);
+  padding-top: 11px;
+  color: #65a0d0;
+  font-size: .78rem;
+  font-weight: 600;
 }
 
 .fishing-gallery-page .back {
@@ -87,11 +141,15 @@ body:has(.fishing-gallery-page) {
   font-weight: 700;
   margin-top: 14px;
 }
+
+.fishing-gallery-page .back:hover {
+  text-decoration: underline;
+}
 </style>
 
 <div class="fishing-gallery-page">
 
-  <main class="wrap">
+  <div class="wrap">
 
     <div class="kicker">
       Travelfilm_gr Bite time
@@ -126,6 +184,7 @@ body:has(.fishing-gallery-page) {
         <a
           class="item"
           href="{{ shot.image | relative_url }}"
+          aria-label="{{ shot.alt | escape }}"
         >
 
           <img
@@ -133,10 +192,54 @@ body:has(.fishing-gallery-page) {
             alt="{{ shot.alt | escape }}"
             loading="lazy"
             decoding="async"
+            width="600"
+            height="450"
           >
 
           <div class="caption">
-            {{ shot.alt | escape }}
+
+            <div class="caption-title">
+              {{ shot.alt | escape }}
+            </div>
+
+            {% if shot.category %}
+              <span class="category-tag">
+                {{ shot.category | escape }}
+              </span>
+            {% endif %}
+
+            {% if shot.description %}
+              <p class="caption-description">
+                {{ shot.description | escape }}
+              </p>
+            {% endif %}
+
+            {% if shot.location or shot.date %}
+
+              <div class="caption-meta">
+
+                {% if shot.location %}
+                  <span>
+                    📍 {{ shot.location | escape }}
+                  </span>
+                {% endif %}
+
+                {% if shot.date %}
+                  <span>
+                    📅 {{ shot.date | date: "%d/%m/%Y" }}
+                  </span>
+                {% endif %}
+
+              </div>
+
+            {% endif %}
+
+            {% if shot.camera %}
+              <div class="caption-credit">
+                {{ shot.camera | escape }}
+              </div>
+            {% endif %}
+
           </div>
 
         </a>
@@ -157,6 +260,6 @@ body:has(.fishing-gallery-page) {
 
     </div>
 
-  </main>
+  </div>
 
 </div>
