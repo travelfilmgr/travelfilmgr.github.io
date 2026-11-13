@@ -189,6 +189,7 @@ body:has(.fishing-page) {
 <div class="blog-page fishing-page">
 
   <!-- BITE TIME BRAND -->
+
   <section class="container fish-brand fade-in">
 
     <img
@@ -207,22 +208,22 @@ body:has(.fishing-page) {
 
   <!-- FIND FISHING ARTICLES -->
 
-  {% assign fishing_posts = site.pages
-    | where_exp: "item", "item.path contains 'fishing/'"
-    | sort: "date"
-    | reverse
-  %}
+  {% assign fishing_posts = site.pages | sort: "date" | reverse %}
 
   {% assign featured = nil %}
 
   {% for page in fishing_posts %}
 
-    {% unless page.name == 'gallery.md' %}
+    {% if page.path contains 'fishing/' %}
 
-      {% assign featured = page %}
-      {% break %}
+      {% unless page.name == 'gallery.md' %}
 
-    {% endunless %}
+        {% assign featured = page %}
+        {% break %}
+
+      {% endunless %}
+
+    {% endif %}
 
   {% endfor %}
 
@@ -435,115 +436,127 @@ body:has(.fishing-page) {
 
       {% for fishing in fishing_posts %}
 
-        {% unless fishing.name == 'gallery.md' %}
+        {% if fishing.path contains 'fishing/' %}
 
-          {% assign fishing_image_filename = fishing.image | split: '/' | last %}
+          {% unless fishing.name == 'gallery.md' %}
 
-          {% assign fishing_thumbnail_filename = fishing_image_filename
-            | replace: '.jpg', '.webp'
-            | replace: '.JPG', '.webp'
-            | replace: '.jpeg', '.webp'
-            | replace: '.JPEG', '.webp'
-          %}
+            {% assign fishing_image_filename = fishing.image | split: '/' | last %}
 
-          <div
-            class="card blog-post-card fade-in"
-            data-category="{{ fishing.category | default: 'other' | downcase }}"
-            data-title="{{ fishing.title | escape }}"
-            data-tags="{{ fishing.category | default: 'other' }} {{ fishing.title | escape }} {{ fishing.excerpt | strip_html | escape }}"
-          >
+            {% assign fishing_thumbnail_filename = fishing_image_filename
+              | replace: '.jpg', '.webp'
+              | replace: '.JPG', '.webp'
+              | replace: '.jpeg', '.webp'
+              | replace: '.JPEG', '.webp'
+            %}
 
-            <!-- PHOTO -->
+            <div
+              class="card blog-post-card fade-in"
+              data-category="{{ fishing.category | default: 'other' | downcase }}"
+              data-title="{{ fishing.title | escape }}"
+              data-tags="{{ fishing.category | default: 'other' }} {{ fishing.title | escape }} {{ fishing.excerpt | strip_html | escape }}"
+            >
 
-            {% if fishing.image %}
+              <!-- PHOTO -->
 
-              <a
-                href="{{ fishing.image }}"
-                class="gallery-link"
-                data-title="{{ fishing.title | escape }}"
-                style="
-                  display:block;
-                  overflow:hidden;
-                  cursor:zoom-in;
-                "
-              >
+              {% if fishing.image %}
 
-                <img
-                  src="/assets/images/gallery-thumbs/{{ fishing_thumbnail_filename }}"
-                  data-full="{{ fishing.image }}"
-                  alt="{{ fishing.title }}"
-                  loading="lazy"
-                  decoding="async"
-                  width="600"
-                  height="400"
-                  style="width:100%;display:block;"
+                <a
+                  href="{{ fishing.image }}"
+                  class="gallery-link"
+                  data-title="{{ fishing.title | escape }}"
+                  style="
+                    display:block;
+                    overflow:hidden;
+                    cursor:zoom-in;
+                  "
                 >
 
-              </a>
+                  <img
+                    src="/assets/images/gallery-thumbs/{{ fishing_thumbnail_filename }}"
+                    data-full="{{ fishing.image }}"
+                    alt="{{ fishing.title }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
+                    style="width:100%;display:block;"
+                  >
 
-            {% endif %}
+                </a>
 
-            <!-- ARTICLE CONTENT -->
+              {% endif %}
 
-            <div class="blog-card-content">
+              <!-- ARTICLE CONTENT -->
 
-              <a
-                href="{{ fishing.url | relative_url }}"
-                class="blog-post-link"
-                style="
-                  text-decoration:none;
-                  color:inherit;
-                  display:block;
-                "
-              >
+              <div class="blog-card-content">
 
-                <div class="blog-meta">
+                <a
+                  href="{{ fishing.url | relative_url }}"
+                  class="blog-post-link"
+                  style="
+                    text-decoration:none;
+                    color:inherit;
+                    display:block;
+                  "
+                >
 
-                  <span class="blog-tag">
-                    {{ fishing.category | default: 'other' }}
-                  </span>
+                  <div class="blog-meta">
 
-                  {% if fishing.date %}
-
-                    <span class="blog-date">
-                      {{ fishing.date | date: "%d %b %Y" }}
+                    <span class="blog-tag">
+                      {{ fishing.category | default: 'other' }}
                     </span>
+
+                    {% if fishing.date %}
+
+                      <span class="blog-date">
+                        {{ fishing.date | date: "%d %b %Y" }}
+                      </span>
+
+                    {% endif %}
+
+                  </div>
+
+                  <h3>
+                    {{ fishing.title }}
+                  </h3>
+
+                  {% if fishing.excerpt %}
+
+                    <p>
+                      {{ fishing.excerpt | strip_html | truncate: 130 }}
+                    </p>
 
                   {% endif %}
 
-                </div>
+                </a>
 
-                <h3>
-                  {{ fishing.title }}
-                </h3>
-
-                {% if fishing.excerpt %}
-
-                  <p>
-                    {{ fishing.excerpt | strip_html | truncate: 130 }}
-                  </p>
-
-                {% endif %}
-
-              </a>
+              </div>
 
             </div>
 
-          </div>
+          {% endunless %}
 
-        {% endunless %}
+        {% endif %}
 
       {% endfor %}
 
     </div>
 
+    <!-- ARTICLE COUNT -->
+
     {% assign article_count = 0 %}
 
     {% for fishing in fishing_posts %}
 
-      {% unless fishing.name == 'gallery.md' %}
-        {% assign article_count = article_count | plus: 1 %}
-      {% endunless %}
+      {% if fishing.path contains 'fishing/' %}
+
+        {% unless fishing.name == 'gallery.md' %}
+
+          {% assign article_count = article_count | plus: 1 %}
+
+        {% endunless %}
+
+      {% endif %}
 
     {% endfor %}
 
