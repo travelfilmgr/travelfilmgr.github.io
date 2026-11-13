@@ -5,1005 +5,694 @@ permalink: /fishing/
 ---
 
 <style>
-/* ============================================
-   TRAVELFILMGR BITE TIME — FISHING HOME
-   Independent styling: does not change the
-   Roadtrips, Blog or main Gallery pages.
-============================================ */
+/* =========================================
+   TRAVELFILMGR BITE TIME
+   FISHING PAGE ONLY
+========================================= */
 
-body:has(.bite-page) {
+body:has(.fishing-page) {
   --primary: #65a0d0;
-  --accent: #285e91;
   --muted: #aec7dd;
-  background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(40, 94, 145, .22),
-      transparent 48%
-    ),
-    linear-gradient(
-      180deg,
-      #06101b 0%,
-      #081a2c 48%,
-      #06101b 100%
-    );
+
+  background: linear-gradient(
+    180deg,
+    #06101b 0%,
+    #10355a 48%,
+    #06101b 100%
+  );
+
   color: #f5f8fc;
 }
 
-.bite-page {
-  --bite-bg: #06101b;
-  --bite-panel: #0b2135;
-  --bite-panel-2: #10355a;
-  --bite-blue: #65a0d0;
-  --bite-blue-dark: #285e91;
-  --bite-text: #f5f8fc;
-  --bite-muted: #aec7dd;
-  --bite-border: rgba(101, 160, 208, .23);
+.fishing-page {
+  --primary: #65a0d0;
+  --muted: #aec7dd;
 
-  color: var(--bite-text);
+  color: #f5f8fc;
   min-height: 100vh;
-  padding: 126px 0 80px;
 }
 
-.bite-page *,
-.bite-page *::before,
-.bite-page *::after {
-  box-sizing: border-box;
+.fishing-page h1,
+.fishing-page h2,
+.fishing-page h3 {
+  color: #f5f8fc;
 }
 
-.bite-page .bite-wrap {
-  width: min(1160px, calc(100% - 36px));
-  margin-inline: auto;
-}
+/* =========================================
+   LOGO AND INTRO
+========================================= */
 
-/* ============================================
-   BRAND / LOGO
-============================================ */
-
-.bite-page .bite-brand {
+.fishing-page .fish-brand {
+  padding-top: 145px;
+  padding-bottom: 24px;
   text-align: center;
-  padding: 15px 0 30px;
 }
 
-.bite-page .bite-logo {
-  width: min(300px, 78vw);
-  height: auto;
+.fishing-page .fish-logo {
   display: block;
-  margin: 0 auto 22px;
-  border-radius: 22px;
-  border: 1px solid var(--bite-border);
+
+  width: min(280px, 82%);
+  height: auto;
+
+  margin: 0 auto 24px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(101,160,208,.25);
+
   box-shadow:
-    0 22px 70px rgba(0, 0, 0, .35),
-    0 0 45px rgba(101, 160, 208, .09);
+    0 20px 55px rgba(0,0,0,.28);
 }
 
-.bite-page h1,
-.bite-page h2,
-.bite-page h3 {
-  color: var(--bite-text);
-}
-
-.bite-page .bite-brand h1 {
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  line-height: 1.13;
-  margin-bottom: 13px;
-}
-
-.bite-page .bite-brand h1 span {
-  color: var(--bite-blue);
-}
-
-.bite-page .bite-eyebrow {
-  color: var(--bite-blue);
-  font-size: .76rem;
-  font-weight: 800;
-  letter-spacing: .19em;
-  text-transform: uppercase;
+.fishing-page .fish-brand h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 12px;
 }
 
-.bite-page .bite-lead {
-  color: var(--bite-muted);
-  font-size: clamp(.95rem, 2vw, 1.1rem);
-  line-height: 1.75;
-  max-width: 640px;
+.fishing-page .fish-brand h1 span {
+  color: #65a0d0;
+}
+
+.fishing-page .fish-brand p {
+  max-width: 660px;
   margin: 0 auto;
+
+  color: #aec7dd;
+  line-height: 1.75;
 }
 
-/* ============================================
+/* =========================================
    SEPARATE FISHING GALLERY BUTTON
-============================================ */
+========================================= */
 
-.bite-page .bite-gallery-action {
+.fishing-page .fish-gallery-link {
+  padding-top: 0;
+  padding-bottom: 30px;
   text-align: center;
-  margin: 26px auto 44px;
 }
 
-.bite-page .bite-gallery-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.fishing-page .fish-gallery-link a {
+  display: inline-block;
 
-  min-height: 48px;
-  padding: 13px 25px;
-
+  padding: 13px 28px;
   border-radius: 999px;
-  text-decoration: none;
 
   background: linear-gradient(
     135deg,
     #65a0d0,
-    #8fc2e6
+    #92c6ea
   );
 
   color: #06101b;
-  font-weight: 800;
 
-  box-shadow:
-    0 12px 32px rgba(32, 105, 167, .23);
+  font-weight: 800;
+  text-decoration: none;
 
   transition:
     transform .2s ease,
-    box-shadow .2s ease,
-    filter .2s ease;
+    box-shadow .2s ease;
 }
 
-.bite-page .bite-gallery-btn:hover,
-.bite-page .bite-gallery-btn:focus-visible {
+.fishing-page .fish-gallery-link a:hover {
   transform: translateY(-2px);
 
   box-shadow:
-    0 16px 36px rgba(32, 105, 167, .35);
-
-  filter: brightness(1.06);
+    0 12px 30px rgba(101,160,208,.24);
 }
 
-/* ============================================
-   FISHING BLOG / TIPS HEADER
-============================================ */
-
-.bite-page .bite-section-head {
-  text-align: center;
-  margin: 0 auto 25px;
-}
-
-.bite-page .bite-section-head h2 {
-  font-size: clamp(1.65rem, 3.5vw, 2.45rem);
-  margin-bottom: 10px;
-}
-
-.bite-page .bite-section-head p {
-  color: var(--bite-muted);
-  line-height: 1.7;
-  max-width: 650px;
-  margin-inline: auto;
-}
-
-/* ============================================
+/* =========================================
    FEATURED FISHING ARTICLE
-============================================ */
+========================================= */
 
-.bite-page .bite-featured {
-  position: relative;
-  display: block;
-  min-height: 340px;
-
-  border: 1px solid var(--bite-border);
-  border-radius: 24px;
-  overflow: hidden;
-
-  text-decoration: none;
-  color: var(--bite-text);
-  background: var(--bite-panel);
-
-  margin-bottom: 30px;
-
-  box-shadow:
-    0 22px 50px rgba(0, 0, 0, .24);
+.fishing-page .blog-hero {
+  padding: 10px 20px 22px;
 }
 
-.bite-page .bite-featured img {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  transition: transform .45s ease;
-}
-
-.bite-page .bite-featured:hover img {
-  transform: scale(1.035);
-}
-
-.bite-page .bite-featured::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.fishing-page .featured-post {
+  min-height: 320px;
 
   background: linear-gradient(
-    180deg,
-    rgba(3, 11, 21, .28),
-    rgba(3, 11, 21, .95)
+    135deg,
+    #10355a,
+    #06101b
   );
+
+  border: 1px solid rgba(101,160,208,.25);
 }
 
-.bite-page .bite-featured-content {
+.fishing-page .featured-post img {
+  height: 400px;
+}
+
+.fishing-page .featured-post:not(:has(img)) {
+  min-height: 300px;
+}
+
+.fishing-page .featured-post:not(:has(img))
+.featured-overlay {
   position: relative;
-  z-index: 1;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: 55px 10px;
 
-  min-height: 340px;
-  padding: clamp(22px, 5vw, 38px);
+  left: auto;
+  right: auto;
+  bottom: auto;
 }
 
-.bite-page .bite-label {
-  display: inline-block;
-  align-self: flex-start;
-
-  color: #071321;
-  background: var(--bite-blue);
-
-  padding: 6px 12px;
-  border-radius: 999px;
-
-  font-weight: 800;
-  font-size: .73rem;
-  margin-bottom: 14px;
+.fishing-page .featured-label {
+  background: #65a0d0;
+  color: #06101b;
+  border-color: #65a0d0;
 }
 
-.bite-page .bite-featured h3 {
-  font-size: clamp(1.5rem, 3vw, 2.45rem);
-  line-height: 1.22;
-  max-width: 730px;
-  margin-bottom: 10px;
+.fishing-page .featured-overlay h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
 
-.bite-page .bite-featured p {
-  color: #e0e9f2;
-  max-width: 720px;
-  line-height: 1.7;
+.fishing-page .featured-overlay p {
+  color: #e0edf7;
 }
 
-/* ============================================
-   SEARCH AND CATEGORY FILTERS
-============================================ */
+/* =========================================
+   BLOG INTRO AND SEARCH
+========================================= */
 
-.bite-page .bite-controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 17px;
-  margin: 10px auto 27px;
+.fishing-page .blog-intro {
+  padding-top: 28px;
+  padding-bottom: 18px;
 }
 
-.bite-page .bite-search {
-  width: min(420px, 100%);
-  min-height: 45px;
-
-  border-radius: 999px;
-  border: 1px solid var(--bite-border);
-  outline: none;
-
-  padding: 12px 18px;
-
-  background: #0b2135;
-  color: #ffffff;
-  font: inherit;
-}
-
-.bite-page .bite-search::placeholder {
+.fishing-page .blog-intro p {
   color: #aec7dd;
 }
 
-.bite-page .bite-search:focus {
-  border-color: var(--bite-blue);
-}
-
-.bite-page .bite-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 9px;
-}
-
-.bite-page .bite-filter {
-  border-radius: 999px;
-  border: 1px solid var(--bite-border);
-
-  padding: 9px 15px;
+.fishing-page .search-input {
+  color: #fff;
 
   background: #0b2135;
-  color: var(--bite-muted);
 
-  cursor: pointer;
-  font: inherit;
-  font-size: .85rem;
-  font-weight: 700;
-
-  transition:
-    background .2s ease,
-    color .2s ease,
-    border-color .2s ease;
+  border-color: rgba(101,160,208,.30);
 }
 
-.bite-page .bite-filter:hover,
-.bite-page .bite-filter[aria-pressed="true"] {
-  background: var(--bite-blue);
-  border-color: var(--bite-blue);
+.fishing-page .search-input::placeholder {
+  color: #aec7dd;
+}
+
+/* =========================================
+   CATEGORY FILTERS
+========================================= */
+
+.fishing-page .filters button {
+  background: #0b2135;
+  color: #d2e4f2;
+
+  border-color: rgba(101,160,208,.3);
+}
+
+.fishing-page .filters button:hover,
+.fishing-page .filters button.active {
+  background: #65a0d0;
   color: #06101b;
+  border-color: #65a0d0;
 }
 
-/* ============================================
-   FISHING ARTICLE CARDS
-============================================ */
+/* =========================================
+   ARTICLE CARDS
+========================================= */
 
-.bite-page .bite-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(min(100%, 270px), 1fr));
-
-  gap: 22px;
-}
-
-.bite-page .bite-card {
-  min-width: 0;
-  overflow: hidden;
-
-  border-radius: 20px;
-  border: 1px solid var(--bite-border);
-
+.fishing-page .card {
   background: linear-gradient(
     180deg,
-    #10304b,
+    #10355a,
     #0b2135
   );
 
-  transition:
-    transform .23s ease,
-    border-color .23s ease;
+  border-color: rgba(101,160,208,.24);
 }
 
-.bite-page .bite-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--bite-blue);
-}
-
-.bite-page .bite-card a {
+.fishing-page .blog-post-card img {
   display: block;
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-}
 
-.bite-page .bite-card img,
-.bite-page .bite-card-placeholder {
   width: 100%;
-  height: 215px;
-  display: block;
+  height: 230px;
+
   object-fit: cover;
 }
 
-.bite-page .bite-card-placeholder {
+.fishing-page .fish-no-photo {
   display: grid;
   place-items: center;
 
-  background: radial-gradient(
-    circle,
+  height: 230px;
+
+  background: linear-gradient(
+    135deg,
     #285e91,
     #06101b
   );
 
-  color: #cce8fa;
   font-size: 3rem;
 }
 
-.bite-page .bite-card-body {
-  padding: 19px 20px 22px;
+.fishing-page .blog-tag {
+  color: #65a0d0;
+
+  background: rgba(101,160,208,.12);
+
+  border-color: rgba(101,160,208,.25);
 }
 
-.bite-page .bite-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  gap: 8px 12px;
-  margin-bottom: 12px;
-
-  font-size: .78rem;
-  color: var(--bite-muted);
+.fishing-page .blog-post-card p,
+.fishing-page .blog-date {
+  color: #aec7dd;
 }
 
-.bite-page .bite-category {
-  color: var(--bite-blue);
-  font-weight: 800;
-  text-transform: capitalize;
+.fishing-page .blog-post-card h3 {
+  color: #fff;
 }
 
-.bite-page .bite-card h3 {
-  line-height: 1.35;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.bite-page .bite-card p {
-  color: var(--bite-muted);
-  font-size: .93rem;
-  line-height: 1.7;
-}
-
-/* ============================================
-   EMPTY STATES
-============================================ */
-
-.bite-page .bite-empty {
+.fishing-page .fish-empty {
+  padding: 40px 20px;
   text-align: center;
-  padding: 35px 20px;
-
-  color: var(--bite-muted);
-
-  border: 1px dashed var(--bite-border);
-  border-radius: 18px;
-
-  background: rgba(11, 33, 53, .5);
+  color: #aec7dd;
 }
 
-.bite-page [hidden] {
-  display: none !important;
-}
-
-/* ============================================
-   MOBILE RESPONSIVE
-============================================ */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 768px) {
-  .bite-page {
-    padding-top: 135px;
+
+  .fishing-page .fish-brand {
+    padding-top: 155px;
   }
 
-  .bite-page .bite-featured,
-  .bite-page .bite-featured-content {
-    min-height: 285px;
+  .fishing-page .featured-post img {
+    height: 320px;
   }
 
-  .bite-page .bite-gallery-action {
-    margin-bottom: 38px;
+  .fishing-page .featured-overlay {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
   }
+
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .bite-page *,
-  .bite-page *::before,
-  .bite-page *::after {
-    transition-duration: .01ms !important;
-  }
-}
 </style>
 
 {% comment %}
-FISHING ARTICLES:
+Fishing articles can be created inside fishing/
+Example: fishing/my-tips.md
 
-1. Pages inside fishing/
-   Example: fishing/my-first-trip.md
+Use category:
+tips, sea, shore, spinning,
+freshwater or other.
 
-2. Posts inside _posts/
-   Must have category: fishing
-   OR tags containing fishing.
-
-For filtering:
-Use category: sea, shore, spinning,
-freshwater or other for fishing pages.
-
-For _posts articles, use tags containing
-fishing and set their category to the
-specific fishing topic.
+You can also use _posts with:
+category: fishing
+fishing_category: tips
 {% endcomment %}
 
-{% assign bite_posts = site.posts | where_exp: "post", "post.categories contains 'fishing' or post.tags contains 'fishing'" %}
+{% assign fishing_pages = site.pages | where_exp: "item", "item.path contains 'fishing/'" %}
 
-{% assign bite_pages = site.pages | where_exp: "item", "item.path contains 'fishing/'" %}
+{% assign fishing_blog_posts = site.posts | where: "category", "fishing" %}
 
-{% assign bite_articles = bite_posts | concat: bite_pages | sort: 'date' | reverse %}
+{% assign fishing_articles = fishing_pages | concat: fishing_blog_posts | sort: "date" | reverse %}
 
-{% assign bite_featured = nil %}
-{% assign bite_count = 0 %}
+{% assign featured = nil %}
+{% assign fishing_count = 0 %}
 
-{% for article in bite_articles %}
-  {% unless article.name == 'gallery.md' or article.url == '/fishing/gallery/' %}
-    {% assign bite_count = bite_count | plus: 1 %}
+{% for entry in fishing_articles %}
 
-    {% if bite_featured == nil %}
-      {% assign bite_featured = article %}
+  {% unless entry.name == 'gallery.md' %}
+
+    {% assign fishing_count = fishing_count | plus: 1 %}
+
+    {% if featured == nil %}
+      {% assign featured = entry %}
     {% endif %}
+
   {% endunless %}
+
 {% endfor %}
 
-<!-- ==========================================
-     TRAVELFILMGR BITE TIME HOMEPAGE
-=========================================== -->
 
-<div class="bite-page">
+<div class="blog-page fishing-page">
 
-  <div class="bite-wrap">
+  <!-- =====================================
+       BITE TIME BRAND
+  ====================================== -->
 
-    <!-- OFFICIAL BITE TIME LOGO -->
+  <section class="container fish-brand fade-in">
 
-    <section class="bite-brand">
+    <img
+      class="fish-logo"
+      src="{{ '/assets/bite-time-logo.png' | relative_url }}"
+      alt="TravelFilmGR Bite Time"
+      width="280"
+      height="280"
+    >
 
-      <img
-        class="bite-logo"
-        src="{{ '/assets/bite-time-logo.png' | relative_url }}"
-        alt="TravelFilmGR Bite Time logo"
-        width="300"
-        height="300"
-        fetchpriority="high"
+    <h1>
+      TravelFilmGR <span>Bite Time</span>
+    </h1>
+
+    <p
+      data-en="Fishing stories, practical tips, techniques and adventures by the water."
+      data-el="Ψαρευτικές ιστορίες, συμβουλές, τεχνικές και εξορμήσεις δίπλα στο νερό."
+    >
+      Fishing stories, practical tips, techniques and adventures by the water.
+    </p>
+
+  </section>
+
+
+  <!-- =====================================
+       SEPARATE FISHING GALLERY
+  ====================================== -->
+
+  <section class="container fish-gallery-link fade-in">
+
+    <a href="{{ '/fishing/gallery/' | relative_url }}">
+
+      <span
+        data-en="📷 Explore Fishing Gallery"
+        data-el="📷 Δες τη Fishing Gallery"
       >
+        📷 Explore Fishing Gallery
+      </span>
 
-      <p class="bite-eyebrow">
-        Fishing • Adventures • Moments
-      </p>
+    </a>
 
-      <h1>
-        TravelFilmGR <span>Bite Time</span>
-      </h1>
+  </section>
 
-      <p
-        class="bite-lead"
-        data-en="Fishing stories, practical tips, techniques and moments by the water."
-        data-el="Ψαρευτικές ιστορίες, χρήσιμες συμβουλές, τεχνικές και στιγμές δίπλα στο νερό."
-      >
-        Fishing stories, practical tips, techniques and moments by the water.
-      </p>
 
-    </section>
+  <!-- =====================================
+       LATEST FISHING ARTICLE
+  ====================================== -->
 
-    <!-- =====================================
-         SEPARATE FISHING PHOTO GALLERY
-    ====================================== -->
+  {% if featured %}
 
-    <div class="bite-gallery-action">
+    <section class="blog-hero fade-in">
 
       <a
-        class="bite-gallery-btn"
-        href="{{ '/fishing/gallery/' | relative_url }}"
+        href="{{ featured.url | relative_url }}"
+        class="featured-post"
       >
 
-        <span aria-hidden="true">📷</span>
+        {% if featured.image %}
 
-        <span
-          data-en="View Fishing Gallery"
-          data-el="Δες τη Fishing Gallery"
-        >
-          View Fishing Gallery
-        </span>
-
-      </a>
-
-    </div>
-
-    <!-- =====================================
-         MAIN FISHING BLOG AND TIPS
-    ====================================== -->
-
-    <section aria-labelledby="bite-blog-title">
-
-      <div class="bite-section-head">
-
-        <p class="bite-eyebrow">
-          Bite Time Journal
-        </p>
-
-        <h2
-          id="bite-blog-title"
-          data-en="Fishing Blog & Tips"
-          data-el="Άρθρα & Συμβουλές Ψαρέματος"
-        >
-          Fishing Blog & Tips
-        </h2>
-
-        <p
-          data-en="Experiences, techniques and useful ideas from every fishing trip."
-          data-el="Εμπειρίες, τεχνικές και χρήσιμες ιδέες από κάθε ψαρευτική εξόρμηση."
-        >
-          Experiences, techniques and useful ideas from every fishing trip.
-        </p>
-
-      </div>
-
-      {% if bite_count > 0 %}
-
-        <!-- MOST RECENT FISHING ARTICLE -->
-
-        <a
-          class="bite-featured"
-          data-bite-post
-          data-category="{{ bite_featured.category | default: 'other' | downcase | escape }}"
-          data-tags="{{ bite_featured.tags | join: ' ' | downcase | escape }}"
-          href="{{ bite_featured.url | relative_url }}"
-        >
-
-          {% if bite_featured.image %}
-
-            <img
-              src="{{ bite_featured.image | relative_url }}"
-              alt="{{ bite_featured.title | escape }}"
-              width="1200"
-              height="700"
-              loading="eager"
-            >
-
-          {% endif %}
-
-          <div class="bite-featured-content">
-
-            <span
-              class="bite-label"
-              data-en="Latest Fishing Article"
-              data-el="Τελευταίο Άρθρο Ψαρέματος"
-            >
-              Latest Fishing Article
-            </span>
-
-            <h3>
-              {{ bite_featured.title | escape }}
-            </h3>
-
-            {% if bite_featured.excerpt %}
-
-              <p>
-                {{ bite_featured.excerpt | strip_html | strip_newlines | truncate: 180 }}
-              </p>
-
-            {% endif %}
-
-          </div>
-
-        </a>
-
-        <!-- =================================
-             SEARCH AND FILTER CONTROLS
-        ================================== -->
-
-        <div class="bite-controls">
-
-          <input
-            class="bite-search"
-            type="search"
-            id="bite-search"
-            aria-label="Search fishing articles"
-            data-en-placeholder="Search articles and fishing tips..."
-            data-el-placeholder="Αναζήτηση άρθρων και συμβουλών..."
-            placeholder="Search articles and fishing tips..."
+          <img
+            src="{{ featured.image | relative_url }}"
+            alt="{{ featured.title | escape }}"
+            loading="eager"
+            width="1200"
+            height="700"
           >
-
-          <div
-            class="bite-filters"
-            role="group"
-            aria-label="Fishing categories"
-          >
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="all"
-              aria-pressed="true"
-              data-en="All"
-              data-el="Όλα"
-            >
-              All
-            </button>
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="sea"
-              aria-pressed="false"
-              data-en="Sea"
-              data-el="Θάλασσα"
-            >
-              Sea
-            </button>
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="shore"
-              aria-pressed="false"
-              data-en="Shore"
-              data-el="Ακτή"
-            >
-              Shore
-            </button>
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="spinning"
-              aria-pressed="false"
-            >
-              Spinning
-            </button>
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="freshwater"
-              aria-pressed="false"
-              data-en="Freshwater"
-              data-el="Γλυκά Νερά"
-            >
-              Freshwater
-            </button>
-
-            <button
-              type="button"
-              class="bite-filter"
-              data-bite-filter="other"
-              aria-pressed="false"
-              data-en="Other"
-              data-el="Άλλα"
-            >
-              Other
-            </button>
-
-          </div>
-
-        </div>
-
-        <!-- =================================
-             ALL OTHER FISHING POSTS
-        ================================== -->
-
-        {% if bite_count > 1 %}
-
-          <div
-            class="bite-grid"
-            id="bite-posts"
-          >
-
-            {% for article in bite_articles %}
-
-              {% unless article.name == 'gallery.md' or article.url == '/fishing/gallery/' or article.url == bite_featured.url %}
-
-                <article
-                  class="bite-card"
-                  data-bite-post
-                  data-category="{{ article.category | default: 'other' | downcase | escape }}"
-                  data-tags="{{ article.tags | join: ' ' | downcase | escape }}"
-                >
-
-                  <a href="{{ article.url | relative_url }}">
-
-                    {% if article.image %}
-
-                      <img
-                        src="{{ article.image | relative_url }}"
-                        alt="{{ article.title | escape }}"
-                        width="600"
-                        height="400"
-                        loading="lazy"
-                        decoding="async"
-                      >
-
-                    {% else %}
-
-                      <div
-                        class="bite-card-placeholder"
-                        aria-hidden="true"
-                      >
-                        🎣
-                      </div>
-
-                    {% endif %}
-
-                    <div class="bite-card-body">
-
-                      <div class="bite-meta">
-
-                        <span class="bite-category">
-                          {{ article.category | default: 'Fishing' | escape }}
-                        </span>
-
-                        {% if article.date %}
-
-                          <time
-                            datetime="{{ article.date | date: '%Y-%m-%d' }}"
-                          >
-                            {{ article.date | date: '%d/%m/%Y' }}
-                          </time>
-
-                        {% endif %}
-
-                      </div>
-
-                      <h3>
-                        {{ article.title | escape }}
-                      </h3>
-
-                      {% if article.excerpt %}
-
-                        <p>
-                          {{ article.excerpt | strip_html | strip_newlines | truncate: 145 }}
-                        </p>
-
-                      {% endif %}
-
-                    </div>
-
-                  </a>
-
-                </article>
-
-              {% endunless %}
-
-            {% endfor %}
-
-          </div>
 
         {% endif %}
 
-        <!-- NO SEARCH RESULTS -->
+        <div class="featured-overlay">
 
-        <p
-          class="bite-empty"
-          id="bite-no-results"
-          hidden
-          data-en="No articles match your search or category."
-          data-el="Δεν βρέθηκαν άρθρα για αυτή την αναζήτηση ή κατηγορία."
-        >
-          No articles match your search or category.
-        </p>
-
-      {% else %}
-
-        <!-- NO FISHING ARTICLES YET -->
-
-        <div class="bite-empty">
-
-          <p
-            data-en="Fishing articles and tips are coming soon. The photo gallery is already available through the button above."
-            data-el="Σύντομα θα προστεθούν άρθρα και συμβουλές ψαρέματος. Η φωτογραφική Gallery ανοίγει από το κουμπί παραπάνω."
+          <span
+            class="featured-label"
+            data-en="Latest Fishing Article"
+            data-el="Τελευταίο Άρθρο Ψαρέματος"
           >
-            Fishing articles and tips are coming soon.
-            The photo gallery is already available
-            through the button above.
-          </p>
+            Latest Fishing Article
+          </span>
+
+          <h2>
+            {{ featured.title | escape }}
+          </h2>
+
+          {% if featured.excerpt %}
+
+            <p>
+              {{ featured.excerpt | strip_html | truncate: 160 }}
+            </p>
+
+          {% endif %}
 
         </div>
 
-      {% endif %}
+      </a>
 
     </section>
 
-  </div>
+  {% endif %}
+
+
+  <!-- =====================================
+       BLOG AND TIPS TITLE
+  ====================================== -->
+
+  <section class="container fade-in blog-intro">
+
+    <h2
+      data-en="Fishing Blog & Tips"
+      data-el="Άρθρα & Tips Ψαρέματος"
+    >
+      Fishing Blog & Tips
+    </h2>
+
+    <p
+      data-en="My fishing experiences, guides and useful tips — newest first."
+      data-el="Οι εμπειρίες, οι οδηγοί και τα χρήσιμα tips μου για το ψάρεμα — πρώτα τα νεότερα."
+    >
+      My fishing experiences, guides and useful tips — newest first.
+    </p>
+
+  </section>
+
+
+  {% if fishing_count > 0 %}
+
+    <!-- =====================================
+         SEARCH
+    ====================================== -->
+
+    <section
+      class="container fade-in"
+      style="padding-top:0;padding-bottom:10px;"
+    >
+
+      <div class="search-wrap">
+
+        <input
+          type="search"
+          class="search-input"
+          data-blog-search
+          data-en-placeholder="Search fishing articles..."
+          data-el-placeholder="Αναζήτηση άρθρων ψαρέματος..."
+          placeholder="Search fishing articles..."
+          aria-label="Search fishing articles"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ARTICLE FILTERS
+    ====================================== -->
+
+    <section
+      class="container fade-in"
+      style="padding-top:10px;padding-bottom:10px;"
+    >
+
+      <div class="filters blog-filters">
+
+        <button
+          type="button"
+          class="active"
+          onclick="filterPosts('all', event)"
+          data-en="All"
+          data-el="Όλα"
+        >
+          All
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('tips', event)"
+          data-en="Tips"
+          data-el="Συμβουλές"
+        >
+          Tips
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('sea', event)"
+          data-en="Sea"
+          data-el="Θάλασσα"
+        >
+          Sea
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('shore', event)"
+          data-en="Shore"
+          data-el="Ακτή"
+        >
+          Shore
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('spinning', event)"
+        >
+          Spinning
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('freshwater', event)"
+          data-en="Freshwater"
+          data-el="Γλυκά Νερά"
+        >
+          Freshwater
+        </button>
+
+        <button
+          type="button"
+          onclick="filterPosts('other', event)"
+          data-en="Other"
+          data-el="Άλλα"
+        >
+          Other
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ALL FISHING ARTICLES AND TIPS
+    ====================================== -->
+
+    <section
+      class="container fade-in"
+      style="padding-top:18px;"
+    >
+
+      <div class="cards blog-grid">
+
+        {% for entry in fishing_articles %}
+
+          {% unless entry.name == 'gallery.md' %}
+
+            {% assign entry_type = entry.fishing_category | default: entry.category | default: 'other' | downcase %}
+
+            <div
+              class="card blog-post-card fade-in"
+              data-category="{{ entry_type | escape }}"
+              data-title="{{ entry.title | escape }}"
+              data-tags="{{ entry.tags | join: ' ' | escape }} {{ entry.excerpt | strip_html | escape }}"
+            >
+
+              <a
+                href="{{ entry.url | relative_url }}"
+                class="blog-post-link"
+              >
+
+                {% if entry.image %}
+
+                  <img
+                    src="{{ entry.image | relative_url }}"
+                    alt="{{ entry.title | escape }}"
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
+                  >
+
+                {% else %}
+
+                  <div
+                    class="fish-no-photo"
+                    aria-hidden="true"
+                  >
+                    🎣
+                  </div>
+
+                {% endif %}
+
+                <div class="blog-card-content">
+
+                  <div class="blog-meta">
+
+                    <span class="blog-tag">
+                      {{ entry_type | escape }}
+                    </span>
+
+                    {% if entry.date %}
+
+                      <span class="blog-date">
+                        {{ entry.date | date: '%d %b %Y' }}
+                      </span>
+
+                    {% endif %}
+
+                  </div>
+
+                  <h3>
+                    {{ entry.title | escape }}
+                  </h3>
+
+                  {% if entry.excerpt %}
+
+                    <p>
+                      {{ entry.excerpt | strip_html | truncate: 130 }}
+                    </p>
+
+                  {% endif %}
+
+                </div>
+
+              </a>
+
+            </div>
+
+          {% endunless %}
+
+        {% endfor %}
+
+      </div>
+
+    </section>
+
+
+  {% else %}
+
+    <!-- =====================================
+         NO ARTICLES YET
+    ====================================== -->
+
+    <section
+      class="container fade-in"
+      style="padding-top:10px;"
+    >
+
+      <p
+        class="fish-empty"
+        data-en="Fishing articles and tips are coming soon. Meanwhile, explore the Fishing Gallery above."
+        data-el="Σύντομα θα ανεβάσω άρθρα και tips ψαρέματος. Μέχρι τότε, δες τη Fishing Gallery από το κουμπί παραπάνω."
+      >
+        Fishing articles and tips are coming soon.
+        Meanwhile, explore the Fishing Gallery above.
+      </p>
+
+    </section>
+
+  {% endif %}
 
 </div>
-
-<!-- ==========================================
-     INDEPENDENT FISHING FILTER SCRIPT
-=========================================== -->
-
-<script>
-(function () {
-
-  const root = document.querySelector('.bite-page');
-
-  if (!root) return;
-
-  const search = root.querySelector('#bite-search');
-
-  const buttons = Array.from(
-    root.querySelectorAll('[data-bite-filter]')
-  );
-
-  const articles = Array.from(
-    root.querySelectorAll('[data-bite-post]')
-  );
-
-  const noResults = root.querySelector('#bite-no-results');
-
-  if (!search || !articles.length) return;
-
-  const knownCategories = [
-    'sea',
-    'shore',
-    'spinning',
-    'freshwater'
-  ];
-
-  let activeCategory = 'all';
-
-  function refresh() {
-
-    const query = search.value
-      .trim()
-      .toLocaleLowerCase();
-
-    let visibleCount = 0;
-
-    articles.forEach(function (article) {
-
-      const category = (
-        article.dataset.category || 'other'
-      ).toLowerCase();
-
-      const tags = (
-        article.dataset.tags || ''
-      ).toLowerCase().split(/\s+/);
-
-      const hasKnownCategory = knownCategories.some(
-        function (name) {
-          return (
-            category === name ||
-            tags.includes(name)
-          );
-        }
-      );
-
-      const categoryMatches =
-        activeCategory === 'all' ||
-        (
-          activeCategory === 'other'
-            ? !hasKnownCategory
-            : (
-                category === activeCategory ||
-                tags.includes(activeCategory)
-              )
-        );
-
-      const textMatches =
-        !query ||
-        article.textContent
-          .toLocaleLowerCase()
-          .includes(query);
-
-      const visible =
-        categoryMatches && textMatches;
-
-      article.hidden = !visible;
-
-      if (visible) {
-        visibleCount += 1;
-      }
-
-    });
-
-    if (noResults) {
-      noResults.hidden = visibleCount > 0;
-    }
-
-  }
-
-  buttons.forEach(function (button) {
-
-    button.addEventListener('click', function () {
-
-      activeCategory =
-        button.dataset.biteFilter || 'all';
-
-      buttons.forEach(function (item) {
-
-        item.setAttribute(
-          'aria-pressed',
-          String(item === button)
-        );
-
-      });
-
-      refresh();
-
-    });
-
-  });
-
-  search.addEventListener('input', refresh);
-
-})();
-</script>
