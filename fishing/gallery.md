@@ -44,9 +44,13 @@ body:has(.fishing-gallery-page) {
 
 .fishing-gallery-page .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-  margin-top: 24px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 320px)
+  );
+  justify-content: center;
+  gap: 22px;
+  margin-top: 30px;
 }
 
 .fishing-gallery-page .item {
@@ -62,7 +66,8 @@ body:has(.fishing-gallery-page) {
   width: 100%;
   display: block;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: contain;
+  background: #091522;
   transition: transform .25s ease;
 }
 
