@@ -6,10 +6,9 @@ permalink: /fishing/
 ---
 
 <style>
-/* ==================================
+/* =====================================
    TRAVELFILM_GR BITE TIME THEME
-   Fishing page only
-================================== */
+===================================== */
 
 body:has(.fishing-page) {
   --primary: #55b9ee;
@@ -21,31 +20,59 @@ body:has(.fishing-page) {
 .fishing-page {
   --primary: #55b9ee;
   --muted: #a9bfd0;
-  --fish-bg: #06111d;
-  --fish-card: #0b1d2d;
-  --fish-accent: #10283b;
   color: #eef7ff;
 }
 
-.fishing-page .blog-intro h2,
 .fishing-page h1,
 .fishing-page h2,
 .fishing-page h3 {
-  color: #eef7ff;
+  color: #ffffff;
 }
 
 .fishing-page .blog-intro p {
   color: #a9bfd0 !important;
 }
 
+/* BRAND HEADER */
+
+.fishing-page .fish-brand {
+  text-align: center;
+  padding: 35px 20px 25px;
+}
+
+.fishing-page .fish-logo {
+  display: block;
+  width: min(280px, 80%);
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+}
+
+.fishing-page .fish-brand h1 {
+  font-size: clamp(28px, 5vw, 46px);
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.fishing-page .fish-brand p {
+  color: #55b9ee;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* FEATURED ARTICLE */
+
 .fishing-page .blog-hero {
-  border-color: rgba(85,185,238,.25);
+  border: 1px solid rgba(85,185,238,.25);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .fishing-page .featured-overlay {
   background: linear-gradient(
     to top,
-    rgba(3,12,22,.95),
+    rgba(3,12,22,.96),
     rgba(3,12,22,.05)
   );
 }
@@ -55,9 +82,51 @@ body:has(.fishing-page) {
   color: #06111d;
 }
 
+/* INTRO */
+
+.fishing-page .blog-intro {
+  text-align: center;
+}
+
+.fishing-page .blog-intro h2 {
+  color: #ffffff;
+}
+
+/* SEARCH */
+
+.fishing-page .search-input {
+  background: #0b1d2d;
+  color: #ffffff;
+  border: 1px solid rgba(85,185,238,.3);
+}
+
+.fishing-page .search-input::placeholder {
+  color: #a9bfd0;
+}
+
+/* FILTERS */
+
+.fishing-page .filters button {
+  background: #0b1d2d;
+  color: #c2d5e5;
+  border: 1px solid rgba(85,185,238,.25);
+  border-radius: 25px;
+}
+
+.fishing-page .filters button.active,
+.fishing-page .filters button:hover {
+  background: #55b9ee;
+  color: #06111d;
+  border-color: #55b9ee;
+}
+
+/* ARTICLE CARDS */
+
 .fishing-page .card {
   background: #0b1d2d;
   border: 1px solid rgba(85,185,238,.2);
+  border-radius: 15px;
+  overflow: hidden;
   transition: transform .25s ease, border-color .25s ease;
 }
 
@@ -83,63 +152,16 @@ body:has(.fishing-page) {
   color: #a9bfd0;
 }
 
-.fishing-page .search-input {
-  background: #0b1d2d;
-  color: #ffffff;
-  border: 1px solid rgba(85,185,238,.3);
-}
-
-.fishing-page .search-input::placeholder {
-  color: #a9bfd0;
-}
-
-.fishing-page .filters button {
-  background: #0b1d2d;
-  color: #c2d5e5;
-  border: 1px solid rgba(85,185,238,.25);
-  border-radius: 25px;
-}
-
-.fishing-page .filters button.active,
-.fishing-page .filters button:hover {
-  background: #55b9ee;
-  color: #06111d;
-  border-color: #55b9ee;
-}
-
-.fishing-page .fish-brand {
-  text-align: center;
-  padding: 35px 20px 15px;
-}
-
-.fishing-page .fish-logo {
-  width: min(260px, 75%);
-  height: auto;
-  border-radius: 14px;
-  margin: 0 auto 20px;
-}
-
-.fishing-page .fish-brand h1 {
-  font-size: clamp(28px, 5vw, 45px);
-  margin: 10px 0;
-  letter-spacing: .04em;
-}
-
-.fishing-page .fish-brand p {
-  color: #a9bfd0;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-size: 12px;
-}
+/* GALLERY BUTTON */
 
 .fishing-page .fish-gallery-link {
   text-align: center;
-  padding: 15px 20px 35px;
+  padding: 25px 20px 35px;
 }
 
 .fishing-page .fish-gallery-link a {
   display: inline-block;
-  padding: 12px 26px;
+  padding: 13px 27px;
   background: #55b9ee;
   color: #06111d;
   text-decoration: none;
@@ -159,7 +181,7 @@ body:has(.fishing-page) {
   }
 
   .fishing-page .fish-logo {
-    width: min(220px, 80%);
+    width: min(230px, 85%);
   }
 }
 </style>
@@ -183,15 +205,29 @@ body:has(.fishing-page) {
 
   </section>
 
+  <!-- FIND FISHING ARTICLES -->
+
   {% assign fishing_posts = site.pages
-    | where_exp: "item", "item.path contains 'fishing/' and item.name != 'gallery.md'"
+    | where_exp: "item", "item.path contains 'fishing/'"
     | sort: "date"
     | reverse
   %}
 
-  {% assign featured = fishing_posts.first %}
+  {% assign featured = nil %}
 
-  <!-- HERO FEATURED FISHING -->
+  {% for page in fishing_posts %}
+
+    {% unless page.name == 'gallery.md' %}
+
+      {% assign featured = page %}
+      {% break %}
+
+    {% endunless %}
+
+  {% endfor %}
+
+  <!-- FEATURED FISHING ARTICLE -->
+
   <section class="blog-hero fade-in">
 
     {% if featured %}
@@ -249,7 +285,8 @@ body:has(.fishing-page) {
 
   </section>
 
-  <!-- TITLE / INTRO -->
+  <!-- INTRO -->
+
   <section class="container fade-in blog-intro">
 
     <span
@@ -292,17 +329,24 @@ body:has(.fishing-page) {
   </section>
 
   <!-- GALLERY BUTTON -->
+
   <section class="container fish-gallery-link fade-in">
 
     <a href="/fishing/gallery/">
-      <span data-en="Explore Fishing Gallery" data-el="Δείτε τη Φωτογραφική Gallery">
+
+      <span
+        data-en="Explore Fishing Gallery"
+        data-el="Δείτε τη Φωτογραφική Gallery"
+      >
         Explore Fishing Gallery
       </span>
+
     </a>
 
   </section>
 
   <!-- SEARCH -->
+
   <section
     class="container fade-in"
     style="padding-top:0; padding-bottom:10px;"
@@ -324,7 +368,8 @@ body:has(.fishing-page) {
 
   </section>
 
-  <!-- FILTER BUTTONS -->
+  <!-- FILTERS -->
+
   <section class="container fade-in">
 
     <div class="filters blog-filters">
@@ -383,117 +428,132 @@ body:has(.fishing-page) {
   </section>
 
   <!-- FISHING ARTICLES GRID -->
+
   <section class="container fade-in">
 
     <div class="cards blog-grid">
 
       {% for fishing in fishing_posts %}
 
-        {% assign fishing_image_filename = fishing.image | split: '/' | last %}
+        {% unless fishing.name == 'gallery.md' %}
 
-        {% assign fishing_thumbnail_filename = fishing_image_filename
-          | replace: '.jpg', '.webp'
-          | replace: '.JPG', '.webp'
-          | replace: '.jpeg', '.webp'
-          | replace: '.JPEG', '.webp'
-        %}
+          {% assign fishing_image_filename = fishing.image | split: '/' | last %}
 
-        <div
-          class="card blog-post-card fade-in"
-          data-category="{{ fishing.category | default: 'other' | downcase }}"
-          data-title="{{ fishing.title | escape }}"
-          data-tags="{{ fishing.category | default: 'other' }} {{ fishing.title | escape }} {{ fishing.excerpt | strip_html | escape }}"
-        >
+          {% assign fishing_thumbnail_filename = fishing_image_filename
+            | replace: '.jpg', '.webp'
+            | replace: '.JPG', '.webp'
+            | replace: '.jpeg', '.webp'
+            | replace: '.JPEG', '.webp'
+          %}
 
-          <!-- PHOTO -->
+          <div
+            class="card blog-post-card fade-in"
+            data-category="{{ fishing.category | default: 'other' | downcase }}"
+            data-title="{{ fishing.title | escape }}"
+            data-tags="{{ fishing.category | default: 'other' }} {{ fishing.title | escape }} {{ fishing.excerpt | strip_html | escape }}"
+          >
 
-          {% if fishing.image %}
+            <!-- PHOTO -->
 
-            <a
-              href="{{ fishing.image }}"
-              class="gallery-link"
-              data-title="{{ fishing.title | escape }}"
-              style="
-                display:block;
-                overflow:hidden;
-                cursor:zoom-in;
-              "
-            >
+            {% if fishing.image %}
 
-              <img
-                src="/assets/images/gallery-thumbs/{{ fishing_thumbnail_filename }}"
-                data-full="{{ fishing.image }}"
-                alt="{{ fishing.title }}"
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-                style="width:100%; display:block;"
+              <a
+                href="{{ fishing.image }}"
+                class="gallery-link"
+                data-title="{{ fishing.title | escape }}"
+                style="
+                  display:block;
+                  overflow:hidden;
+                  cursor:zoom-in;
+                "
               >
 
-            </a>
+                <img
+                  src="/assets/images/gallery-thumbs/{{ fishing_thumbnail_filename }}"
+                  data-full="{{ fishing.image }}"
+                  alt="{{ fishing.title }}"
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="400"
+                  style="width:100%;display:block;"
+                >
 
-          {% endif %}
+              </a>
 
-          <!-- CARD CONTENT -->
+            {% endif %}
 
-          <div class="blog-card-content">
+            <!-- ARTICLE CONTENT -->
 
-            <a
-              href="{{ fishing.url | relative_url }}"
-              class="blog-post-link"
-              style="
-                text-decoration:none;
-                color:inherit;
-                display:block;
-              "
-            >
+            <div class="blog-card-content">
 
-              <div class="blog-meta">
+              <a
+                href="{{ fishing.url | relative_url }}"
+                class="blog-post-link"
+                style="
+                  text-decoration:none;
+                  color:inherit;
+                  display:block;
+                "
+              >
 
-                <span class="blog-tag">
-                  {{ fishing.category | default: 'other' }}
-                </span>
+                <div class="blog-meta">
 
-                {% if fishing.date %}
-
-                  <span class="blog-date">
-                    {{ fishing.date | date: "%d %b %Y" }}
+                  <span class="blog-tag">
+                    {{ fishing.category | default: 'other' }}
                   </span>
+
+                  {% if fishing.date %}
+
+                    <span class="blog-date">
+                      {{ fishing.date | date: "%d %b %Y" }}
+                    </span>
+
+                  {% endif %}
+
+                </div>
+
+                <h3>
+                  {{ fishing.title }}
+                </h3>
+
+                {% if fishing.excerpt %}
+
+                  <p>
+                    {{ fishing.excerpt | strip_html | truncate: 130 }}
+                  </p>
 
                 {% endif %}
 
-              </div>
+              </a>
 
-              <h3>
-                {{ fishing.title }}
-              </h3>
-
-              {% if fishing.excerpt %}
-
-                <p>
-                  {{ fishing.excerpt | strip_html | truncate: 130 }}
-                </p>
-
-              {% endif %}
-
-            </a>
+            </div>
 
           </div>
 
-        </div>
+        {% endunless %}
 
       {% endfor %}
 
     </div>
 
-    {% unless fishing_posts.size > 0 %}
+    {% assign article_count = 0 %}
+
+    {% for fishing in fishing_posts %}
+
+      {% unless fishing.name == 'gallery.md' %}
+        {% assign article_count = article_count | plus: 1 %}
+      {% endunless %}
+
+    {% endfor %}
+
+    {% if article_count == 0 %}
 
       <p style="text-align:center;color:var(--muted);padding:35px 10px;">
         New fishing adventures coming soon.
       </p>
 
-    {% endunless %}
+    {% endif %}
 
   </section>
 
