@@ -1,3 +1,66 @@
+- image: /assets/images/Asclepius Statue.jpg
+  alt: Asclepius Statue – Trikala
+  category: City
+  description: Ο ανδριάντας του Ασκληπιού στο κέντρο των Τρικάλων, με φόντο μια πολύχρωμη τοιχογραφία και τον συννεφιασμένο ουρανό.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+  
+- image: /assets/images/Indigo Kids.jpg
+  alt: Indigo Kids – Trikala Street Art
+  category: Street
+  description: Η εντυπωσιακή τοιχογραφία Indigo Kids των Apset και Ashos, με ένα πολύχρωμο γυναικείο πορτρέτο στην πρόσοψη κτιρίου των Τρικάλων.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
+- image: /assets/images/General Stefanos Sarafis Statue.jpg
+  alt: General Stefanos Sarafis Statue
+  category: City
+  description: Ο ανδριάντας του στρατηγού Στέφανου Σαράφη, πλαισιωμένος από δέντρα και σημαίες σε δημόσιο χώρο των Τρικάλων.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
+- image: /assets/images/Agora.jpg
+  alt: Agora – Trikala Street Art
+  category: Street
+  description: Η τοιχογραφία Agora με σκηνές από την παλιά αγορά των Τρικάλων, σε ασπρόμαυρους τόνους και έντονες χρωματικές λεπτομέρειες.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
+- image: /assets/images/Trikala City Centre.jpg
+  alt: Trikala City Centre
+  category: City
+  description: Αστική σκηνή από το κέντρο των Τρικάλων, με δρόμους, κτίρια, φθινοπωρινά δέντρα και έναν δραματικό συννεφιασμένο ουρανό.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
+- image: /assets/images/Street Art.jpg
+  alt: Sleep On It – Urban Mural
+  category: Street
+  description: Πολύχρωμη τοιχογραφία στην πρόσοψη κτιρίου στα Τρίκαλα, με ανθρώπινη μορφή, λευκά πουλιά και έντονες γεωμετρικές συνθέσεις.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
+- image: /assets/images/The Little Photographer.jpg
+  alt: The Little Photographer – Street Art
+  category: Street
+  description: Ζωγραφική παρέμβαση σε υπαίθριο κουτί ηλεκτρολογικού εξοπλισμού, με ένα παιδί που φωτογραφίζει λευκά περιστέρια.
+  location: Greece, Trikala
+  date: 2026-11-12
+  camera: Nikon D7000
+
+
 - image: /assets/images/Παυλιανίτικα Καλούδια.jpg
   alt: Παυλιανίτικα Καλούδια
   category: Nature
