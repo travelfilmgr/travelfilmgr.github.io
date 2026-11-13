@@ -6,7 +6,11 @@ permalink: /fishing/
 ---
 
 <style>
-/* FISHING THEME - ONLY FOR THIS PAGE */
+/* ==================================
+   TRAVELFILM_GR BITE TIME THEME
+   Fishing page only
+================================== */
+
 body:has(.fishing-page) {
   --primary: #55b9ee;
   --muted: #a9bfd0;
@@ -15,298 +19,481 @@ body:has(.fishing-page) {
 }
 
 .fishing-page {
-  --fish-panel: #0b1d2d;
-  --fish-panel-2: #10283b;
-  --fish-blue: #55b9ee;
-  --fish-text: #eef7ff;
-  --fish-muted: #a9bfd0;
-  color: var(--fish-text);
+  --primary: #55b9ee;
+  --muted: #a9bfd0;
+  --fish-bg: #06111d;
+  --fish-card: #0b1d2d;
+  --fish-accent: #10283b;
+  color: #eef7ff;
 }
 
-.fishing-page .fish-container {
-  width: min(1100px, calc(100% - 36px));
-  margin: 0 auto;
-  padding: 34px 0;
+.fishing-page .blog-intro h2,
+.fishing-page h1,
+.fishing-page h2,
+.fishing-page h3 {
+  color: #eef7ff;
 }
 
-.fishing-page .fish-hero {
-  min-height: 440px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 50px 22px;
-  border-radius: 22px;
-  overflow: hidden;
-  background:
-    linear-gradient(135deg, rgba(3,12,22,.88), rgba(5,34,55,.76)),
-    url('/assets/images/fishing-hero.jpg') center/cover no-repeat,
-    #071a2b;
+.fishing-page .blog-intro p {
+  color: #a9bfd0 !important;
+}
+
+.fishing-page .blog-hero {
+  border-color: rgba(85,185,238,.25);
+}
+
+.fishing-page .featured-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(3,12,22,.95),
+    rgba(3,12,22,.05)
+  );
+}
+
+.fishing-page .featured-label {
+  background: #55b9ee;
+  color: #06111d;
+}
+
+.fishing-page .card {
+  background: #0b1d2d;
+  border: 1px solid rgba(85,185,238,.2);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.fishing-page .card:hover {
+  transform: translateY(-5px);
+  border-color: #55b9ee;
+}
+
+.fishing-page .blog-card-content h3 {
+  color: #ffffff;
+}
+
+.fishing-page .blog-card-content p {
+  color: #a9bfd0;
+}
+
+.fishing-page .blog-tag {
+  background: rgba(85,185,238,.15);
+  color: #55b9ee;
+}
+
+.fishing-page .blog-date {
+  color: #a9bfd0;
+}
+
+.fishing-page .search-input {
+  background: #0b1d2d;
+  color: #ffffff;
+  border: 1px solid rgba(85,185,238,.3);
+}
+
+.fishing-page .search-input::placeholder {
+  color: #a9bfd0;
+}
+
+.fishing-page .filters button {
+  background: #0b1d2d;
+  color: #c2d5e5;
   border: 1px solid rgba(85,185,238,.25);
+  border-radius: 25px;
+}
+
+.fishing-page .filters button.active,
+.fishing-page .filters button:hover {
+  background: #55b9ee;
+  color: #06111d;
+  border-color: #55b9ee;
+}
+
+.fishing-page .fish-brand {
+  text-align: center;
+  padding: 35px 20px 15px;
 }
 
 .fishing-page .fish-logo {
-  display: block;
-  width: min(260px, 70vw);
+  width: min(260px, 75%);
   height: auto;
-  margin: 0 auto 22px;
   border-radius: 14px;
+  margin: 0 auto 20px;
 }
 
-.fishing-page h1 {
-  color: #fff;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  margin: 0 0 12px;
+.fishing-page .fish-brand h1 {
+  font-size: clamp(28px, 5vw, 45px);
+  margin: 10px 0;
+  letter-spacing: .04em;
 }
 
-.fishing-page h2 {
-  color: #fff;
-  margin: 0 0 12px;
-}
-
-.fishing-page p {
-  color: var(--fish-muted);
-  line-height: 1.8;
-}
-
-.fishing-page .fish-kicker {
-  color: var(--fish-blue);
+.fishing-page .fish-brand p {
+  color: #a9bfd0;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  letter-spacing: .16em;
-  font-size: .78rem;
-  font-weight: 700;
+  font-size: 12px;
 }
 
-.fishing-page .fish-btn {
+.fishing-page .fish-gallery-link {
+  text-align: center;
+  padding: 15px 20px 35px;
+}
+
+.fishing-page .fish-gallery-link a {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: var(--fish-blue);
-  color: #04111c;
+  padding: 12px 26px;
+  background: #55b9ee;
+  color: #06111d;
   text-decoration: none;
   font-weight: 800;
-  transition: transform .2s ease, filter .2s ease;
+  border-radius: 30px;
+  transition: .2s ease;
 }
 
-.fishing-page .fish-btn:hover {
+.fishing-page .fish-gallery-link a:hover {
+  background: #ffffff;
   transform: translateY(-2px);
-  filter: brightness(1.08);
-}
-
-.fishing-page .fish-section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-
-.fishing-page .fish-link {
-  color: var(--fish-blue);
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.fishing-page .fish-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.fishing-page .fish-card {
-  background: var(--fish-panel);
-  border: 1px solid rgba(85,185,238,.16);
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.fishing-page .fish-card img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-}
-
-.fishing-page .fish-card-caption {
-  padding: 13px 15px;
-  color: #eaf6ff;
-}
-
-.fishing-page .fish-cta {
-  text-align: center;
-  padding: 38px 24px;
-  border-radius: 18px;
-  background: var(--fish-panel-2);
-  border: 1px solid rgba(85,185,238,.2);
 }
 
 @media(max-width:600px) {
-  .fishing-page .fish-hero {
-    min-height: 360px;
+  .fishing-page .fish-brand {
+    padding-top: 20px;
   }
 
-  .fishing-page .fish-container {
-    width: calc(100% - 24px);
-    padding: 24px 0;
+  .fishing-page .fish-logo {
+    width: min(220px, 80%);
   }
 }
 </style>
 
-<div class="fishing-page">
+<div class="blog-page fishing-page">
 
-  <!-- HERO -->
-  <section class="fish-container">
-    <div class="fish-hero">
-      <div>
+  <!-- BITE TIME BRAND -->
+  <section class="container fish-brand fade-in">
 
-        <img
-          class="fish-logo"
-          src="/assets/bite-time-logo.png"
-          alt="Travelfilm_gr Bite time logo"
-        >
+    <img
+      src="/assets/bite-time-logo.png"
+      alt="Travelfilm_gr Bite time"
+      class="fish-logo"
+    >
 
-        <div class="fish-kicker">
-          Fishing • Adventures • Moments
-        </div>
+    <h1>Travelfilm_gr Bite time</h1>
 
-        <h1>Travelfilm_gr Bite time</h1>
+    <p>
+      Fishing • Adventures • Moments
+    </p>
 
-        <p style="max-width:680px;margin:0 auto;">
-          Fishing stories, outdoor escapes and moments by the water — captured through my lens.
-        </p>
-
-        <a class="fish-btn" href="/fishing/gallery/">
-          Explore Fishing Gallery
-        </a>
-
-      </div>
-    </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="fish-container">
-    <div style="max-width:850px;">
+  {% assign fishing_posts = site.pages
+    | where_exp: "item", "item.path contains 'fishing/' and item.name != 'gallery.md'"
+    | sort: "date"
+    | reverse
+  %}
 
-      <div class="fish-kicker">Welcome to Bite time</div>
+  {% assign featured = fishing_posts.first %}
 
-      <h2>A passion for fishing</h2>
+  <!-- HERO FEATURED FISHING -->
+  <section class="blog-hero fade-in">
 
-      <p>
-        Καλώς ήρθες στο Travelfilm_gr Bite time.
-        Εδώ θα μοιράζομαι ψαρευτικές εξορμήσεις,
-        στιγμές στη φύση, εικόνες και μικρές ιστορίες
-        από τη θάλασσα και τα νερά που επισκέπτομαι.
-      </p>
+    {% if featured %}
 
-    </div>
-  </section>
+      {% assign featured_image_filename = featured.image | split: '/' | last %}
 
-  <!-- LATEST FISHING PHOTOS -->
-  <section class="fish-container">
+      {% assign featured_thumbnail_filename = featured_image_filename
+        | replace: '.jpg', '.webp'
+        | replace: '.JPG', '.webp'
+        | replace: '.jpeg', '.webp'
+        | replace: '.JPEG', '.webp'
+      %}
 
-    <div class="fish-section-head">
-      <div>
+      <a href="{{ featured.url | relative_url }}" class="featured-post">
 
-        <div class="fish-kicker">From the water</div>
+        {% if featured.image %}
 
-        <h2>Latest Fishing Shots</h2>
-
-        <p style="max-width:650px;margin:0;">
-          A selection of fishing moments and outdoor memories.
-        </p>
-
-      </div>
-
-      <a class="fish-link" href="/fishing/gallery/">
-        View all photos →
-      </a>
-    </div>
-
-    <div class="fish-grid">
-
-      {% assign fishing_count = 0 %}
-
-      {% for shot in site.data.gallery reversed %}
-
-        {% assign shot_category = shot.category | downcase %}
-
-        {% if shot_category contains 'fishing' or shot_category contains 'ψαρε' %}
-
-          {% assign image_filename = shot.image | split: '/' | last %}
-
-          {% assign thumbnail_filename =
-            image_filename
-            | replace: '.jpg', '.webp'
-            | replace: '.JPG', '.webp'
-            | replace: '.jpeg', '.webp'
-            | replace: '.JPEG', '.webp'
-          %}
-
-          <a
-            class="fish-card"
-            href="{{ shot.image | relative_url }}"
+          <img
+            src="/assets/images/gallery-thumbs/{{ featured_thumbnail_filename }}"
+            data-full="{{ featured.image }}"
+            alt="{{ featured.title }}"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="700"
           >
-
-            <img
-              src="/assets/images/gallery-thumbs/{{ thumbnail_filename }}"
-              alt="{{ shot.alt | escape }}"
-              loading="lazy"
-              decoding="async"
-            >
-
-            <div class="fish-card-caption">
-              {{ shot.alt }}
-            </div>
-
-          </a>
-
-          {% assign fishing_count = fishing_count | plus: 1 %}
-
-          {% if fishing_count >= 6 %}
-            {% break %}
-          {% endif %}
 
         {% endif %}
 
-      {% endfor %}
+        <div class="featured-overlay">
 
-      {% if fishing_count == 0 %}
+          <span
+            class="featured-label"
+            data-en="Featured Fishing"
+            data-el="Προτεινόμενο Ψάρεμα"
+          >
+            Featured Fishing
+          </span>
 
-        <p>
-          Οι φωτογραφίες ψαρέματος θα εμφανιστούν εδώ
-          μόλις προστεθούν στο gallery data με category "Fishing".
-        </p>
+          <h1>{{ featured.title }}</h1>
 
-      {% endif %}
+          {% if featured.excerpt %}
 
-    </div>
-  </section>
+            <p>
+              {{ featured.excerpt | strip_html | truncate: 160 }}
+            </p>
 
-  <!-- CTA -->
-  <section class="fish-container">
+          {% endif %}
 
-    <div class="fish-cta">
+        </div>
 
-      <div class="fish-kicker">
-        Keep the line tight
-      </div>
-
-      <h2>Every bite has a story.</h2>
-
-      <p>
-        Ακολούθησε τις εξορμήσεις και τις στιγμές
-        του Travelfilm_gr Bite time.
-      </p>
-
-      <a class="fish-btn" href="/fishing/gallery/">
-        View Fishing Gallery
       </a>
 
+    {% endif %}
+
+  </section>
+
+  <!-- TITLE / INTRO -->
+  <section class="container fade-in blog-intro">
+
+    <span
+      style="
+        display:inline-block;
+        margin-bottom:12px;
+        padding:6px 12px;
+        border-radius:999px;
+        background:rgba(85,185,238,0.1);
+        border:1px solid rgba(85,185,238,0.25);
+        font-size:12px;
+        letter-spacing:0.08em;
+        text-transform:uppercase;
+        color:var(--primary);
+      "
+    >
+      Bite time
+    </span>
+
+    <h2
+      data-en="Fishing Adventures"
+      data-el="Ψαρευτικές Εξορμήσεις"
+    >
+      Fishing Adventures
+    </h2>
+
+    <p
+      data-en="Fishing stories, outdoor adventures and moments captured by the water."
+      data-el="Ψαρευτικές ιστορίες, εξορμήσεις στη φύση και στιγμές δίπλα στο νερό."
+      style="
+        max-width:720px;
+        margin:12px auto 0;
+        color:var(--muted);
+        line-height:1.8;
+      "
+    >
+      Fishing stories, outdoor adventures and moments captured by the water.
+    </p>
+
+  </section>
+
+  <!-- GALLERY BUTTON -->
+  <section class="container fish-gallery-link fade-in">
+
+    <a href="/fishing/gallery/">
+      <span data-en="Explore Fishing Gallery" data-el="Δείτε τη Φωτογραφική Gallery">
+        Explore Fishing Gallery
+      </span>
+    </a>
+
+  </section>
+
+  <!-- SEARCH -->
+  <section
+    class="container fade-in"
+    style="padding-top:0; padding-bottom:10px;"
+  >
+
+    <div class="search-wrap">
+
+      <input
+        type="text"
+        class="search-input"
+        data-blog-search
+        data-placeholder-en="Search fishing adventures..."
+        data-placeholder-el="Αναζήτηση ψαρευτικών εξορμήσεων..."
+        placeholder="Search fishing adventures..."
+        aria-label="Search fishing adventures"
+      >
+
     </div>
+
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <section class="container fade-in">
+
+    <div class="filters blog-filters">
+
+      <button
+        onclick="filterPosts('all', event)"
+        class="active"
+        data-en="All"
+        data-el="Όλα"
+      >
+        All
+      </button>
+
+      <button
+        onclick="filterPosts('sea', event)"
+        data-en="Sea"
+        data-el="Θάλασσα"
+      >
+        Sea
+      </button>
+
+      <button
+        onclick="filterPosts('shore', event)"
+        data-en="Shore Fishing"
+        data-el="Ακτή"
+      >
+        Shore Fishing
+      </button>
+
+      <button
+        onclick="filterPosts('spinning', event)"
+        data-en="Spinning"
+        data-el="Spinning"
+      >
+        Spinning
+      </button>
+
+      <button
+        onclick="filterPosts('freshwater', event)"
+        data-en="Freshwater"
+        data-el="Γλυκά Νερά"
+      >
+        Freshwater
+      </button>
+
+      <button
+        onclick="filterPosts('other', event)"
+        data-en="Other"
+        data-el="Άλλα"
+      >
+        Other
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FISHING ARTICLES GRID -->
+  <section class="container fade-in">
+
+    <div class="cards blog-grid">
+
+      {% for fishing in fishing_posts %}
+
+        {% assign fishing_image_filename = fishing.image | split: '/' | last %}
+
+        {% assign fishing_thumbnail_filename = fishing_image_filename
+          | replace: '.jpg', '.webp'
+          | replace: '.JPG', '.webp'
+          | replace: '.jpeg', '.webp'
+          | replace: '.JPEG', '.webp'
+        %}
+
+        <div
+          class="card blog-post-card fade-in"
+          data-category="{{ fishing.category | default: 'other' | downcase }}"
+          data-title="{{ fishing.title | escape }}"
+          data-tags="{{ fishing.category | default: 'other' }} {{ fishing.title | escape }} {{ fishing.excerpt | strip_html | escape }}"
+        >
+
+          <!-- PHOTO -->
+
+          {% if fishing.image %}
+
+            <a
+              href="{{ fishing.image }}"
+              class="gallery-link"
+              data-title="{{ fishing.title | escape }}"
+              style="
+                display:block;
+                overflow:hidden;
+                cursor:zoom-in;
+              "
+            >
+
+              <img
+                src="/assets/images/gallery-thumbs/{{ fishing_thumbnail_filename }}"
+                data-full="{{ fishing.image }}"
+                alt="{{ fishing.title }}"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+                style="width:100%; display:block;"
+              >
+
+            </a>
+
+          {% endif %}
+
+          <!-- CARD CONTENT -->
+
+          <div class="blog-card-content">
+
+            <a
+              href="{{ fishing.url | relative_url }}"
+              class="blog-post-link"
+              style="
+                text-decoration:none;
+                color:inherit;
+                display:block;
+              "
+            >
+
+              <div class="blog-meta">
+
+                <span class="blog-tag">
+                  {{ fishing.category | default: 'other' }}
+                </span>
+
+                {% if fishing.date %}
+
+                  <span class="blog-date">
+                    {{ fishing.date | date: "%d %b %Y" }}
+                  </span>
+
+                {% endif %}
+
+              </div>
+
+              <h3>
+                {{ fishing.title }}
+              </h3>
+
+              {% if fishing.excerpt %}
+
+                <p>
+                  {{ fishing.excerpt | strip_html | truncate: 130 }}
+                </p>
+
+              {% endif %}
+
+            </a>
+
+          </div>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+    {% unless fishing_posts.size > 0 %}
+
+      <p style="text-align:center;color:var(--muted);padding:35px 10px;">
+        New fishing adventures coming soon.
+      </p>
+
+    {% endunless %}
 
   </section>
 
